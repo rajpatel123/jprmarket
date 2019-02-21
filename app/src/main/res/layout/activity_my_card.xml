@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyCardActivity">
+
+    <TextView
+        android:id="@+id/item_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="120dp"
+        android:text="No items in your cart"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/fav_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:text="your Favourite are just a click away"
+        android:textSize="15dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/enter_BTN"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:background="#ff4002"
+        android:layout_marginLeft="130dp"
+        android:text=" Start Shopping"
+        android:textSize="13dp"
+        android:textStyle="italic" />
+
+</LinearLayout>

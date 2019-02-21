@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LocationActivity">
+
+    <TextView
+        android:layout_marginTop="400dp"
+        android:gravity="center"
+        android:text="Where do you want your delivery?"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/location_BTN"
+        android:text="Use my Location"
+        android:layout_marginRight="20dp"
+     android:layout_marginLeft="20dp"
+        android:background="@drawable/oval"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+    <TextView
+        android:gravity="center"
+        android:text="Set location manually"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+</LinearLayout>
