@@ -4,17 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/textbutton_color"
     android:orientation="vertical"
     tools:context=".MyCardActivity">
+
+    <ImageView
+        android:id="@+id/locationnn"
+        android:background="@drawable/cart"
+        android:layout_width="match_parent"
+        android:layout_height="350dp" />
 
     <TextView
         android:id="@+id/item_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="120dp"
-        android:text="No items in your cart"
-        android:textSize="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="110dp"
+        android:text="@string/item_text"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <TextView
@@ -23,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
-        android:text="your Favourite are just a click away"
+        android:text="@string/favorite_text"
         android:textSize="15dp"
         android:textStyle="italic" />
 
@@ -32,7 +39,8 @@
         android:id="@+id/enter_BTN"
         android:layout_width="130dp"
         android:layout_height="40dp"
-        android:background="#ff4002"
+        android:textColor="@color/textbutton_color"
+        android:background="@color/text_color"
         android:layout_marginLeft="130dp"
         android:text=" Start Shopping"
         android:textSize="13dp"

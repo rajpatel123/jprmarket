@@ -7,26 +7,49 @@
     android:orientation="vertical"
     tools:context=".LocationActivity">
 
+
+    <ImageView
+
+        android:id="@+id/location"
+        android:background="@drawable/location"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
     <TextView
-        android:layout_marginTop="400dp"
         android:gravity="center"
-        android:text="Where do you want your delivery?"
+        android:text="@string/text1"
+        android:textColor="@color/textcolor"
+        android:textSize="@dimen/text_margins"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:textColor="@color/textcolor"
+        android:text="@string/text2"
+        android:textSize="16dp"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 
     <Button
+
+        android:layout_marginTop="10dp"
         android:id="@+id/location_BTN"
-        android:text="Use my Location"
+        android:text="@string/text_button"
+        android:textColor="@color/textbutton_color"
         android:layout_marginRight="20dp"
-     android:layout_marginLeft="20dp"
-        android:background="@drawable/oval"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/roundedbutton"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 
 
     <TextView
+        android:textSize="14dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text="Set location manually"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:text="@string/text3"
         android:layout_width="match_parent"
         android:layout_height="40dp" />
 
