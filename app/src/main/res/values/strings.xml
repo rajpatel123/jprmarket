@@ -6,8 +6,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="Msg">We will an SMS with a conformation code</string>
-    <string name="code"> to this number</string>
+    <string name="Msg">We will Send SMS with a conformation code to  </string>
+    <string name="code">this number</string>
     <string name="get"> Use referred code and get up to 150 Grofers Cash</string>
     <string name="caller"> One touch login with Trucaller</string>
     <string name="text2"> Where do you want your delivery?</string>
