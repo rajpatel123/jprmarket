@@ -1,41 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/primary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
-    <TextView
-        android:layout_marginTop="60dp"
-        android:textStyle="italic"
-        android:id="@+id/tv"
-        android:textColor="@color/white_greyish"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        />
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:text="Registration"
-        android:textSize="30dp" />
-    <EditText
-        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:background="#f1f0f0"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textColorHint="@color/white"
-        android:id="@+id/nameET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:hint="Name" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Details Here"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="#000"
+            />
 
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
         android:textSize="15dp"
-        android:textColorHint="@color/white"
+        android:id="@+id/nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:hint="user Name" />
+
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
         android:id="@+id/mobileET"
         android:inputType="number"
         android:layout_width="match_parent"
@@ -45,9 +73,8 @@
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
         android:textSize="15dp"
-        android:textColorHint="@color/white"
         android:id="@+id/countryET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,9 +83,8 @@
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
         android:textSize="15dp"
-        android:textColorHint="@color/white"
         android:id="@+id/emailET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,9 +93,8 @@
     <EditText
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
         android:textSize="15dp"
-        android:textColorHint="@color/white"
         android:id="@+id/pwdET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -78,18 +103,26 @@
     <Button
 
 
-        android:background="@color/primary_darker"
+        android:background="#5C6ac4"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:id="@+id/submitBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Submit"
-        android:textColor="@color/white_greyish"
+        android:layout_marginTop="30dp"
+        android:text="Sing Up"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="15dp" />
 
 
+    </LinearLayout>
 
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
+
+</ScrollView>
+
+
+
