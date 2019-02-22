@@ -97,7 +97,7 @@
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
                     android:textColor="@color/white_greyish"
-                    android:text="Forget Your Password" />
+                    android:text="@string/forgetet" />
             </LinearLayout>
             <Button
                 android:id="@+id/loginButton"
@@ -129,7 +129,7 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="5dp"
-                android:text="Sign in with Google"
+                android:text="@string/signin"
                 android:textAllCaps="false"
                 android:textColor="@color/white_greyish"
                 android:textSize="15dp"

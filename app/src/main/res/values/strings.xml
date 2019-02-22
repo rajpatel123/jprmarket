@@ -17,5 +17,9 @@
 
     <string name="item_text">No items in your cart</string>
     <string name="favorite_text">your Favourite are just a click away</string>
+       <string name="_text">Sign in with Google</string>
+<string name="forgetet">Forget Your Password</string>
+    <string name="signin">Signin with email</string>
+
 
 </resources>
