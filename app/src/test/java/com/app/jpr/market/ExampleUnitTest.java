@@ -1,4 +1,4 @@
-package com.example.kishan.grofers;
+package com.app.jpr.market;
 
 import org.junit.Test;
 

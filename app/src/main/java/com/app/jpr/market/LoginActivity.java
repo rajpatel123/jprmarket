@@ -1,6 +1,7 @@
-package com.example.kishan.grofers;
+package com.app.jpr.market;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -27,7 +28,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-         signup=findViewById(R.id.register_tv);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+        signup=findViewById(R.id.register_tv);
          email=findViewById(R.id.edit_email);
         password=findViewById(R.id.edit_Passwword);
         login=findViewById(R.id.loginButton);
