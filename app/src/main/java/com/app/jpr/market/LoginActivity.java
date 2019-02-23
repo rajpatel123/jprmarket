@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                     LoginResponse loginResponse = response.body();
                                     if (loginResponse.getStatus().equalsIgnoreCase("true")){
                                         Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                                        Intent intent=new Intent(LoginActivity.this,Main2Activity.class);
+                                        Intent intent=new Intent(LoginActivity.this,MainActivity.class);
 
                                         intent.putExtra("USERNAME","gmail");
                                         intent.putExtra("PASSWORD","password");
