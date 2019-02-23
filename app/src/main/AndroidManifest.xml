@@ -26,12 +26,13 @@
             android:name="com.app.jpr.market.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.app.jpr.market.SkipActivity" />
-        <activity android:name="com.app.jpr.market.LocationActivity" />
-        <activity android:name="com.app.jpr.market.LoginActivity" />
-        <activity android:name="com.app.jpr.market.MyCardActivity"></activity>
-        <activity android:name="com.app.jpr.market.SignupActivity" />
-        <activity android:name="com.app.jpr.market.Main2Activity"></activity>
+
+        <activity android:name=".SkipActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MyCardActivity"></activity>
+        <activity android:name=".SignupActivity" />
+
     </application>
 
 </manifest>

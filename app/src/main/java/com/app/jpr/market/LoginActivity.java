@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
+import com.app.jpr.market.util.AppUtils;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -22,9 +23,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-   private TextView signup;
-   private EditText email,password;
-   private Button login;
+    private TextView signup;
+    private EditText email, password;
+    private Button login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
         signup = findViewById(R.id.register_tv);
         email = findViewById(R.id.edit_email);
-        password=findViewById(R.id.edit_Passwword);
+        password = findViewById(R.id.edit_Passwword);
         login = findViewById(R.id.loginButton);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -41,63 +43,59 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                String gmaill=email.getText().toString();
-                String passworddd=password.getText().toString();
+                String gmaill = email.getText().toString();
+                String passworddd = password.getText().toString();
                 boolean check = validateInputs(gmaill, passworddd);
 
 
-                if (check)
-                {
+                if (check) {
+                    if (AppUtils.isInternetConnected(LoginActivity.this)) {
+                        RequestBody email = RequestBody.create(MediaType.parse("text/plain"), gmaill);
+                        RequestBody pwd = RequestBody.create(MediaType.parse("text/plain"), passworddd);
 
-                    //TODO  check internet connection
+                        //TODO  display progress dialog
 
+                        AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
 
+                        RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
+                            @Override
+                            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
-                    // creating requestbody to send data to cloud
-                    RequestBody email = RequestBody.create(MediaType.parse("text/plain"), gmaill);
-                    RequestBody pwd = RequestBody.create(MediaType.parse("text/plain"), passworddd);
+                                switch (response.code()) {
+                                    case 200:
+                                        AppUtils.dismisDialog();
+                                        LoginResponse loginResponse = response.body();
+                                        if (loginResponse.getStatus().equalsIgnoreCase("true")) {
+                                            Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
 
-                    //TODO  display progress dialog
+                                            intent.putExtra("USERNAME", "gmail");
+                                            intent.putExtra("PASSWORD", "password");
+                                            startActivity(intent);
+                                            finish();
 
-                    RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
-                        @Override
-                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                                        } else {
+                                            //TODO  show toast
+                                        }
+                                        break;
+                                    case 500:
 
-                            switch (response.code()){
-                                case 200:
-                                    LoginResponse loginResponse = response.body();
-                                    if (loginResponse.getStatus().equalsIgnoreCase("true")){
-                                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                                        Intent intent=new Intent(LoginActivity.this,Main2Activity.class);
-
-                                        intent.putExtra("USERNAME","gmail");
-                                        intent.putExtra("PASSWORD","password");
-                                        startActivity(intent);
-                                        finish();
-
-                                    }else{
-                                        //TODO  show toast
-                                    }
-                                    break;
-                                case 500:
-
-                                    break;
-                                default:
+                                        break;
+                                    default:
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onFailure(Call<LoginResponse> call, Throwable t) {
-                            Log.d("Fail",call.toString());
-                        }
-                    });
+                            @Override
+                            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                                Log.d("Fail", call.toString());
+                                AppUtils.dismisDialog();
+                            }
+                        });
 
 
-
-                }
-                else
-                {
-                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "no Internet connection", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
 
@@ -105,14 +103,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
         signup.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 Intent intent=new Intent(LoginActivity.this,SignupActivity.class);
-                 startActivity(intent);
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
 
-             }
+            }
         });
     }
 
@@ -125,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        if (passworddd.length() <6) {
+        if (passworddd.length() < 6) {
             password.setError("enter more than 10 charater");
             check = false;
         }
