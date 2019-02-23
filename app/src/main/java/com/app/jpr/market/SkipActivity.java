@@ -1,4 +1,4 @@
-package com.example.kishan.grofers;
+package com.app.jpr.market;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
