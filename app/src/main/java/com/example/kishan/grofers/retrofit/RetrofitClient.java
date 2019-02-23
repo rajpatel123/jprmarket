@@ -1,16 +1,13 @@
 package com.example.kishan.grofers.retrofit;
 
-import com.camtrack.tracker.BuildConfig;
-import com.camtrack.tracker.retrofit.ApiInterface;
+
+import com.example.kishan.grofers.BuildConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -47,12 +44,7 @@ public class RetrofitClient {
         builder.readTimeout(60, TimeUnit.SECONDS);
         builder.writeTimeout(60, TimeUnit.SECONDS);
 
-        if (BuildConfig.DEBUG) {
-            // set your desired log level
-            HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-            builder.addInterceptor(logging);
-        }
+
         return builder.build();
     }
 
@@ -61,13 +53,11 @@ public class RetrofitClient {
         builder.client(okHttp());
         builder.baseUrl(BuildConfig.API_SERVER_IP);
         builder.addConverterFactory(GsonConverterFactory.create(gson()));
-        if (withRxJavaSupport) {
-            builder.addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()));
-        }
+
         return builder.build();
     }
-
     public static Gson gson() {
         return new GsonBuilder().setDateFormat("yyyy-M  M-dd'T'HH:mm:ssZ").create();
     }
+
 }

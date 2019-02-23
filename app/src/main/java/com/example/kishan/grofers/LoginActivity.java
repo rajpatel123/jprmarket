@@ -10,6 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kishan.grofers.models.LoginResponse;
+import com.example.kishan.grofers.retrofit.RestClient;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginActivity extends AppCompatActivity {
    private TextView signup;
    private EditText email,password;
@@ -55,6 +64,27 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (check==true)
                 {
+
+                    RequestBody email = RequestBody.create(MediaType.parse("text/plain"), gmaill);
+                    RequestBody pwd = RequestBody.create(MediaType.parse("text/plain"), passworddd);
+                    RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            switch (response.code()){
+                             //case
+                            }
+
+
+
+                        }
+
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+
+                        }
+                    });
+
+
                     Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                     Intent intent=new Intent(LoginActivity.this,Main2Activity.class);
 

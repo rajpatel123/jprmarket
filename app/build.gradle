@@ -13,13 +13,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/api/test_api.php?action=login/\""
+            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         debug {
             minifyEnabled false
-            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/api/test_api.php?action=login/\""
+            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
