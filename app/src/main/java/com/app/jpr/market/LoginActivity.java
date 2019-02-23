@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -60,34 +61,39 @@ public class LoginActivity extends AppCompatActivity {
 
                     RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
                         @Override
-                        public void onResponse(Call call, Response response) {
+                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
                             switch (response.code()){
                                 case 200:
                                     LoginResponse loginResponse = response.body();
+                                    if (loginResponse.getStatus().equalsIgnoreCase("true")){
+                                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+                                        Intent intent=new Intent(LoginActivity.this,Main2Activity.class);
+
+                                        intent.putExtra("USERNAME","gmail");
+                                        intent.putExtra("PASSWORD","password");
+                                        startActivity(intent);
+                                        finish();
+
+                                    }else{
+                                        //TODO  show toast
+                                    }
                                     break;
                                 case 500:
 
                                     break;
-                                    default:
+                                default:
                             }
-
-
-
                         }
 
                         @Override
-                        public void onFailure(Call call, Throwable t) {
-
+                        public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            Log.d("Fail",call.toString());
                         }
                     });
 
 
-                    Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(LoginActivity.this,Main2Activity.class);
 
-                    intent.putExtra("USERNAME","gmail");
-                    intent.putExtra("PASSWORD","password");
-                    startActivity(intent);
                 }
                 else
                 {
@@ -119,7 +125,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        if (passworddd.length() < 10) {
+        if (passworddd.length() <6) {
             password.setError("enter more than 10 charater");
             check = false;
         }
