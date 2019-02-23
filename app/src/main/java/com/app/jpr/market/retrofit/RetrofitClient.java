@@ -1,7 +1,7 @@
-package com.example.kishan.grofers.retrofit;
+package com.app.jpr.market.retrofit;
 
 
-import com.example.kishan.grofers.BuildConfig;
+import com.app.jpr.market.BuildConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

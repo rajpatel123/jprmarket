@@ -1,7 +1,7 @@
-package com.example.kishan.grofers.retrofit;
+package com.app.jpr.market.retrofit;
 
 
-import com.example.kishan.grofers.models.LoginResponse;
+import com.app.jpr.market.models.LoginResponse;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -14,5 +14,7 @@ public interface ApiInterface {
     Call<LoginResponse>  login(@Part("u_email") RequestBody u_email,@Part("u_password") RequestBody u_password);
 
 
+//    @POST("api/test_api.php?action=signup")
+//    Call<>
 
 }
