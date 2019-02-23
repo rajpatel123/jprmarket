@@ -14,13 +14,11 @@
     <color name="primary_darker">#CC1D1D</color>
     <color name="white">#FFFFFF</color>
     <color name="primary">#E43F3F</color>
-
-    <color name="smart">#079aaa</color>
+    <color name="smart">#f1f0f0</color>
     <color name="exclusive">#3c3b3b</color>
     <color name="nav_color">#ffe198</color>
     <color name="nav_welcolor">#dedbdb</color>
     <color name="member">#918f8f</color>
     <color name="nav_colors">#ffd25d</color>
-
 
 </resources>
