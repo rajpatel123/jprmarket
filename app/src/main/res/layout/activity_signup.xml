@@ -24,7 +24,7 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textColorHint="@color/white"
-        android:id="@+id/et1"
+        android:id="@+id/nameET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -36,10 +36,11 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textColorHint="@color/white"
-        android:id="@+id/et2"
+        android:id="@+id/mobileET"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Gmail" />
+        android:hint="Mobile number" />
 
     <EditText
         android:layout_marginLeft="20dp"
@@ -47,32 +48,32 @@
         android:textColor="@color/white"
         android:textSize="15dp"
         android:textColorHint="@color/white"
-        android:id="@+id/et3"
+        android:id="@+id/countryET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country" />
+
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textColorHint="@color/white"
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textColorHint="@color/white"
+        android:id="@+id/pwdET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password" />
-
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textColorHint="@color/white"
-        android:id="@+id/et4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Subject" />
-
-    <EditText
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:textColorHint="@color/white"
-        android:id="@+id/et5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Address" />
 
     <Button
 
@@ -80,7 +81,7 @@
         android:background="@color/primary_darker"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:id="@+id/btn"
+        android:id="@+id/submitBTN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"

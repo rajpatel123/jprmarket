@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LocationActivity extends AppCompatActivity {
+public class
+LocationActivity extends AppCompatActivity {
   private Button location_BTN;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
