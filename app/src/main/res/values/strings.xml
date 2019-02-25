@@ -17,12 +17,29 @@
 
     <string name="item_text">No items in your cart</string>
     <string name="favorite_text">your Favourite are just a click away</string>
-       <string name="_text">Sign in with Google</string>
-<string name="forgetet">Forget Your Password</string>
+    <string name="_text">Sign in with Google</string>
+    <string name="forgetet">Forget Your Password</string>
     <string name="signin">Signin with email</string>
     <string name="smart">Smart Bachat Club</string>
     <string name="exclusive">Exclusive wholesale prices</string>
     <string name="details">Enter Details Here</string>
     <string name="password">Forget password</string>
+    <string name="use_location">Use my location</string>
+
+    <string name="app_name1">ToolbarSearchview</string>
+    <string-array name="months_array">
+        <item>January</item>
+        <item>fev</item>
+        <item>mar</item>
+        <item>april</item>
+        <item>may</item>
+        <item>June</item>
+        <item>july</item>
+        <item>august</item>
+        <item>sep</item>
+        <item>oct</item>
+        <item>nov</item>
+        <item>dec</item>
+    </string-array>
 
 </resources>
