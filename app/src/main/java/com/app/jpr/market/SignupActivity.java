@@ -1,7 +1,6 @@
 package com.app.jpr.market;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,8 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.app.jpr.market.models.LoginResponse;
-import com.app.jpr.market.models.RegResponce;
+import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.retrofit.RestClient;
 
 import okhttp3.MediaType;
@@ -62,32 +60,32 @@ public class SignupActivity extends AppCompatActivity {
                     RequestBody email = RequestBody.create(MediaType.parse("text/plain"), emaill);
                     RequestBody password = RequestBody.create(MediaType.parse("text/plain"), pwdd);
 
-                    RestClient.registerUser(name, mobile, country, email, password, new Callback<RegResponce>() {
+                    RestClient.registerUser(name, mobile, country, email, password, new Callback<RegistrationResponse>() {
                         @Override
                         ////
-                        public void onResponse(Call<RegResponce> call, Response<RegResponce> response) {
+                        public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
 
-                                RegResponce regResponce=response.body();
+                                RegistrationResponse regResponce=response.body();
                                 if(regResponce.getStatus().equals("true")){
                                     Toast.makeText(SignupActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
                                Intent intent=new Intent(SignupActivity.this,LoginActivity.class);
                                 }else {
+                                    Toast.makeText(SignupActivity.this, "Registration failed ", Toast.LENGTH_SHORT).show();
 
                                 }
 
                         }
 
                         @Override
-                        public void onFailure(Call<RegResponce> call, Throwable t) {
+                        public void onFailure(Call<RegistrationResponse> call, Throwable t) {
                             Log.d("Fail",call.toString());
-                            Toast.makeText(SignupActivity.this, "failed ", Toast.LENGTH_SHORT).show();
 
                         }
                     });
 
 
                 } else {
-                    Toast.makeText(SignupActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignupActivity.this, "no Internet connection", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -115,12 +113,12 @@ public class SignupActivity extends AppCompatActivity {
 //
 //    }
 
-        private boolean validateInputs (String namee, String mobilee, String gmaill, String pwdd, String countryy){
+        private boolean validateInputs (String namee, String mobilee, String emaill, String pwdd, String countryy){
             boolean check = true;
 
 
             if (namee.length() < 3) {
-                name.setError("Enter more than 15 character!!");
+                name.setError("Enter more than 3 character!!");
                 check = false;
             }
             if (mobilee.isEmpty()) {
@@ -128,14 +126,14 @@ public class SignupActivity extends AppCompatActivity {
                 check = false;
             }
 
-//           if (!Patterns.EMAIL_ADDRESS.matcher(gmaill).matches()) {
+//          if (!Patterns.EMAIL_ADDRESS.matcher(emaill).matches()) {
 //               email.setError("Field is empty");
-//                check = false;
-//            }
+//               check = false;
+//           }
 
 
             if (pwdd.length() < 4) {
-                pwd.setError("enter more than 10 charater");
+                pwd.setError("enter more than 4 charater");
                 check = false;
             }
             if (countryy.length() < 4) {
