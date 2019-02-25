@@ -19,6 +19,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,13 +27,13 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".SkipActivity" />
+        <activity android:name=".NearbyLocationActivity" />
+
         <activity android:name=".LocationActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MyCardActivity"></activity>
+        <activity android:name=".MyCardActivity" />
         <activity android:name=".SignupActivity" />
-
     </application>
 
 </manifest>
