@@ -26,20 +26,20 @@
     <string name="password">Forget password</string>
     <string name="use_location">Use my location</string>
 
-    <string name="app_name1">ToolbarSearchview</string>
+    <string name="app_name4">ToolbarSearchview</string>
     <string-array name="months_array">
-        <item>January</item>
-        <item>fev</item>
-        <item>mar</item>
-        <item>april</item>
-        <item>may</item>
-        <item>June</item>
-        <item>july</item>
-        <item>august</item>
-        <item>sep</item>
-        <item>oct</item>
-        <item>nov</item>
-        <item>dec</item>
+        <item>India</item>
+        <item>Amerika</item>
+        <item>Pakistan</item>
+        <item>Ijrail</item>
+        <item>Dubai</item>
+        <item>Japan</item>
+        <item>Rus</item>
+        <item>Switzerland</item>
+        <item>Igland</item>
+        <item>Nagaland</item>
+        <item>China</item>
+        <item>Australiya</item>
     </string-array>
 
 </resources>

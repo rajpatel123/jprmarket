@@ -28,9 +28,9 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SkipActivity" />
-        <activity android:name=".NearbyLocationActivity" />
-
         <activity android:name=".LocationActivity" />
+        <activity android:name=".NearbyLocationActivity" android:theme="@style/AppTheme4"/>
+
         <activity android:name=".LoginActivity" />
         <activity android:name=".MyCardActivity" />
         <activity android:name=".SignupActivity" />
