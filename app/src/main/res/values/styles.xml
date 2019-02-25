@@ -34,4 +34,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="AppTheme4" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">#E12929</item>
+        <item name="colorPrimaryDark">#E12929</item>
+        <item name="colorAccent">#ffff</item>
+    </style>
+
 </resources>
