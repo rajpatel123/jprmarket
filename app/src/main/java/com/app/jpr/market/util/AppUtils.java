@@ -13,7 +13,7 @@ import android.net.NetworkInfo;
 
 
 public class AppUtils {
-   static ProgressDialog dialog;
+   static ProgressDialog pDialog;
 
     /**
      * method to check internet connection
@@ -40,19 +40,27 @@ public class AppUtils {
 
 
 
-     public static void showProgressDialog(Context context,String message){
+    public static void showProgressDialog(Context context, String s) {
+        if (pDialog != null) {
+            pDialog.dismiss();
+        }
+        try {
+            pDialog = new ProgressDialog(context);
+            pDialog.setMessage("Please wait");
+            pDialog.setIndeterminate(true);
+            pDialog.setCancelable(false);
+            pDialog.setCanceledOnTouchOutside(false);
+            pDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-            dialog=new ProgressDialog(context);
-           dialog.setMessage(message);
-           dialog.setCancelable(false);
-           dialog.show();
-
-     }
 
 
     public static void dismisDialog() {
-        if (dialog!=null && dialog.isShowing()){
-            dialog.dismiss();
+        if (pDialog!=null && pDialog.isShowing()){
+            pDialog.dismiss();
         }
     }
 }
