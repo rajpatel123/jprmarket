@@ -2,7 +2,7 @@ package com.app.jpr.market.retrofit;
 
 
 import com.app.jpr.market.models.LoginResponse;
-import com.app.jpr.market.models.RegResponce;
+import com.app.jpr.market.models.RegistrationResponse;
 
 import okhttp3.RequestBody;
 import retrofit2.Callback;
@@ -16,7 +16,7 @@ public class RestClient {
     }
 
 
-    public static void registerUser(RequestBody name , RequestBody mobile, RequestBody country , RequestBody email , RequestBody password, Callback<RegResponce> callback){
+    public static void registerUser(RequestBody name , RequestBody mobile, RequestBody country , RequestBody email , RequestBody password, Callback<RegistrationResponse> callback){
         RetrofitClient.getClient().register(name,mobile,country,email,password).enqueue(callback);
     }
 
