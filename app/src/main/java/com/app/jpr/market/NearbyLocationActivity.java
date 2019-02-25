@@ -1,4 +1,4 @@
-package marketplace.jpr.com.searchbox;
+package com.app.jpr.market;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,7 +22,7 @@ public class NearbyLocationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_nearby_location);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
