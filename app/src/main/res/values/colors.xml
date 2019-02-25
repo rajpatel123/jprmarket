@@ -20,5 +20,6 @@
     <color name="nav_welcolor">#dedbdb</color>
     <color name="member">#918f8f</color>
     <color name="nav_colors">#ffd25d</color>
+    <color name="location_color">#FF000000</color>
 
 </resources>
