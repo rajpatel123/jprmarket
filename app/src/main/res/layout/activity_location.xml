@@ -17,8 +17,9 @@
 
         android:id="@+id/location"
         android:background="@drawable/location"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginRight="5dp"/>
     <TextView
         android:gravity="center"
         android:text="@string/text1"
