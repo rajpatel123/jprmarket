@@ -27,7 +27,6 @@ public interface ApiInterface {
                                          @Part("u_country") RequestBody country,
                                          @Part("u_password") RequestBody password);
 
-//    @POST("api/test_api.php?action=signup")
-//    Call<>
+
 
 }
