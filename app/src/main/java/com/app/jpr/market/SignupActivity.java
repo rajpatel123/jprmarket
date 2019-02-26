@@ -41,8 +41,7 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //Intent intent=new Intent(Main3Activity.this,Main2Activity.class);
-                //   startActivity(intent);
+
 
 
                 String namee = name.getText().toString();
@@ -103,7 +102,7 @@ public class SignupActivity extends AppCompatActivity {
 //                if (check == true) {
 //
 //                    Toast.makeText(SignupActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
-//                    Intent intent=new Intent(SignupActivity.this,Main2Activity.class);
+//                    Intent intent=new Intent(SignupActivity.this,.class);
 //                    startActivity(intent);
 //
 //                } else {
