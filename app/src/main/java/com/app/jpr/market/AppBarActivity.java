@@ -14,8 +14,8 @@ public class  AppBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
 
-        catagory=findViewById(R.id.catagoryBTN);
-        search=findViewById(R.id.searchBTN);
+        catagory=findViewById(R.id.categories);
+        search=findViewById(R.id.serch);
 
         catagory.setOnClickListener(new View.OnClickListener() {
             @Override
