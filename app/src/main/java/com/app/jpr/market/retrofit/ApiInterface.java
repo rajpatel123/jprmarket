@@ -20,8 +20,12 @@ public interface ApiInterface {
 
     @Multipart
     @POST("api/test_api.php?action=register")
-   @Headers({"Content-Type: application/json", "Accept: application/json"})
-    Call<RegistrationResponse>  register(@Part ("u_name") RequestBody u_name, @Part ("u_mobile") RequestBody u_mobile, @Part("u_country") RequestBody u_country, @Part("u_email") RequestBody u_email, @Part("u_password") RequestBody u_password);
+   //@Headers({"Content-Type: application/json", "Accept: application/json"})
+    Call<RegistrationResponse>  register(@Part ("u_name") RequestBody name,
+                                         @Part("u_email") RequestBody email,
+                                         @Part ("u_mobile") RequestBody mobile,
+                                         @Part("u_country") RequestBody country,
+                                         @Part("u_password") RequestBody password);
 
 //    @POST("api/test_api.php?action=signup")
 //    Call<>

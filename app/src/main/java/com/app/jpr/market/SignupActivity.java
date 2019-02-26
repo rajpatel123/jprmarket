@@ -60,25 +60,32 @@ public class SignupActivity extends AppCompatActivity {
                     RequestBody email = RequestBody.create(MediaType.parse("text/plain"), emaill);
                     RequestBody password = RequestBody.create(MediaType.parse("text/plain"), pwdd);
 
-                    RestClient.registerUser(name, mobile, country, email, password, new Callback<RegistrationResponse>() {
+                    RestClient.registerUser(name,email,mobile,country,password, new Callback<RegistrationResponse>() {
                         @Override
                         ////
                         public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
 
-                                RegistrationResponse regResponce=response.body();
-                                if(regResponce.getStatus().equals("true")){
+                            if ((response.body() != null)) {
+                                if (response.body().getStatus()) {
                                     Toast.makeText(SignupActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
-                               Intent intent=new Intent(SignupActivity.this,LoginActivity.class);
-                                }else {
+                                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                } else {
                                     Toast.makeText(SignupActivity.this, "Registration failed ", Toast.LENGTH_SHORT).show();
 
                                 }
+
+                            }
+                            else {
+                                Toast.makeText(SignupActivity.this, "Response Null", Toast.LENGTH_SHORT).show();
+                            }
+
 
                         }
 
                         @Override
                         public void onFailure(Call<RegistrationResponse> call, Throwable t) {
-                            Log.d("Fail",call.toString());
+                            Log.d("Fail", call.toString());
 
                         }
                     });
@@ -113,35 +120,35 @@ public class SignupActivity extends AppCompatActivity {
 //
 //    }
 
-        private boolean validateInputs (String namee, String mobilee, String emaill, String pwdd, String countryy){
-            boolean check = true;
+    private boolean validateInputs(String namee, String mobilee, String emaill, String pwdd, String countryy) {
+        boolean check = true;
 
 
-            if (namee.length() < 3) {
-                name.setError("Enter more than 3 character!!");
-                check = false;
-            }
-            if (mobilee.isEmpty()) {
-                mobile.setError("fields is empty");
-                check = false;
-            }
-
-//          if (!Patterns.EMAIL_ADDRESS.matcher(emaill).matches()) {
-//               email.setError("Field is empty");
-//               check = false;
-//           }
-
-
-            if (pwdd.length() < 4) {
-                pwd.setError("enter more than 4 charater");
-                check = false;
-            }
-            if (countryy.length() < 4) {
-                country.setError("enter valid country");
-                check = false;
-
-            }
-            return check;
+        if (namee.length() < 3) {
+            name.setError("Enter more than 3 character!!");
+            check = false;
         }
+        if (mobilee.isEmpty()) {
+            mobile.setError("fields is empty");
+            check = false;
+        }
+
+        /*  if (!Patterns.EMAIL_ADDRESS.matcher(emaill).matches()) {
+               email.setError("Field is empty");
+               check = false;
+           }
+*/
+
+        if (pwdd.length() < 4) {
+            pwd.setError("enter more than 4 charater");
+            check = false;
+        }
+        if (countryy.length() < 4) {
+            country.setError("enter valid country");
+            check = false;
+
+        }
+        return check;
+    }
 
 }

@@ -35,6 +35,7 @@
                 android:layout_marginTop="0dp"
 
 
+
                 android:orientation="vertical">
 
                 <TextView
@@ -43,11 +44,13 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
                     android:text="Enter Details Here"
+
                     android:textColor="#000"
                     android:textSize="20dp" />
 
                 <EditText
                     android:id="@+id/nameET"
+                    android:text="kishan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -58,6 +61,7 @@
 
                 <EditText
                     android:id="@+id/mobileET"
+                    android:text="7865789878"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -75,6 +79,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:hint="Country"
+                    android:text="india"
                     android:textSize="15dp" />
 
                 <EditText
@@ -85,6 +90,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:hint="Email"
+                    android:text="rb@gmail.com"
                     android:textSize="15dp" />
 
                 <EditText
@@ -94,6 +100,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
+                    android:text="dagvgvcdhgvd"
                     android:hint="Password"
                     android:textSize="15dp" />
 

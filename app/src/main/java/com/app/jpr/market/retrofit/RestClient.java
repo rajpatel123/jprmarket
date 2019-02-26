@@ -16,8 +16,8 @@ public class RestClient {
     }
 
 
-    public static void registerUser(RequestBody name , RequestBody mobile, RequestBody country , RequestBody email , RequestBody password, Callback<RegistrationResponse> callback){
-        RetrofitClient.getClient().register(name,mobile,country,email,password).enqueue(callback);
+    public static void registerUser(RequestBody u_name , RequestBody u_email , RequestBody u_mobile, RequestBody u_country , RequestBody u_password, Callback<RegistrationResponse> callback){
+        RetrofitClient.getClient().register(u_name,u_email,u_mobile,u_country,u_password).enqueue(callback);
     }
 
 
