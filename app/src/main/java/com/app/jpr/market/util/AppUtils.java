@@ -46,7 +46,7 @@ public class AppUtils {
         }
         try {
             pDialog = new ProgressDialog(context);
-            pDialog.setMessage("Please wait");
+            pDialog.setMessage("Please wait....");
             pDialog.setIndeterminate(true);
             pDialog.setCancelable(false);
             pDialog.setCanceledOnTouchOutside(false);

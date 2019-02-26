@@ -14,27 +14,27 @@ public class  AppBarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
 
-        catagory=findViewById(R.id.catagoryBTN);
-        search=findViewById(R.id.searchBTN);
-
-        catagory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent=new Intent(AppBarActivity.this,CatagoryActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent=new Intent(AppBarActivity.this,SearchActivity.class);
-                startActivity(intent);
-            }
-        });
+//        catagory=findViewById(R.id.catagoryBTN);
+//        search=findViewById(R.id.searchBTN);
+//
+//        catagory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent=new Intent(AppBarActivity.this,CatagoryActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//
+//
+//        search.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent intent=new Intent(AppBarActivity.this,SearchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
