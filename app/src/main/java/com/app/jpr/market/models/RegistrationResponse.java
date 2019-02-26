@@ -1,10 +1,11 @@
 package com.app.jpr.market.models;
 
 
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RegResponce {
+public class RegistrationResponse {
 
 @SerializedName("status")
 @Expose

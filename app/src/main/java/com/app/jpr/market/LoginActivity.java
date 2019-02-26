@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         signup = findViewById(R.id.register_tv);
         email = findViewById(R.id.edit_email);
@@ -55,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         //TODO  display progress dialog
 
-                        AppUtils.showProgressDialog(LoginActivity.this, "Please wait...");
+                       AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
 
                         RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
                             @Override
@@ -63,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
 
                                 switch (response.code()) {
                                     case 200:
-                                        AppUtils.dismisDialog();
+                                       AppUtils.dismisDialog();
                                         LoginResponse loginResponse = response.body();
                                         if (loginResponse.getStatus().equalsIgnoreCase("true")) {
                                             Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(LoginActivity.this, Main2Activity.class);
+                                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
                                             intent.putExtra("USERNAME", "gmail");
                                             intent.putExtra("PASSWORD", "password");
@@ -75,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                                             finish();
 
                                         } else {
-                                            //TODO  show toast
+                                            Toast.makeText(LoginActivity.this, "login failed", Toast.LENGTH_SHORT).show();
                                         }
                                         break;
                                     case 500:
@@ -88,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(Call<LoginResponse> call, Throwable t) {
                                 Log.d("Fail", call.toString());
-                                AppUtils.dismisDialog();
+                               AppUtils.dismisDialog();
                             }
                         });
 
@@ -123,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (passworddd.length() < 6) {
-            password.setError("enter more than 10 charater");
+            password.setError("enter more than 6 charater");
             check = false;
         }
         return check;

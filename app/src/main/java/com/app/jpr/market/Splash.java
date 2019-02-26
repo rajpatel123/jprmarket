@@ -7,14 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-
 public class Splash extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         new Handler().postDelayed(new Runnable() {
@@ -23,7 +21,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(Splash.this,SkipActivity.class);
+                Intent i = new Intent(Splash.this, SkipActivity.class);
                 startActivity(i);
                 finish();
             }
