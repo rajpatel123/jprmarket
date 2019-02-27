@@ -4,6 +4,8 @@ package com.app.jpr.market.retrofit;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
+import com.app.jpr.market.models.SubcategoryResponse;
+
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -35,4 +37,11 @@ public interface ApiInterface {
     @Multipart
     @POST("cat_api/test_api.php?action=fetch_all")
     Call<CatagoryResponse>getCourse();
+
+
+   // SubCatagory
+   // @Multipart
+   // @POST("cat_api/test_api.php?action=fetchsub_all")
+    //Call<SubcategoryResponse>getCourse();
+
 }

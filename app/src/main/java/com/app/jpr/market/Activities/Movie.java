@@ -1,4 +1,4 @@
-package com.mycomputer.kalamnew;
+package com.app.jpr.market.Activities;
  
 public class Movie {
     private String title, genre, year;

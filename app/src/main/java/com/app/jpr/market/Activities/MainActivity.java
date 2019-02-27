@@ -1,4 +1,4 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.app.jpr.market.Activities.MyCardActivity;
-import com.app.jpr.market.Activities.NearbyLocationActivity;
+import com.app.jpr.market.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         }
 
        if (id == R.id.nav_login) {
-           Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+           Intent intent=new Intent(MainActivity.this, LoginActivity.class);
            startActivity(intent);
 
         }else  if(id==R.id.nav_myaddress){

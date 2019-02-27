@@ -1,4 +1,4 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.jpr.market.Activities.SignupActivity;
+import com.app.jpr.market.R;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.util.AppUtils;

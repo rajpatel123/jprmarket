@@ -21,12 +21,16 @@ public class RestClient {
         RetrofitClient.getClient().register(u_name,u_email,u_mobile,u_country,u_password).enqueue(callback);
     }
 
-    //catagory
+    //Category
     public static void getCourses(Callback<CatagoryResponse> callback) {
         RetrofitClient.getClient().getCourse().enqueue(callback);
     }
 
 
+    //Subcatagory
+   // public static void getCourses(Callback<CatagoryResponse> callback) {
+       // RetrofitClient.getClient().getCourse().enqueue(callback);
+    //}
 }
 
 

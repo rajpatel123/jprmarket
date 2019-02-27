@@ -1,15 +1,15 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.app.jpr.market.R;
 import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.retrofit.RestClient;
 

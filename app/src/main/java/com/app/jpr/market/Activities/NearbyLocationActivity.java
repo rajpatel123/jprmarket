@@ -1,4 +1,4 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.app.jpr.market.R;
 
 public class NearbyLocationActivity extends AppCompatActivity {
     Toolbar mToolbar;
