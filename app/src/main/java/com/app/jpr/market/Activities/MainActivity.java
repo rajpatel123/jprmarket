@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.app.jpr.market.Activities.MyCardActivity;
+import com.app.jpr.market.Activities.NearbyLocationActivity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if(id==R.id.nav_location){
-            Intent intent=new Intent(MainActivity.this,NearbyLocationActivity.class);
+            Intent intent=new Intent(MainActivity.this, NearbyLocationActivity.class);
             startActivity(intent);
         }
 
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity
            startActivity(intent);
 
        }else if(id==R.id.nav_mycart){
-           Intent intent=new Intent(MainActivity.this,MyCardActivity.class);
+           Intent intent=new Intent(MainActivity.this, MyCardActivity.class);
            startActivity(intent);
 
        }else if(id==R.id.nav_wallet){

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.app.jpr.market.Activities.MainActivity;
+
 public class
 LocationActivity extends AppCompatActivity {
   private Button location_BTN;
@@ -21,7 +23,7 @@ LocationActivity extends AppCompatActivity {
         location_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LocationActivity.this,MainActivity.class);
+                Intent intent=new Intent(LocationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,7 +1,6 @@
 package com.app.jpr.market;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.jpr.market.Activities.SignupActivity;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.util.AppUtils;
