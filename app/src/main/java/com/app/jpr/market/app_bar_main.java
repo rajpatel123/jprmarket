@@ -16,19 +16,5 @@ public class app_bar_main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_bar_main);
 
-        categorie =(Button)findViewById(R.id.categories);
-        serch =(Button)findViewById(R.id.serch);
-
-
-        categorie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(app_bar_main.this,categorie.class);
-                startActivity(i);
-            }
-        });
-
-
     }
 }

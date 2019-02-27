@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SearchActivity"></activity>
-        <activity android:name=".CatagoryActivity" />
 
         <activity android:name=".categorie"></activity>
 
