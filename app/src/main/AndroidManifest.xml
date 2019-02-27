@@ -12,9 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchActivity"></activity>
-
-        <activity android:name=".categorie"></activity>
 
         <activity
             android:name=".Splash"
@@ -36,6 +33,9 @@
         <activity
             android:name=".NearbyLocationActivity"
             android:theme="@style/AppTheme4" />
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".CatagoryActivity" />
+        <activity android:name=".categorie"></activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MyCardActivity" />
         <activity android:name=".SignupActivity" />
