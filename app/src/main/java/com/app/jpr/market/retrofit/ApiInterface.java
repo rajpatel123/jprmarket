@@ -1,6 +1,7 @@
 package com.app.jpr.market.retrofit;
 
 
+import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
@@ -34,9 +35,9 @@ public interface ApiInterface {
 
 
     //Catagory
-    @Multipart
+
     @POST("cat_api/test_api.php?action=fetch_all")
-    Call<CatagoryResponse>getCourse();
+    Call<CatagoryResponse> getCourse();
 
 
    // SubCatagory
