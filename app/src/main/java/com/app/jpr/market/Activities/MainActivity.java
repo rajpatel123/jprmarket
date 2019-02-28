@@ -1,6 +1,7 @@
 package com.app.jpr.market.Activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -33,20 +36,41 @@ public class MainActivity extends AppCompatActivity
         Button button=findViewById(R.id.first);
         Button button1=findViewById(R.id.second);
 
+       // Icon =findViewById(R.id.action_addcart);
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, categorie.class));
+                startActivity(new Intent(MainActivity.this,CategoryActivity.class));
             }
         });
-
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "GOOGLE", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this,SearchActivity.class));
             }
         });
+
+//        Icon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this,MyCardActivity.class));
+//            }
+//        });
+//        Icon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Intent main = new Intent(getApplicationContext(), MyCardActivity.class);
+//                startActivity(main);
+//            }
+//        });
+
+
+
+
        /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,12 +162,14 @@ public class MainActivity extends AppCompatActivity
            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "---" });
            intent.putExtra(Intent.EXTRA_SUBJECT, "---");
            startActivity(Intent.createChooser(intent, "Contact Us!"));
-
-
        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 }
