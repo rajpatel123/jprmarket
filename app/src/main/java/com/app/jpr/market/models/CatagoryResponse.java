@@ -4,25 +4,29 @@ package com.app.jpr.market.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.BitSet;
+import java.util.List;
+
 public class CatagoryResponse {
 
-@SerializedName("cat_id")
-@Expose
-private String catId;
-@SerializedName("cat_title")
-@Expose
-private String catTitle;
-@SerializedName("cat_image")
-@Expose
-private String catImage;
-@SerializedName("cat_desc")
-@Expose
-private String catDesc;
-@SerializedName("d_title")
-@Expose
-private String dTitle;
+    @SerializedName("cat_id")
+    @Expose
+    private String catId;
+    @SerializedName("cat_title")
+    @Expose
+    private String catTitle;
+    @SerializedName("cat_image")
+    @Expose
+    private String catImage;
+    @SerializedName("cat_desc")
+    @Expose
+    private String catDesc;
+    @SerializedName("d_title")
+    @Expose
+    private String dTitle;
 
-public String getCatId() {
+
+    public String getCatId() {
 return catId;
 }
 
