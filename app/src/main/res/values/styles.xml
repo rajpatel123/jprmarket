@@ -42,4 +42,11 @@
         <item name="colorAccent">#ffff</item>
     </style>
 
+    <style name="AppTheme5" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">#ffff</item>
+    </style>
+
 </resources>
