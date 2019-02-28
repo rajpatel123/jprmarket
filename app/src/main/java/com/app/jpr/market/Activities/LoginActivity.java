@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         //TODO  display progress dialog
 
-                       AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
+                        AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
 
                         RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
                             @Override
