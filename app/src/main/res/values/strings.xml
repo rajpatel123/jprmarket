@@ -25,6 +25,9 @@
     <string name="details">Enter Details Here</string>
     <string name="password">Forget password</string>
     <string name="use_location">Use my location</string>
+    <string name="search_product">Search for products</string>
+    <string name="categories">Categories</string>
+
 
     <string name="app_name4">ToolbarSearchview</string>
     <string-array name="months_array">
@@ -40,6 +43,15 @@
         <item>Nagaland</item>
         <item>China</item>
         <item>Australiya</item>
+    </string-array>
+
+    <string name="app_name5">ToolbarSearchview</string>
+    <string-array name="months_array1">
+        <item>stainless</item>
+        <item>staples</item>
+        <item>household need</item>
+        <item>personal care</item>
+        <item>baby and kids</item>
     </string-array>
 
 </resources>
