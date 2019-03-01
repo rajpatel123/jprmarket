@@ -41,9 +41,10 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
 
-holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getCatId());
+//holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getCatId());
+holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getDTitle());
 holder.second.setText(categoryResponse.get(holder.getAdapterPosition()).getCatTitle());
-
+holder.third.setText(categoryResponse.get(holder.getAdapterPosition()).getCatDesc());
 
 
 
@@ -67,12 +68,14 @@ holder.second.setText(categoryResponse.get(holder.getAdapterPosition()).getCatTi
      */
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView first, second;
+        TextView first, second,third;
 
         public ViewHolder(View view) {
             super(view);
             first = itemView.findViewById(R.id.text1);
             second = itemView.findViewById(R.id.text2);
+            third = itemView.findViewById(R.id.text3);
+
         }
     }
 

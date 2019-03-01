@@ -7,6 +7,8 @@ import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.models.SubcategoryResponse;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -37,7 +39,7 @@ public interface ApiInterface {
     //Catagory
 
     @POST("cat_api/test_api.php?action=fetch_all")
-    Call<CatagoryResponse> getCourse();
+    Call <List<CatagoryResponse>> getCourse();
 
 
    // SubCatagory

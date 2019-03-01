@@ -40,17 +40,19 @@ public class CategoryActivity extends AppCompatActivity {
 
 
         AppUtils.showProgressDialog(CategoryActivity.this);
-        RestClient.getCourses(new Callback<CatagoryResponse>() {
+
+        RestClient.getCourses(new Callback<List<CatagoryResponse>>() {
             @Override
-            public void onResponse(Call<CatagoryResponse> call, Response<CatagoryResponse> response) {
+            public void onResponse(Call<List<CatagoryResponse>> call, Response<List<CatagoryResponse>> response) {
 
 
-                Log.d("Api Response :", "Got Success from Api");
-                if (response.isSuccessful()) {
-                    AppUtils.dismisDialog();
-
+                categoryResponse=response.body();
+                if(response.isSuccessful())
+                {
                     if (categoryResponse != null && categoryResponse.size() > 0) {
-                    Log.d("Api Response :", "Got Success from Api");
+                        AppUtils.dismisDialog();
+
+                        Log.d("Api Response :", "Got Success from Api");
                         CourseListAdapter courseListAdapter = new CourseListAdapter(getApplicationContext());
                         courseListAdapter.setData(categoryResponse);
 
@@ -59,36 +61,40 @@ public class CategoryActivity extends AppCompatActivity {
                         recyclerView.setAdapter(courseListAdapter);
 
                         Log.d("Api Response :", "Got Success from Api");
-                        // noInternet.setVisibility(View.GONE);
-                           /* RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2) {
-                                @Override
-                                public boolean canScrollVertically() {
-                                    return true;
-                                }
 
-                            };
-*/
-                    } else {
-                        Log.d("Api Response :", "Got Success from Api");
-
-                        Toast.makeText(CategoryActivity.this, "No data", Toast.LENGTH_SHORT).show();
-                        // noInternet.setVisibility(View.VISIBLE);
-                        // noInternet.setText(getString(R.string.no_project));
-
-                    }
+                    };
                 } else {
+                    Log.d("Api Response :", "Got Success from Api");
 
+                    Toast.makeText(CategoryActivity.this, "No data", Toast.LENGTH_SHORT).show();
+                    // noInternet.setVisibility(View.VISIBLE);
+                    // noInternet.setText(getString(R.string.no_project));
                 }
+            }
 
+
+            @Override
+            public void onFailure(Call<List<CatagoryResponse>> call, Throwable t) {
+                AppUtils.dismisDialog();
 
             }
+        });
+    /*    RestClient.getCourses(new Callback<CatagoryResponse>() {
+            @Override
+            public void onResponse(Call<CatagoryResponse> call, Response<CatagoryResponse> response) {
+
+
+                Log.d("Api Response :", "Got Success from Api");
+                if (response.isSuccessful()) {
+                    AppUtils.dismisDialog();
+
 
             @Override
             public void onFailure(Call<CatagoryResponse> call, Throwable t) {
                 AppUtils.dismisDialog();
                 Toast.makeText(CategoryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 }
 

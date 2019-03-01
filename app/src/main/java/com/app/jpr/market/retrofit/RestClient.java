@@ -5,6 +5,8 @@ import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
 
+import java.util.List;
+
 import okhttp3.RequestBody;
 import retrofit2.Callback;
 
@@ -21,8 +23,8 @@ public class RestClient {
         RetrofitClient.getClient().register(u_name,u_email,u_mobile,u_country,u_password).enqueue(callback);
     }
 
-    //Category
-    public static void getCourses(Callback<CatagoryResponse> callback) {
+    //Category                             //imp
+    public static void getCourses(Callback <List<CatagoryResponse>> callback) {
         RetrofitClient.getClient().getCourse().enqueue(callback);
     }
 
