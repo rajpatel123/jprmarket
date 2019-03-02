@@ -1,10 +1,14 @@
 package com.app.jpr.market.Activities;
 
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 
@@ -26,7 +30,7 @@ public class CategoryActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    private List<CatagoryResponse> categoryResponse=new ArrayList<>();
+    private List<CatagoryResponse> categoryResponse = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void getCourse() {
 
-
+        //show progress dialog
         AppUtils.showProgressDialog(CategoryActivity.this);
 
         RestClient.getCourses(new Callback<List<CatagoryResponse>>() {
@@ -46,11 +50,10 @@ public class CategoryActivity extends AppCompatActivity {
             public void onResponse(Call<List<CatagoryResponse>> call, Response<List<CatagoryResponse>> response) {
 
 
-                categoryResponse=response.body();
-                if(response.isSuccessful())
-                {
+                categoryResponse = response.body();
+                if (response.isSuccessful()) {
                     if (categoryResponse != null && categoryResponse.size() > 0) {
-                        AppUtils.dismisDialog();
+                        AppUtils.dismisDialog(); //dismiss progress dialog
 
                         Log.d("Api Response :", "Got Success from Api");
                         CourseListAdapter courseListAdapter = new CourseListAdapter(getApplicationContext());
@@ -62,7 +65,8 @@ public class CategoryActivity extends AppCompatActivity {
 
                         Log.d("Api Response :", "Got Success from Api");
 
-                    };
+                    }
+                    ;
                 } else {
                     Log.d("Api Response :", "Got Success from Api");
 
@@ -96,5 +100,37 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });*/
     }
+
+
+    @Override  //add cart code
+    public boolean onCreateOptionsMenu(Menu menu) {                                             //
+        // Inflate the menu; this adds items to the action bar if it is present.               //
+        getMenuInflater().inflate(R.menu.main, menu);                                         //
+        return true;                                                                          //
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {                                                          //
+        int id = item.getItemId();                                                                                 //
+        switch (id) {                                                                                               //
+            case R.id.action_settings:                                                                               //
+                Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();            //
+                return true;
+
+
+
+        }
+        return true;
+    }
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.action_arrow);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 }
+
 
