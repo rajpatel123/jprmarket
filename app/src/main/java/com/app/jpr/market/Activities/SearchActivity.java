@@ -1,19 +1,24 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
+
+
+
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.SearchView;
+        import android.support.v7.widget.Toolbar;
+        import android.view.Menu;
+        import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.AdapterView;
+        import android.widget.ArrayAdapter;
+        import android.widget.ListView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-public class NearbyLocationActivity extends AppCompatActivity {
+        import com.app.jpr.market.R;
+
+public class SearchActivity extends AppCompatActivity {
     Toolbar mToolbar;
     ArrayAdapter mAdapter;
     ListView mListView;
@@ -22,7 +27,7 @@ public class NearbyLocationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nearby_location);
+        setContentView(R.layout.activity_search);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -30,15 +35,15 @@ public class NearbyLocationActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.list);
         mEmptyView = (TextView) findViewById(R.id.emptyView);
 
-        mAdapter = new ArrayAdapter(NearbyLocationActivity.this,
+        mAdapter = new ArrayAdapter(SearchActivity.this,
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.months_array));
+                getResources().getStringArray(R.array.months_array1));
         mListView.setAdapter(mAdapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(NearbyLocationActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -52,7 +57,7 @@ public class NearbyLocationActivity extends AppCompatActivity {
         MenuItem mSearch = menu.findItem(R.id.action_search);
 
         SearchView mSearchView = (SearchView) mSearch.getActionView();
-        mSearchView.setQueryHint("Search for nearby landmark,locality");
+        mSearchView.setQueryHint("Search for products");
 
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     android:background="@color/textbutton_color"
     android:orientation="vertical"
-    tools:context=".MyCardActivity">
+    tools:context=".Activities.MyCardActivity">
 
     <ImageView
+        android:layout_marginTop="30dp"
         android:id="@+id/locationnn"
+        android:background="@drawable/cart"
         android:layout_width="match_parent"
         android:layout_height="350dp" />
 

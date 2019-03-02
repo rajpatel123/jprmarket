@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LocationActivity">
+    tools:context=".Activities.LocationActivity">
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"

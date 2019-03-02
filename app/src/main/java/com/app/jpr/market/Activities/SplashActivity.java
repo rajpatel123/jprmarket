@@ -1,13 +1,14 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.app.jpr.market.R;
 
-public class Splash extends AppCompatActivity {
+
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(Splash.this, SkipActivity.class);
+                Intent i = new Intent(SplashActivity.this, SkipActivity.class);
                 startActivity(i);
                 finish();
             }

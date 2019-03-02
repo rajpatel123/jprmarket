@@ -1,7 +1,6 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.jpr.market.R;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.util.AppUtils;
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         //TODO  display progress dialog
 
-                       AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
+                        AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
 
                         RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
                             @Override

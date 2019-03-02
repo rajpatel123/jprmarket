@@ -1,4 +1,4 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.app.jpr.market.R;
 
 public class
 LocationActivity extends AppCompatActivity {
@@ -21,7 +23,7 @@ LocationActivity extends AppCompatActivity {
         location_BTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LocationActivity.this,MainActivity.class);
+                Intent intent=new Intent(LocationActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

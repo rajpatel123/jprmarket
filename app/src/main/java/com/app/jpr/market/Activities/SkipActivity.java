@@ -1,11 +1,12 @@
-package com.app.jpr.market;
+package com.app.jpr.market.Activities;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.app.jpr.market.R;
 
 public class SkipActivity extends AppCompatActivity {
     private TextView skip_button;
@@ -23,7 +24,7 @@ public class SkipActivity extends AppCompatActivity {
       skip_button.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Intent intent=new Intent(SkipActivity.this,LocationActivity.class);
+              Intent intent=new Intent(SkipActivity.this, LocationActivity.class);
               startActivity(intent);
           }
       });
