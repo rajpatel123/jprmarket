@@ -44,8 +44,7 @@
 
         <activity android:name=".Activities.CategoryActivity"
                   android:label="@string/app_name2"
-
-            android:screenOrientation="portrait" />
+                  android:screenOrientation="portrait" />
         <activity android:name=".Activities.app_bar_main"
                   android:screenOrientation="portrait" />
         <activity android:name=".Activities.LoginActivity"
