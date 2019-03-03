@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:background="@color/colorGray"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="90dp"
+            android:layout_width="200dp"
+            android:layout_height="150dp" />
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#987"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:id="@+id/addBTN"
+            android:text="21% OFF"
+            android:textColor="@color/white"
+            android:background="#80C533"
+            android:layout_width="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"/>
+        <TextView
+            android:text="Chakki Fresh Atta"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:textStyle="normal"
+            android:textSize="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs259"
+                android:textSize="16dp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textSize="14dp"
+                android:text="Rs330" />
+
+            <Button
+                android:id="@+id/addBTN1"
+                android:text="ADD"
+                android:textColor="@color/white"
+                android:drawableRight="@drawable/ic_add"
+                android:background="@color/text_color"
+                android:layout_width="100dp"
+                android:layout_marginLeft="120dp"
+                android:layout_height="30dp"
+               />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:background="#FF9331"
+            android:layout_marginTop="40dp"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="20dp"
+                android:layout_gravity="center"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/navimg">
+            </ImageView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price for Club Members: Rs254"
+                android:layout_gravity="center"
+                android:textSize="12dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/lockIMG"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/ic_lock">
+            </ImageView>
+            <TextView
+                android:text="Unlock Price"
+                android:id="@+id/IMG"
+               android:textSize="12dp"
+                android:textColor="#d9d9d9"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_chevron_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#987"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:text="Unit"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:textStyle="normal"
+            android:textSize="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/addBTN3"
+                android:text="10 kg"
+                android:background="@drawable/shadow_button"
+                android:textColor="@color/primary"
+                android:layout_width="80dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:id="@+id/addBTN4"
+                android:text="5 kg"
+                android:background="@drawable/shadow_buttons"
+                android:textColor="@color/colorBlack"
+                android:layout_width="80dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#987"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+
+
+
+
+
+</ScrollView>
