@@ -156,6 +156,11 @@ public class MainActivity extends AppCompatActivity
            Intent intent=new Intent(MainActivity.this,LoginActivity.class);
            startActivity(intent);
 
+
+       }else if(id==R.id.nav_aboutus){
+           Intent intent=new Intent(MainActivity.this,About_us.class);
+           startActivity(intent);
+
        }else if(id==R.id.nav_share){
            Intent intent = new Intent(Intent.ACTION_SEND);
            intent.setType("plain/text");
