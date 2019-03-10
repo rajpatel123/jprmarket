@@ -162,17 +162,18 @@
             android:layout_height="wrap_content" />
 
 
-        <Button
-            android:layout_marginTop="20dp"
-            android:id="@+id/addBTN"
-            android:text="ADD"
-            android:textColor="@color/white"
-            android:drawableRight="@drawable/ic_add"
-            android:background="@color/text_color"
-            android:layout_width="130dp"
+
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/mybutton"
             android:layout_marginLeft="10dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="130dp"
+            android:layout_marginBottom="20dp"
+            app:backGroundColor="@color/text_color"
+            android:layout_height="30dp">
+
+        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
