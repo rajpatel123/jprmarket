@@ -23,7 +23,7 @@
     <color name="location_color">#FF000000</color>
     <color name="card_color">#9B9595</color>
     <color name="off_color">#07A50D</color>
-
+    <color name="view_color">#E0DCDC</color>
     <color name="colorBlack">#000</color>
 
 </resources>

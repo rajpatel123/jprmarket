@@ -12,17 +12,18 @@
         android:layout_height="150dp">
 
         <LinearLayout
+
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="150dp">
 
         <ImageView
             android:id="@+id/logoID"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:src="@drawable/vegetable"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="45dp" />
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:src="@drawable/veg"
+            android:layout_marginTop="4dp" />
 </LinearLayout>
 
 <LinearLayout
@@ -40,11 +41,11 @@
             android:textStyle="bold"
             android:textColor="@color/off_color"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="130dp"/>
+            android:layout_marginLeft="80dp"/>
 
 
         <TextView
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
             android:textSize="15dp"
             android:textStyle="bold"
             android:textColor="@color/colorBlack"
-            android:layout_marginLeft="130dp"/>
+            android:layout_marginLeft="80dp"/>
 
 
         <TextView
@@ -64,19 +65,24 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:textColor="@color/card_color"
-            android:layout_marginLeft="130dp"/>
+            android:layout_marginLeft="80dp"/>
 
 
 </LinearLayout>
         <LinearLayout
-            android:gravity="center"
-            android:layout_marginLeft="310dp"
-            android:orientation="vertical"
-            android:layout_width="40dp"
+            android:layout_marginLeft="320dp"
+            android:orientation="horizontal"
+            android:layout_width="50dp"
             android:layout_height="150dp">
 
-            <ImageView
+            <View
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:background="@color/view_color" />
 
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/ic_down_black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

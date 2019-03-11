@@ -1,8 +1,7 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,6 +37,13 @@ public class CategoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_category);
         recyclerView = findViewById(R.id.recycler);
         getCourse();
+
+        ///show back button
+        if(getSupportActionBar()!=null){                                                                                  ///
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);                                                       ///
+            getSupportActionBar().setDisplayShowHomeEnabled(true);                                                       ///
+
+        }
     }
 
     private void getCourse() {
@@ -115,22 +121,22 @@ public class CategoryActivity extends AppCompatActivity {
         int id = item.getItemId();                                                                                 //
         switch (id) {                                                                                               //
             case R.id.action_settings:                                                                               //
-                Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();            //
+                //Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(CategoryActivity.this,MyCardActivity.class);
+                startActivity(intent);//
                 return true;
 
-
-
         }
+
+        ///show back button
+        if(item.getItemId()==android.R.id.home)                                                                     ///
+        {                                                                                                           ///
+            finish();                                                                                               ///
+            return super.onOptionsItemSelected(item);                                                               ///
+        }                                                                                                          ///
         return true;
     }
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.action_arrow);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+
 }
 
 
