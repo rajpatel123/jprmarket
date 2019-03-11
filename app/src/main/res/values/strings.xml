@@ -57,4 +57,23 @@
         <item>baby and kids</item>
     </string-array>
 
+
+    <string name="dscrption_text">Treat your family to a combination of health and
+                  taste with Nature Fresh Chakki Atta which is made from the choiset
+                  grains of wheat .Packed with nutrition , it is doughed to make soft
+                  and fluffy roti,paranthas etc and can also be used to make a varify
+                  of other sweets and savouriea</string>
+
+    <string name="key_feature">Perfect combination of health and taste Naturally rich in
+                  fibre and hutrient Helps prepare soft and fluffy roti, paranthhas etc.
+                  ideal to prepare various sweets and savouries</string>
+
+    <string name="disclaimer_text">Every effort is made to maintain accuracy of all information.
+                  However, actual product packaging and materials may contain  more and more
+                  different information. it is recommended not to solety on the information
+                  presented</string>
+
+    <string name="detail_text">Avent AGRO PVT.LTD. 1818  DISIC industrial Complex Narela Delhi-110040 </string>
+
+
 </resources>
