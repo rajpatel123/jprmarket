@@ -3,6 +3,8 @@ package com.app.jpr.market.Activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.app.jpr.market.R;
+
 public class Offer_Zone extends AppCompatActivity {
 
     @Override
