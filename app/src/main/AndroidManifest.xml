@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.InfoActivity"></activity>
+        <activity android:name=".Activities.MyCardActivity"></activity>
+        <activity android:name=".Activities.InfoActivity" />
         <activity
             android:name=".Activities.SplashActivity"
             android:label="@string/app_name"
@@ -55,7 +56,7 @@
             android:name=".Activities.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Activities.MyCardActivity"
+            android:name=".Activities.AddCard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.SignupActivity"
