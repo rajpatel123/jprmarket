@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.About_us">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textSize="30sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v4.2.31"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="30sp"
+            android:textSize="20sp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:text="Grofers is an Indian online grocery delivery service.It was founded in December 2013 and is based out of Gurugram.As of 2018, the company has raised about $442.5 million from investors including SoftBank, Tiger Global and Sequoia Capital.
+
+The name Grofers is a portmanteau of (grocery).Customers of the company use a mobile application to order groceries online. Grofers employees then secure the items from their warehouse and deliver the items to the consumer. The delivery may be scheduled for any time of the day.
+Grofers currently operates in a total of 18 cities across India: Delhi, Gurugram, Mumbai, Bengaluru, Kolkata, Noida, Pune, Ahmedabad, Chennai, Hyderabad, Jaipur, Lucknow, Ghaziabad, Kochi, Faridabad, Madurai, Bhubaneshwar and Kanpur."/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

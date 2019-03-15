@@ -64,8 +64,10 @@ public class SignupActivity extends AppCompatActivity {
                         ////
                         public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
 
-                            if ((response.body() != null)) {
-                                if (response.body().getStatus()) {
+                            if ((response.body() != null))
+                            {
+                                if (response.body().getStatus())
+                                {
                                     Toast.makeText(SignupActivity.this, "Registration Successfully", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                                     startActivity(intent);
