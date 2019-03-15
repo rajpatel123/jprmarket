@@ -18,7 +18,6 @@ import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.util.AppUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -122,7 +121,7 @@ public class CategoryActivity extends AppCompatActivity {
         switch (id) {                                                                                               //
             case R.id.action_settings:                                                                               //
                 //Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
-                Intent intent= new Intent(CategoryActivity.this,MyCardActivity.class);
+                Intent intent= new Intent(CategoryActivity.this, AddCard.class);
                 startActivity(intent);//
                 return true;
 
