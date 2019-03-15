@@ -75,5 +75,8 @@
 
     <string name="detail_text">Avent AGRO PVT.LTD. 1818  DISIC industrial Complex Narela Delhi-110040 </string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
