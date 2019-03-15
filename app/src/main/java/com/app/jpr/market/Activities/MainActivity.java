@@ -1,7 +1,6 @@
 package com.app.jpr.market.Activities;
 
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,11 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.util.Locale;
 
 import com.app.jpr.market.R;
 
@@ -108,7 +102,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent=new Intent(MainActivity.this,MyCardActivity.class);
+            Intent intent=new Intent(MainActivity.this, AddCard.class);
             startActivity(intent);
             return true;
         }
@@ -139,7 +133,7 @@ public class MainActivity extends AppCompatActivity
            startActivity(intent);
 
        }else if(id==R.id.nav_mycart){
-           Intent intent=new Intent(MainActivity.this, MyCardActivity.class);
+           Intent intent=new Intent(MainActivity.this, AddCard.class);
            startActivity(intent);
 
        }else if(id==R.id.nav_wallet){
