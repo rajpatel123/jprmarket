@@ -1,7 +1,7 @@
 package com.app.jpr.market.Activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,19 +12,14 @@ import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import java.util.ArrayList;
 
 
-import android.os.Bundle;
-        import android.os.Handler;
-        import android.support.v4.view.ViewPager;
-        import android.support.v7.app.AppCompatActivity;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-        import java.util.Timer;
-        import java.util.TimerTask;
-
-        import me.relex.circleindicator.CircleIndicator;
+import me.relex.circleindicator.CircleIndicator;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -43,6 +38,14 @@ public class ProductActivity extends AppCompatActivity {
         init();
 
         btn = (ElegantNumberButton) findViewById(R.id.mybutton);
+
+
+        ///show back button
+        if(getSupportActionBar()!=null){                                                                                  ///
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);                                                       ///
+            getSupportActionBar().setDisplayShowHomeEnabled(true);                                                       ///
+
+        }
 
         // elegent button
         btn.setOnClickListener(new ElegantNumberButton.OnClickListener() {
@@ -84,7 +87,10 @@ public class ProductActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(new MyAdapter(ProductActivity.this,XMENArray));
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+       // indicator.setFillColor(Color.RED);
+       // CircleIndicator.setTabIndicatorColor(Color.RED);
         indicator.setViewPager(mPager);
+
 
         // Auto start of viewpager
         final Handler handler = new Handler();
@@ -103,6 +109,37 @@ public class ProductActivity extends AppCompatActivity {
              //   handler.post(Update);
            // }
         //}, 2500, 2500);
+
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_drawers, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {                                                          //
+        int id = item.getItemId();                                                                                 //
+        switch (id) {                                                                                               //
+            case R.id.add_card:                                                                               //
+                //Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
+                Intent intent= new Intent(ProductActivity.this,MyCardActivity.class);
+                startActivity(intent);//
+                return true;
+
+        }
+
+        ///show back button
+        if(item.getItemId()==android.R.id.home)                                                                     ///
+        {                                                                                                           ///
+            finish();                                                                                               ///
+            return super.onOptionsItemSelected(item);                                                               ///
+        }                                                                                                          ///
+        return true;
     }
 
 }
