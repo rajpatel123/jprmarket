@@ -26,4 +26,9 @@
     <color name="view_color">#E0DCDC</color>
     <color name="colorBlack">#000</color>
     <color name="color_lightt">#857C7C</color>
+    <color name="view_color1">#987</color>
+    <color name="button_back">#4caf1b</color>
+    <color name="shadow">#eefafc</color>
+    <color name="skyy">#3baeb4</color>
+    <color name="shad">#857C7C</color>
 </resources>

@@ -52,8 +52,7 @@
             android:layout_height="wrap_content"
             android:text="Product Discount"
             android:textSize="16dp"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_marginLeft="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -80,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Club Member Saving"
-            android:textColor="#3baeb4"
+            android:textColor="@color/skyy"
             android:textSize="16dp"
             android:layout_marginLeft="10dp"
 
