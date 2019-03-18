@@ -19,6 +19,7 @@ import com.app.jpr.market.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private CardView cardView;
+    private Button seeAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity
         Button button1=findViewById(R.id.second);
 
         cardView=findViewById(R.id.cardview);
+        seeAll=findViewById(R.id.SeeAll_BTN);
+
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +46,17 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,SeeAllActivity.class));
+
+
+            }
+        });
+
+
 
        // Icon =findViewById(R.id.action_addcart);
 

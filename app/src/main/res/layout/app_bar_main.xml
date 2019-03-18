@@ -79,7 +79,7 @@
 
             <Button
                 android:layout_marginTop="10dp"
-                android:id="@+id/location_BTN"
+                android:id="@+id/SeeAll_BTN"
                 android:text="@string/see_all"
                 android:layout_marginLeft="80dp"
                 android:textColor="@color/text_color"
