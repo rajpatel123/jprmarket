@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-    }
+    }////
 
     private boolean validateInputs(String gmaill, String passworddd) {
         boolean check = true;
@@ -127,4 +127,4 @@ public class LoginActivity extends AppCompatActivity {
         }
         return check;
     }
-}
+}////
