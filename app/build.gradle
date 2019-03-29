@@ -14,14 +14,14 @@ android {
         release {
             minifyEnabled false
             testCoverageEnabled = true
-            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/\""
+            buildConfigField "String", "API_SERVER_IP", "\"http://13.126.251.200:91/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         debug {
             minifyEnabled false
             testCoverageEnabled = true
-            buildConfigField "String", "API_SERVER_IP", "\"http://192.168.1.11/\""
+            buildConfigField "String", "API_SERVER_IP", "\"http://13.126.251.200:91/\""
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
