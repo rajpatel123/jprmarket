@@ -41,7 +41,7 @@
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="20dp"
                 android:textSize="15dp"
-                android:text="mohan123@gmail.com"
+                android:text="mk@gmail.com"
                 android:textColor="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
