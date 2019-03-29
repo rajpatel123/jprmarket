@@ -42,8 +42,6 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
-
                 String namee = name.getText().toString();
                 String mobilee = mobile.getText().toString();
                 String countryy = country.getText().toString();
