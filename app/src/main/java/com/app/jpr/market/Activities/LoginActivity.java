@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email, password;
     private Button login;
 
+   /* private ImageView imageView;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,9 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.edit_email);
         password = findViewById(R.id.edit_Passwword);
         login = findViewById(R.id.loginButton);
+
+        /*imageView = findViewById(R.id.logoID);*/
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

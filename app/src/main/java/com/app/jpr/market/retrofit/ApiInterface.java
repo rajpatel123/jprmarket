@@ -21,14 +21,14 @@ public interface ApiInterface {
 
     //login
     @Multipart
-    @POST("jpr_admin/user_api/test_api.php?action=login")
+    @POST("cat_api/test_api.php?action=login")
     //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<LoginResponse>  login(@Part("u_email") RequestBody u_email,
                                @Part("u_password") RequestBody u_password);
 
     //Registration
     @Multipart
-    @POST("jpr_admin/user_api/test_api.php?action=register")
+    @POST("cat_api/test_api.php?action=reg")
    //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<RegistrationResponse> register(@Part ("u_name")      RequestBody name,
                                          @Part("u_email")     RequestBody email,
