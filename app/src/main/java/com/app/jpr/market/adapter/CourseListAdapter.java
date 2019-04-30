@@ -63,7 +63,7 @@ holder.third.setText(categoryResponse.get(holder.getAdapterPosition()).getCatDes
     }
 
 
-    /**
+    /*
      * View Holder for CONFIG LIST
      */
 
