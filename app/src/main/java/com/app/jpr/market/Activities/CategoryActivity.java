@@ -88,22 +88,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             }
         });
-    /*    RestClient.getCourses(new Callback<CatagoryResponse>() {
-            @Override
-            public void onResponse(Call<CatagoryResponse> call, Response<CatagoryResponse> response) {
 
-
-                Log.d("Api Response :", "Got Success from Api");
-                if (response.isSuccessful()) {
-                    AppUtils.dismisDialog();
-
-
-            @Override
-            public void onFailure(Call<CatagoryResponse> call, Throwable t) {
-                AppUtils.dismisDialog();
-                Toast.makeText(CategoryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-            }
-        });*/
     }
 
 
