@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
                         RequestBody pwd = RequestBody.create(MediaType.parse("text/plain"), passworddd);
 
                         //TODO  display progress dialog
-
                         AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
 
                         RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
