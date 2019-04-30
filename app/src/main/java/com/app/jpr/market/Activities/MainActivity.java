@@ -17,7 +17,7 @@ import android.widget.Button;
 import com.app.jpr.market.R;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
     private CardView cardView;
     private Button seeAll;
 
