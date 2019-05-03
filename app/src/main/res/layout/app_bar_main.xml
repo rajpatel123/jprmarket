@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,11 @@
     android:orientation="vertical"
     android:background="@color/colorGray"
     tools:context=".Activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
     <android.support.design.widget.AppBarLayout
@@ -29,6 +34,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <Button
                     android:id="@+id/first"
                     android:layout_weight="2"
@@ -36,7 +42,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/categories"
                     android:textSize="12dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <Button
                     android:drawableLeft="@drawable/ic_search"
                     android:id="@+id/second"
@@ -45,179 +52,26 @@
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/search_product"/>
+                    android:text="@string/search_product" />
             </LinearLayout>
         </LinearLayout>
     </android.support.design.widget.AppBarLayout>
+
+
+
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
-
-            <TextView
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                android:text="@string/saver"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-            <Button
-                android:layout_marginTop="10dp"
-                android:id="@+id/SeeAll_BTN"
-                android:text="@string/see_all"
-                android:layout_marginLeft="80dp"
-                android:textColor="@color/text_color"
-                android:background="@drawable/roundbuttonss"
-                android:layout_width="80dp"
-                android:layout_height="40dp" />
-        </LinearLayout>
-
-
-
-
-
-            <LinearLayout
-                android:elevation="10sp"
-                android:background="@drawable/shadow"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_width="150dp"
-                android:layout_marginBottom="20dp"
-                android:layout_height="wrap_content">
-
-
-<android.support.v7.widget.CardView
-    android:id="@+id/cardview"
-    android:layout_width="150dp"
-    android:elevation="10sp"
-    android:background="@drawable/shadow"
-    android:layout_height="wrap_content">
-
-    <LinearLayout
         android:orientation="vertical"
-        android:layout_width="150dp"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:background="@drawable/veg"
-            android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="100dp" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rs259"
-                android:textSize="16dp"
-                android:textColor="@color/colorBlack"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textSize="14dp"
-                android:text="Rs330" />
-        </LinearLayout>
-
-        <TextView
-            android:text="Chakki Fresh Atta"
-            android:textColor="@color/colorBlack"
-            android:layout_marginLeft="10dp"
-            android:textStyle="normal"
-            android:textSize="14dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:text="10 kg"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content" />
 
 
 
-        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-            android:id="@+id/mybutton"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_centerVertical="true"
-            android:layout_width="130dp"
-            android:layout_marginBottom="20dp"
-            app:backGroundColor="@color/text_color"
-            android:layout_height="30dp">
 
-        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="150dp"
-        android:gravity="center"
-        android:background="#FF9331"
-        android:layout_marginTop="280dp"
-        android:layout_height="30dp">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/navimg">
-        </ImageView>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rs 254"
-            android:textSize="10dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/colorBlack"
-            android:textStyle="bold" />
-        <ImageView
-            android:id="@+id/lockIMG"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/ic_lock">
-        </ImageView>
-        <ImageView
-            android:id="@+id/IMG"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_chevron_right">
-        </ImageView>
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
-
-            </LinearLayout>
-            </LinearLayout>
     </LinearLayout>
+</ScrollView>
 
 
 

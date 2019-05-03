@@ -28,9 +28,11 @@
     <string name="search_product">Search for products</string>
     <string name="categories">Categories</string>
     <string name="saver">Top Savers Today</string>
+    <string name="selling">Best Selling Item </string>
 
     <string name="app_name2">All Categories</string>
     <string name="see_all">See all</string>
+    <string name="blockbasterl">SBlock Baster Sale</string>
 
     <string name="app_name4">ToolbarSearchview</string>
     <string-array name="months_array">
