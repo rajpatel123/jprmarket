@@ -31,4 +31,8 @@
     <color name="shadow">#eefafc</color>
     <color name="skyy">#3baeb4</color>
     <color name="shad">#857C7C</color>
+    <color name="heading">#F44336</color>
+<color name="card">#53C4D5</color>
+
+
 </resources>

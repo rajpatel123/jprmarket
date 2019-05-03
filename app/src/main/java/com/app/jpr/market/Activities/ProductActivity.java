@@ -17,6 +17,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +40,7 @@ import java.util.List;
 import me.relex.circleindicator.CircleIndicator;
 
 public class ProductActivity extends AppCompatActivity {
-
+    private LinearLayout price;
 
 
     ExpandableListView expandableListView;
@@ -61,6 +63,7 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product);
         init();
 
+        price=findViewById(R.id.priceID);//
         btn = (ElegantNumberButton) findViewById(R.id.mybutton);
 
         //expendable listview
@@ -87,6 +90,15 @@ public class ProductActivity extends AppCompatActivity {
                         expandableListTitle.get(groupPosition) + " List Collapsed.",
                         Toast.LENGTH_SHORT).show();
 
+            }
+        });
+
+
+        price.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ProductActivity.this,PriceActivity.class);
+                startActivity(intent);
             }
         });
 

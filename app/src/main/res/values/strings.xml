@@ -79,5 +79,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textt">Price for Club Members: Rs254</string>
 
+    <string name="Earn">Earn 250 WinWin points</string>
+    <string name="Buy">Buy 6 month Bachat Club membership </string>
+    <string name="gets">and get 250 WinWin points</string>
+    <string name="ok">OK, GOT IT</string>
+    <string name="select">Select a plan which suits your needs</string>
+
+
+
+
+
 
 </resources>
