@@ -12,39 +12,7 @@
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:orientation="horizontal"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-
-            <TextView
-                android:id="@+id/selling"
-                android:textColor="@color/colorPrimary"
-                android:textSize="16dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:text="@string/selling"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-            <Button
-
-                android:id="@+id/SeeAll_BTN"
-                android:layout_gravity="center"
-                android:text="@string/see_all"
-                android:layout_alignParentRight="true"
-                android:textColor="@color/text_color"
-                android:background="@drawable/roundbuttonss"
-                android:layout_width="80dp"
-                android:layout_height="40dp" />
-        </RelativeLayout>
 
 
         <LinearLayout
