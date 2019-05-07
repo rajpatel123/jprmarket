@@ -11,48 +11,6 @@
 
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/bestsellingitem"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/topsaverstoday"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/blockbustersale"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/happygroferscustomer"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
-
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/items"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
 
 
 

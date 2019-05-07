@@ -6,6 +6,7 @@ import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.models.SubcategoryResponse;
+import com.app.jpr.market.models.dashboard.CategoryResponse;
 
 import java.util.List;
 
@@ -43,9 +44,11 @@ public interface ApiInterface {
     Call <List<CatagoryResponse>> getCourse();
 
 
-   // SubCatagory
-   // @Multipart
-   // @POST("cat_api/test_api.php?action=fetchsub_all")
-    //Call<SubcategoryResponse>getCourse();
+    @POST("grofer_api/list")
+    Call <CategoryResponse> getAllItem();
+
+
+
+
 
 }

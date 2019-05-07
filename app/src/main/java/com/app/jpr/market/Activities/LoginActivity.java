@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.app.jpr.market.R;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
-import com.app.jpr.market.util.AppUtils;
+import com.app.jpr.market.utils.Utils;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -54,12 +54,12 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (check) {
-                    if (AppUtils.isInternetConnected(LoginActivity.this)) {
+                    if (Utils.isInternetConnected(LoginActivity.this)) {
                         RequestBody email = RequestBody.create(MediaType.parse("text/plain"), gmaill);
                         RequestBody pwd = RequestBody.create(MediaType.parse("text/plain"), passworddd);
 
                         //TODO  display progress dialog
-                        AppUtils.showProgressDialog(LoginActivity.this,"Please wait...");
+                        Utils.showProgressDialog(LoginActivity.this,"Please wait...");
 
                         RestClient.loginUser(email, pwd, new Callback<LoginResponse>() {
                             @Override
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 switch (response.code()) {
                                     case 200:
-                                       AppUtils.dismisDialog();
+                                       Utils.dismissProgressDialog();
                                         LoginResponse loginResponse = response.body();
                                         if (loginResponse.getStatus().equalsIgnoreCase("true")) {
                                             Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onFailure(Call<LoginResponse> call, Throwable t) {
                                 Log.d("Fail", call.toString());
-                               AppUtils.dismisDialog();
+                               Utils.dismissProgressDialog();
                             }
                         });
 

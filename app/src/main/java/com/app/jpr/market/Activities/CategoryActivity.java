@@ -15,7 +15,7 @@ import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.retrofit.RestClient;
-import com.app.jpr.market.util.AppUtils;
+import com.app.jpr.market.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,17 +48,18 @@ public class CategoryActivity extends AppCompatActivity {
     private void getCourse() {
 
         //show progress dialog
-        AppUtils.showProgressDialog(CategoryActivity.this);
+
+     Utils.showProgressDialog(CategoryActivity.this, "Please wait...");
 
         RestClient.getCourses(new Callback<List<CatagoryResponse>>() {
             @Override
             public void onResponse(Call<List<CatagoryResponse>> call, Response<List<CatagoryResponse>> response) {
-
+                Utils.dismissProgressDialog();
 
                 categoryResponse = response.body();
                 if (response.isSuccessful()) {
                     if (categoryResponse != null && categoryResponse.size() > 0) {
-                        AppUtils.dismisDialog(); //dismiss progress dialog
+                      //dismiss progress dialog
 
                         Log.d("Api Response :", "Got Success from Api");
                         CourseListAdapter courseListAdapter = new CourseListAdapter(getApplicationContext());
@@ -84,7 +85,7 @@ public class CategoryActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CatagoryResponse>> call, Throwable t) {
-                AppUtils.dismisDialog();
+                Utils.dismissProgressDialog();
 
             }
         });

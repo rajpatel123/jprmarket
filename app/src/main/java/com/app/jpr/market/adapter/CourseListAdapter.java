@@ -68,9 +68,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
     }
 
 
-    /*
-     * View Holder for CONFIG LIST
-     */
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView first, second, third;

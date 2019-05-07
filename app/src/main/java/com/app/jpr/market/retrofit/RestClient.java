@@ -4,6 +4,7 @@ package com.app.jpr.market.retrofit;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
+import com.app.jpr.market.models.dashboard.CategoryResponse;
 
 import java.util.List;
 
@@ -29,10 +30,9 @@ public class RestClient {
     }
 
 
-    //Subcatagory
-   // public static void getCourses(Callback<CatagoryResponse> callback) {
-       // RetrofitClient.getClient().getCourse().enqueue(callback);
-    //}
+    public static void allItems(Callback<CategoryResponse> callback) {
+        RetrofitClient.getClient().getAllItem().enqueue(callback);
+    }
 }
 
 

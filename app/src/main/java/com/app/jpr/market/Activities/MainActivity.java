@@ -8,16 +8,40 @@ import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.app.jpr.market.R;
+import com.app.jpr.market.adapter.BestSellingAdapter;
+import com.app.jpr.market.adapter.BlockBusterAdapter;
+import com.app.jpr.market.adapter.TopSaverAdapter;
+import com.app.jpr.market.models.dashboard.BestSelling;
+import com.app.jpr.market.models.dashboard.BlockbusterSaver;
+import com.app.jpr.market.models.dashboard.CategoryResponse;
+import com.app.jpr.market.models.dashboard.TodaySaver;
+import com.app.jpr.market.retrofit.RestClient;
+import com.app.jpr.market.utils.Utils;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener {
+    private List<BestSelling> itemList;
+    private List<BlockbusterSaver> itemList1;
+    private List<TodaySaver>itemList2;
+    private RecyclerView recyclerView,recyclerView2,recyclerView1;
+
     private CardView cardView;
     private Button seeAll;
 
@@ -27,21 +51,25 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button button=findViewById(R.id.first);
-        Button button1=findViewById(R.id.second);
+        Button button = findViewById(R.id.first);
+        Button button1 = findViewById(R.id.second);
+        recyclerView = findViewById(R.id.recycler_item1);
+        recyclerView1 = findViewById(R.id.recycler_item2);
+        recyclerView2 = findViewById(R.id.recycler_item3);
 
-        cardView=findViewById(R.id.cardview);
-        seeAll=findViewById(R.id.SeeAll_BTN);
+        cardView = findViewById(R.id.cardview);
+        seeAll = findViewById(R.id.SeeAll_BTN);
 
 
-        cardView.setOnClickListener(new View.OnClickListener() {
+        getAllItem();
+
+     /*   cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ProductActivity.class));
+                startActivity(new Intent(MainActivity.this, ProductActivity.class));
 
 
             }
@@ -50,34 +78,29 @@ public class MainActivity extends AppCompatActivity
         seeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,SeeAllActivity.class));
+                startActivity(new Intent(MainActivity.this, SeeAllActivity.class));
 
 
             }
-        });
+        });*/
 
 
-
-       // Icon =findViewById(R.id.action_addcart);
+        // Icon =findViewById(R.id.action_addcart);
 
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,CategoryActivity.class));
+                startActivity(new Intent(MainActivity.this, CategoryActivity.class));
             }
         });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SearchActivity.class));
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
             }
         });
-
-
-
-
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,7 +139,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent=new Intent(MainActivity.this, AddCard.class);
+            Intent intent = new Intent(MainActivity.this, AddCard.class);
             startActivity(intent);
             return true;
         }
@@ -129,47 +152,47 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if(id==R.id.nav_location){
-            Intent intent=new Intent(MainActivity.this, NearbyLocationActivity.class);
+        if (id == R.id.nav_location) {
+            Intent intent = new Intent(MainActivity.this, NearbyLocationActivity.class);
             startActivity(intent);
         }
 
-       if (id == R.id.nav_login) {
-           Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-           startActivity(intent);
+        if (id == R.id.nav_login) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
-        }else  if(id==R.id.nav_myaddress){
-           Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_myaddress) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
-       }else if(id==R.id.nav_myorder){
-           Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_myorder) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
-       }else if(id==R.id.nav_mycart){
-           Intent intent=new Intent(MainActivity.this, AddCard.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_mycart) {
+            Intent intent = new Intent(MainActivity.this, AddCard.class);
+            startActivity(intent);
 
-       }else if(id==R.id.nav_wallet){
-           Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_wallet) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
-       }else if(id==R.id.nav_freeitems){
-           Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_freeitems) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
 
-       }else if(id==R.id.nav_aboutus){
-           Intent intent=new Intent(MainActivity.this,About_us.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_aboutus) {
+            Intent intent = new Intent(MainActivity.this, About_us.class);
+            startActivity(intent);
 
-       }else if(id==R.id.nav_share){
-           Intent intent = new Intent(Intent.ACTION_SEND);
-           intent.setType("plain/text");
-           intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "---" });
-           intent.putExtra(Intent.EXTRA_SUBJECT, "---");
-           startActivity(Intent.createChooser(intent, "Contact Us!"));
-       }
+        } else if (id == R.id.nav_share) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("plain/text");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"---"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "---");
+            startActivity(Intent.createChooser(intent, "Contact Us!"));
+        }
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -177,9 +200,77 @@ public class MainActivity extends AppCompatActivity
         return true;
 
 
+    }
 
+    private void getAllItem() {
+
+
+        Utils.showProgressDialog(this, "Please wait...");
+        if (Utils.isInternetConnected(this)) {
+            Utils.showProgressDialog(this, "Please wait...");
+            RestClient.allItems(new Callback<CategoryResponse>() {
+                @Override
+                public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+
+                    Utils.dismissProgressDialog();
+                    if (response.body() != null) {
+                        if (response.body().getStatus()) {
+                            itemList = response.body().getBestSelling();
+                            itemList1 = response.body().getBlockbusterSavers();
+                            itemList2 = response.body().getTodaySavers();
+
+                            BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
+                            bestSellingAdapter.setdata(itemList);
+                            Log.d("Main Activity", "Done");
+                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+                            Log.d("Main Activity", "Two");
+                            recyclerView.setLayoutManager(linearLayoutManager);
+                            Log.d("Main Activity", "Three");
+                            recyclerView.setAdapter(bestSellingAdapter);
+                            Log.d("Main Activity", "Four");
+
+
+                            BlockBusterAdapter blockBusterAdapter = new BlockBusterAdapter(getApplicationContext());
+                            blockBusterAdapter.setdata(itemList1);
+                            Log.d("Main Activity", "Done");
+                            LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+                            Log.d("Main Activity", "Two");
+                            recyclerView1.setLayoutManager(linearLayoutManager1);
+                            Log.d("Main Activity", "Three");
+                            recyclerView1.setAdapter(blockBusterAdapter);
+                            Log.d("Main Activity", "Four");
+
+                            TopSaverAdapter topSaverAdapter = new TopSaverAdapter(getApplicationContext());
+                            topSaverAdapter.setdata(itemList2);
+                            Log.d("Main Activity", "Done");
+                            LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
+                            Log.d("Main Activity", "Two");
+                            recyclerView2.setLayoutManager(linearLayoutManager2);
+                            Log.d("Main Activity", "Three");
+                            recyclerView2.setAdapter(blockBusterAdapter);
+                            Log.d("Main Activity", "Four");
+
+                        }
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<CategoryResponse> call, Throwable t) {
+                    Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    Utils.dismissProgressDialog();
+
+                }
+            });
+
+
+        }
 
     }
 
 
+    public void onResume() {
+        super.onResume();
+
+    }
 }
