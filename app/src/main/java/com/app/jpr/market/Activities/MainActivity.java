@@ -64,15 +64,21 @@ public class MainActivity extends AppCompatActivity
         recyclerView2 = findViewById(R.id.recycler_item3);
         recyclerView3 = findViewById(R.id.recycler_item4);
 
-        cardView = findViewById(R.id.cardview);
+        cardView = findViewById(R.id.cardview1);
         seeAll = findViewById(R.id.SeeAll_BTN);
 
 
         getAllItem();
 
 
-
-
+      /*  cardView.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent=new Intent(MainActivity.this,ProductActivity.class);
+                 startActivity(intent);
+             }
+         });
+*/
         // Icon =findViewById(R.id.action_addcart);
 
 
@@ -191,8 +197,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void getAllItem() {
-
-
         Utils.showProgressDialog(this, "Please wait...");
         if (Utils.isInternetConnected(this)) {
             Utils.showProgressDialog(this, "Please wait...");
@@ -217,6 +221,17 @@ public class MainActivity extends AppCompatActivity
                             Log.d("Main Activity", "Three");
                             recyclerView.setAdapter(bestSellingAdapter);
                             Log.d("Main Activity", "Four");
+
+
+                            /// click listner
+                            bestSellingAdapter.setSellingListInterface(new BestSellingAdapter.SellingListInterface() { ///
+                                @Override                                                                             ///
+                                   public void sellinglistitem(String id) {                                            ///
+                                    Intent intent=new Intent(MainActivity.this,ProductActivity.class);    ///
+                                    intent.putExtra("id",id);                                                      ///
+                                    startActivity(intent);                                                              ///
+                                }                                                                                        ///
+                            });                                                                                          ////
 
 
                             BlockBusterAdapter blockBusterAdapter = new BlockBusterAdapter(getApplicationContext());
