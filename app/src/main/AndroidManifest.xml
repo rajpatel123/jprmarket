@@ -38,6 +38,9 @@
             android:name=".Activities.SkipActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".Activities.AddCard"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Activities.LocationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
