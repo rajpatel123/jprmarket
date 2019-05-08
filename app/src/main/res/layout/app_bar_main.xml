@@ -11,6 +11,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+
+        android:background="@color/white"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -58,18 +60,22 @@
         </LinearLayout>
 
     </android.support.design.widget.AppBarLayout>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <RelativeLayout
             android:orientation="horizontal"
             android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
             <TextView
                 android:id="@+id/selling"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:text="@string/selling"
@@ -79,15 +85,18 @@
 
             <Button
                 android:id="@+id/SeeAll_BTN"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/see_all"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/text_color"
                 android:background="@drawable/roundbuttonss"
                 android:layout_width="80dp"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
         </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_item1"
@@ -95,13 +104,16 @@
             android:layout_height="wrap_content">
         </android.support.v7.widget.RecyclerView>
 
-
+<android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <RelativeLayout
 
             android:orientation="horizontal"
             android:background="@color/white"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
 
             <TextView
@@ -111,6 +123,7 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textStyle="bold"
+                android:layout_marginLeft="10dp"
                 android:text="@string/blockbasterl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -122,14 +135,15 @@
                 android:layout_gravity="center"
                 android:text="@string/see_all"
                 android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/text_color"
                 android:background="@drawable/roundbuttonss"
                 android:layout_width="80dp"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
 
         </RelativeLayout>
 
-
+       </android.support.v7.widget.CardView>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_item2"
             android:layout_width="wrap_content"
@@ -154,14 +168,17 @@
                 android:text="Happy Grofers Customers" />-->
 
        <!-- </LinearLayout>-->
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <RelativeLayout
 
             android:orientation="horizontal"
-
-
+            android:layout_marginLeft="10dp"
             android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="40dp">
 
 
             <TextView
@@ -182,11 +199,12 @@
                 android:text="@string/see_all"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/text_color"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/roundbuttonss"
                 android:layout_width="80dp"
-                android:layout_height="40dp" />
+                android:layout_height="30dp" />
         </RelativeLayout>
-
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_item3"
@@ -195,9 +213,18 @@
         </android.support.v7.widget.RecyclerView>
 
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_item4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
 
 
     </LinearLayout>
+
+
+
+
 </ScrollView>
 
 

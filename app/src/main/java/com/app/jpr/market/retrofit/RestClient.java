@@ -19,17 +19,17 @@ public class RestClient {
         RetrofitClient.getClient().login(email,password).enqueue(callback);
     }
 
-//    //Registration
+    //Registration
    public static void registerUser(RequestBody u_name , RequestBody u_email , RequestBody u_mobile, RequestBody u_country , RequestBody u_password, Callback<RegistrationResponse> callback){
         RetrofitClient.getClient().register(u_name,u_email,u_mobile,u_country,u_password).enqueue(callback);
    }
 
-    //Category                             //imp
+    //Category
     public static void getCourses(Callback <List<CatagoryResponse>> callback) {
         RetrofitClient.getClient().getCourse().enqueue(callback);
     }
 
-
+   //Dash board
     public static void allItems(Callback<CategoryResponse> callback) {
         RetrofitClient.getClient().getAllItem().enqueue(callback);
     }
