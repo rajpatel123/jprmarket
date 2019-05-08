@@ -18,7 +18,9 @@ import java.util.List;
 
 
 public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.ViewHolder> {
-    private Context applicationContext;
+
+    //img
+    private Context applicationContext;//
     private List<CatagoryResponse> categoryResponse;
 
     public CourseListAdapter(Context applicationContext) {

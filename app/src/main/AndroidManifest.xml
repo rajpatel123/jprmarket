@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SeeAllActivity"></activity>
+        <activity android:name=".Activities.PriceActivity"
+            android:theme="@style/AppTheme6"
+            ></activity>
+        <activity android:name=".Activities.SeeAllActivity" />
         <activity android:name=".Activities.About_us" />
         <activity
             android:name=".Activities.SplashActivity"
@@ -34,6 +37,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.SkipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.AddCard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.LocationActivity"
