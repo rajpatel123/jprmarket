@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/subcat_image"
+        android:layout_width="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_height="100dp"
+       >
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/subcat_itemname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Pulses"
+        android:maxLines="2"
+        android:textColor="@color/colorBlack"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/subcat_discount"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/heading"
+        android:text=" UP TO 61% OFF"
+        android:textSize="14dp" />
+
+
+
+
+
+    </LinearLayout>
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_width="2dp"
+            android:layout_height="210dp"
+            android:background="@color/view_color" />
+    </LinearLayout>
+
+</LinearLayout>

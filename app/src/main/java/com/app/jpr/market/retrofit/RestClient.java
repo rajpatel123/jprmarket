@@ -4,7 +4,10 @@ package com.app.jpr.market.retrofit;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
+import com.app.jpr.market.models.SubcategoryResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
+import com.app.jpr.market.models.subCategory.SubCatResponse;
+import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 
 import java.util.List;
 
@@ -32,6 +35,10 @@ public class RestClient {
    //Dash board
     public static void allItems(Callback<CategoryResponse> callback) {
         RetrofitClient.getClient().getAllItem().enqueue(callback);
+    }
+  //subitem
+    public static void SuballItems(SubCatRequest SubCatRequest, Callback<SubCatResponse> callback) {
+        RetrofitClient.getClient().getAllSubItem(SubCatRequest).enqueue(callback);
     }
 }
 

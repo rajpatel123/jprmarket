@@ -239,6 +239,17 @@ public class MainActivity extends AppCompatActivity
                             recyclerView3.setLayoutManager(linearLayoutManager3);
                             recyclerView3.setAdapter(categoryDashboardAdapter);
 
+                            categoryDashboardAdapter.setSellingListInterface(new CategoryDashboardAdapter.SellingListInterface() {
+                                @Override
+                                public void sellinglistitem(String id) {
+                                    Intent intent = new Intent(MainActivity.this,SubCategoryActivity.class);
+                                    intent.putExtra("id",id);
+                                    startActivity(intent);
+
+                                }
+                            });
+
+
                         }
                     }
 
