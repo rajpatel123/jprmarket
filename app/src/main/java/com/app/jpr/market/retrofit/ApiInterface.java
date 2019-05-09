@@ -7,6 +7,7 @@ import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.models.SubcategoryResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
+import com.app.jpr.market.models.offer.Membership;
 
 import java.util.List;
 
@@ -48,6 +49,8 @@ public interface ApiInterface {
     Call <CategoryResponse> getAllItem();
 
 
+    @POST("http://192.168.1.13/grofer_api/bachat_club")
+    Call <Membership> getAllItems();
 
 
 

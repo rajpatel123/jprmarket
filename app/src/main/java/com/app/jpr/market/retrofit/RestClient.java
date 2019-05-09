@@ -5,6 +5,7 @@ import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
+import com.app.jpr.market.models.offer.Membership;
 
 import java.util.List;
 
@@ -33,6 +34,13 @@ public class RestClient {
     public static void allItems(Callback<CategoryResponse> callback) {
         RetrofitClient.getClient().getAllItem().enqueue(callback);
     }
+
+
+    //Membership
+    public static void allItemss(Callback<Membership> callback) {
+        RetrofitClient.getClient().getAllItems().enqueue(callback);
+    }
+
 }
 
 
