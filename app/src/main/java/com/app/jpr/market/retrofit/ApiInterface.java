@@ -44,11 +44,11 @@ public interface ApiInterface {
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
-
+//Dashboard
     @POST("grofer_api/list")
     Call <CategoryResponse> getAllItem();
 
-
+//Offer
     @POST("http://192.168.1.13/grofer_api/bachat_club")
     Call <Membership> getAllItems();
 

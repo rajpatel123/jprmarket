@@ -1,4 +1,3 @@
-/*
 package com.app.jpr.market.adapter.OfferAdapter;
 
 import android.content.Context;
@@ -15,6 +14,7 @@ import com.app.jpr.market.R;
 import com.app.jpr.market.models.dashboard.BestSelling;
 import com.app.jpr.market.models.offer.Plan;
 import com.app.jpr.market.models.offer.SaveBeyondGrocery;
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -35,7 +35,7 @@ public class SavedBeyondGroceryAdapter extends RecyclerView.Adapter<SavedBeyondG
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.recycler_savedbeyondgrosary, viewGroup, false);
 
-        return new SavedBeyondGroceryAdapter.ViewHolder(itemView);
+        return new ViewHolder(itemView);
 
 
     }
@@ -67,7 +67,7 @@ public class SavedBeyondGroceryAdapter extends RecyclerView.Adapter<SavedBeyondG
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView textView1,textView2,textView3,textView4,textView5;
-        private Button button;
+        private ElegantNumberButton button;
         private ImageView imageView1,imageView2,imageView3,imageView4;
 
         public ViewHolder(@NonNull View itemView) {
@@ -93,4 +93,3 @@ public class SavedBeyondGroceryAdapter extends RecyclerView.Adapter<SavedBeyondG
         }
     }
 }
-*/
