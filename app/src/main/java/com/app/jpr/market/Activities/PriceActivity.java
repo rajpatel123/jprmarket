@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
@@ -37,6 +39,8 @@ public class PriceActivity extends AppCompatActivity {
     private List<SmartBachatClub> itemList2;
     private List<Plan>itemList3;
 
+    private LinearLayout askedQuestion;
+
 
     private RecyclerView recyclerView1,recyclerView2,recyclerView3,recyclerView4;
 
@@ -49,6 +53,16 @@ public class PriceActivity extends AppCompatActivity {
         recyclerView2 = findViewById(R.id.recycler2);
         recyclerView3 = findViewById(R.id.recycler3);
         recyclerView4 = findViewById(R.id.recycler4);
+
+        askedQuestion=findViewById(R.id.asked_question);
+
+        askedQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(PriceActivity.this,AskedQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         getAllItems();
 
