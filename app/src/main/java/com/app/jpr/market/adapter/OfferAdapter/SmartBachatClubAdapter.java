@@ -44,14 +44,14 @@ public class SmartBachatClubAdapter extends RecyclerView.Adapter<SmartBachatClub
     public void onBindViewHolder(@NonNull SmartBachatClubAdapter.ViewHolder viewHolder, int i) {
 
         final SmartBachatClub allItems = smartBachatClubAdapter.get(i);
-        viewHolder.textView1.setText(allItems.getPTitle());
+        viewHolder.PTitle.setText(allItems.getPTitle());
         Picasso.with(context).load(allItems.getPImage())
-                .error(R.drawable.veg).into(viewHolder.imageView1);
+                .error(R.drawable.veg).into(viewHolder.PImage);
 
 
-        viewHolder.textView3.setText(allItems.getPQuantity());
-        viewHolder.textView4.setText(allItems.getPPrice());
-        viewHolder.textView2.setText(allItems.getPDiscPrice());
+        viewHolder.PQuantity.setText(allItems.getPQuantity());
+        viewHolder.PPrice.setText(allItems.getPPrice());
+        viewHolder.PDiscPrice.setText(allItems.getPDiscPrice());
 
 
     }
@@ -63,23 +63,23 @@ public class SmartBachatClubAdapter extends RecyclerView.Adapter<SmartBachatClub
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imageView1,imageView2,imageView3,imageView4;
-        private TextView textView1,textView2,textView3,textView4,textView5;
+        private ImageView PImage,imageView2,imageView3,imageView4;
+        private TextView PPrice,PDiscPrice,PTitle,PQuantity,textView5;
         private ElegantNumberButton button;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageView1=itemView.findViewById(R.id.imageView1);
+            PImage=itemView.findViewById(R.id.PImage);
             imageView2=itemView.findViewById(R.id.imageView2);
             imageView3=itemView.findViewById(R.id.imageView3);
             imageView4=itemView.findViewById(R.id.imageView4);
 
-            textView1=itemView.findViewById(R.id.textView1);
-            textView2=itemView.findViewById(R.id.textView2);
-            textView3=itemView.findViewById(R.id.textView3);
-            textView4=itemView.findViewById(R.id.textView4);
+            PPrice=itemView.findViewById(R.id.PPrice);
+            PDiscPrice=itemView.findViewById(R.id.PDiscPrice);
+            PTitle=itemView.findViewById(R.id.PTitle);
+            PQuantity=itemView.findViewById(R.id.PQuantity);
             textView5=itemView.findViewById(R.id.textView5);
 
 

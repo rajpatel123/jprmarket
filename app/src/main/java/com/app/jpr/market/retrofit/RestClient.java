@@ -37,8 +37,8 @@ public class RestClient {
 
 
     //Membership
-    public static void allItemss(Callback<Membership> callback) {
-        RetrofitClient.getClient().getAllItems().enqueue(callback);
+    public static void allDataItemss(Callback<Membership> callback) {
+        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
     }
 
 }

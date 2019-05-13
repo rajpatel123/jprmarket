@@ -8,6 +8,7 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardview2"
+        app:cardElevation="10sp"
         android:layout_width="150dp"
         android:elevation="10sp"
         android:layout_marginLeft="10dp"
@@ -15,14 +16,15 @@
         android:background="@drawable/shadow"
         android:layout_height="wrap_content">
 
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="150dp"
+            android:elevation="10sp"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView1"
-                android:background="@drawable/veg"
+                android:id="@+id/PImage"
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
@@ -31,11 +33,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/PPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs259"
@@ -44,7 +46,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/PDiscPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -53,10 +55,10 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/PTitle"
                 android:text="Chakki Fresh Atta"
                 android:textColor="@color/colorBlack"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:textStyle="normal"
                 android:textSize="14dp"
                 android:layout_marginTop="10dp"
@@ -64,9 +66,9 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView4"
-                android:text="10 kg"
-                android:layout_marginLeft="10dp"
+                android:id="@+id/PQuantity"
+                android:text="20 kg"
+                android:layout_marginLeft="30dp"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_height="wrap_content" />

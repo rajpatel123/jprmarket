@@ -26,7 +26,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/PlanMonths"
                 android:text="12 months"
                 android:textColor="@color/card"
                 android:textStyle="normal"
@@ -47,7 +47,7 @@
 
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/PlanPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rs 259"
@@ -58,7 +58,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/PlanDiscountPrice"
                 android:text="Rs 1998"
                 android:textSize="16dp"
                 android:layout_gravity="center"
@@ -74,12 +74,12 @@
                 android:background="@color/nav_welcolor" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/PlanFree"
                 android:text="Free Eros Now"
                 android:textColor="@color/colorBlack"
                 android:textStyle="normal"
                 android:textSize="14dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -98,7 +98,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
                 android:text="View"
                 android:textColor="@color/heading" />
 

@@ -14,8 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.PriceActivity"
-            android:theme="@style/AppTheme6"
-            ></activity>
+            android:theme="@style/AppTheme6"></activity>
         <activity android:name=".Activities.SeeAllActivity" />
         <activity android:name=".Activities.About_us" />
         <activity

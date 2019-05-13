@@ -214,6 +214,7 @@ public class MainActivity extends AppCompatActivity
 
                             BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
                             bestSellingAdapter.setdata(itemList);
+
                             Log.d("Main Activity", "Done");
                             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
                             Log.d("Main Activity", "Two");
@@ -272,9 +273,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-    public void onResume() {
-        super.onResume();
-
-    }
+    public void onResume()  {
+                             super.onResume();
+                            }
 }

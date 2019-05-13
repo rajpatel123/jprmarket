@@ -60,7 +60,7 @@ public class PriceActivity extends AppCompatActivity {
         Utils.showProgressDialog(this, "Please wait...");
         if (Utils.isInternetConnected(this)) {
             Utils.showProgressDialog(this, "Please wait...");
-            RestClient.allItemss(new Callback<Membership>() {
+            RestClient.allDataItemss(new Callback<Membership>() {
                 @Override
                 public void onResponse(Call<Membership> call, Response<Membership> response) {
 

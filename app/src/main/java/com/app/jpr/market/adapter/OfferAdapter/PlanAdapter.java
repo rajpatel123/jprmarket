@@ -48,11 +48,10 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.ViewHolder> {
 
 
         final Plan allItems = planAdapter.get(i);
-        viewHolder.textView1.setText(allItems.getPlanMonths());
-
-        viewHolder.textView3.setText(allItems.getPlanPrice());
-        viewHolder.textView2.setText(allItems.getPlanDiscountPrice());
-        viewHolder.textView4.setText(allItems.getPlanFree());
+        viewHolder.PlanMonths.setText(allItems.getPlanMonths());
+        viewHolder.PlanPrice.setText(allItems.getPlanPrice());
+        viewHolder.PlanDiscountPrice.setText(allItems.getPlanDiscountPrice());
+        viewHolder.PlanFree.setText(allItems.getPlanFree());
 
 
     }
@@ -64,17 +63,17 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private Button button;
-        private TextView textView1,textView2,textView3,textView4,textView5,textView6;
+        private TextView PlanMonths,PlanPrice,PlanDiscountPrice,PlanFree,textView5,textView6;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             button= itemView.findViewById(R.id.button);
-            textView1= itemView.findViewById(R.id.textView1);
-            textView2= itemView.findViewById(R.id.textView2);
-            textView3= itemView.findViewById(R.id.textView3);
-            textView4= itemView.findViewById(R.id.textView4);
+            PlanMonths= itemView.findViewById(R.id.PlanMonths);
+            PlanPrice= itemView.findViewById(R.id.PlanPrice);
+            PlanDiscountPrice= itemView.findViewById(R.id.PlanDiscountPrice);
+            PlanFree= itemView.findViewById(R.id.PlanFree);
             textView5= itemView.findViewById(R.id.textView5);
             textView6= itemView.findViewById(R.id.textView6);
 

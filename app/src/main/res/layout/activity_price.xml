@@ -64,9 +64,24 @@
     android:layout_height="wrap_content" />
 
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@drawable/iimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
 
 
     <LinearLayout
@@ -76,6 +91,10 @@
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+
+
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -128,6 +147,8 @@
 
     </LinearLayout>
 
+
+
         <LinearLayout
             android:orientation="vertical"
             android:background="@color/white"
@@ -175,6 +196,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:text="Frequently Asked Questions"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:background="@drawable/ic_navigate_next"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
 
         </LinearLayout>
         </LinearLayout>
