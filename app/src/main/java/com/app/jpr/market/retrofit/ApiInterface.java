@@ -1,12 +1,12 @@
 package com.app.jpr.market.retrofit;
 
 
-import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
+import com.app.jpr.market.models.BlockBusterSeeAll.SeeAllBlockBuster;
 import com.app.jpr.market.models.CatagoryResponse;
-import com.app.jpr.market.models.LoginResponse;
-import com.app.jpr.market.models.RegistrationResponse;
-import com.app.jpr.market.models.SubcategoryResponse;
+import com.app.jpr.market.models.Login.LoginResponse;
+import com.app.jpr.market.models.Signup.RegistrationResponse;
+import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.offer.Membership;
 
@@ -14,8 +14,6 @@ import java.util.List;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -40,22 +38,30 @@ public interface ApiInterface {
                                          @Part("u_password")  RequestBody password);
 
 
-    //Catagory
 
+    //Catagory
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
-//Dashboard
+    //Dashboard
     @POST("grofer_api/list")
     Call <CategoryResponse> getAllItem();
 
-//Offer
+   //Offer
     @POST("http://192.168.1.13/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
 
     //BestSellingSeeAll
     @POST("http://192.168.1.13/grofer_api/best_selling")
     Call <SeeAllBestSelling> getSeeAlls();
+
+ /*   //BestSellingSeeAll
+    @POST("http://192.168.1.13/grofer_api/blockbuster")
+    Call <SeeAllBlockBuster> getSeeAlls();*/
+
+ /*   //BestSellingSeeAll
+    @POST("http://192.168.1.13/grofer_api/top_saver")
+    Call <SeeAllTopSavers> getSeeAlls();*/
 
 
 

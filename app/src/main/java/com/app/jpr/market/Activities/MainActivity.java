@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView recyclerView,recyclerView2,recyclerView1,recyclerView3;
 
     private CardView cardView;
-    private Button seeAll;
+    private Button seeAll,block,saver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,20 +66,15 @@ public class MainActivity extends AppCompatActivity
 
         cardView = findViewById(R.id.cardview1);
         seeAll = findViewById(R.id.SeeAll_BTN);
+        block = findViewById(R.id.Block_btn);
+        saver = findViewById(R.id.Savers_btn);
+
 
 
         getAllItem();
 
 
-      /*  cardView.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Intent intent=new Intent(MainActivity.this,ProductActivity.class);
-                 startActivity(intent);
-             }
-         });
-*/
-        // Icon =findViewById(R.id.action_addcart);
+
 
         seeAll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +83,24 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+
+        block.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SeeAllBlockBusterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        saver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SeeAllTopSaversActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         button.setOnClickListener(new View.OnClickListener() {

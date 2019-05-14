@@ -113,6 +113,7 @@
 
 
                     <LinearLayout
+                        android:id="@+id/offerid"
                         android:orientation="horizontal"
                         android:layout_width="220dp"
                         android:gravity="center"

@@ -1,4 +1,4 @@
-package com.app.jpr.market.models;
+package com.app.jpr.market.models.Login;
 
 
 import com.google.gson.annotations.Expose;

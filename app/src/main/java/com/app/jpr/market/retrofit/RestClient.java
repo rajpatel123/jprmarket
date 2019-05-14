@@ -2,9 +2,11 @@ package com.app.jpr.market.retrofit;
 
 
 import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
+import com.app.jpr.market.models.BlockBusterSeeAll.SeeAllBlockBuster;
 import com.app.jpr.market.models.CatagoryResponse;
-import com.app.jpr.market.models.LoginResponse;
-import com.app.jpr.market.models.RegistrationResponse;
+import com.app.jpr.market.models.Login.LoginResponse;
+import com.app.jpr.market.models.Signup.RegistrationResponse;
+import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.offer.Membership;
 
@@ -47,6 +49,16 @@ public class RestClient {
     public static void SeeAllss(Callback<SeeAllBestSelling> callback) {
         RetrofitClient.getClient().getSeeAlls().enqueue(callback);
     }
+
+ /*   //BlockBusterSeeAll
+    public static void SeeAllss(Callback<SeeAllBlockBuster> callback) {
+        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
+    }*/
+
+  /*  //TopSaversSeeAll
+    public static void SeeAllss(Callback<SeeAllTopSavers> callback) {
+        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
+    }*/
 
 }
 

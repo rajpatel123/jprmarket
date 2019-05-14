@@ -99,41 +99,14 @@ import retrofit2.Response;
                                     Log.d("Main Activity", "Four");
 
 
-                                    ////
+                                   
 
 
-                                   /* SavedBeyondGroceryAdapter savedBeyondGroceryAdapter = new SavedBeyondGroceryAdapter(getApplicationContext());
-                                    Log.d("Price Activity","first");
-                                    savedBeyondGroceryAdapter.setdata(itemList1);
-                                    Log.d("Price Activity","first");
-                                    LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(PriceActivity.this,LinearLayoutManager.HORIZONTAL,false);
-                                    Log.d("Price Activity","first");
-                                    recyclerView2.setLayoutManager(linearLayoutManager1);
-                                    Log.d("Price Activity","first");
-                                    recyclerView2.setAdapter(savedBeyondGroceryAdapter);
-                                    Log.d("Price Activity","first");*/
 
-                                  /*  SmartBachatClubAdapter smartBachatClubAdapter = new SmartBachatClubAdapter(getApplicationContext());
-                                    Log.d("Price Activity","first");
-                                    smartBachatClubAdapter.setdata(itemList2);
-                                    Log.d("Price Activity","first");
-                                    LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(PriceActivity.this,LinearLayoutManager.HORIZONTAL,false);
-                                    Log.d("Price Activity","first");
-                                    recyclerView3.setLayoutManager(linearLayoutManager2);
-                                    Log.d("Price Activity","first");
-                                    recyclerView3.setAdapter(smartBachatClubAdapter);
-                                    Log.d("Price Activity","first");*/
 
-                                 /*   PlanAdapter planAdapter1 = new PlanAdapter(getApplicationContext());
-                                    planAdapter1.setdata(itemList3);
-                                    Log.d("Main Activity", "Done");
-                                    LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(PriceActivity.this,LinearLayoutManager.HORIZONTAL,false);
-                                    Log.d("Main Activity", "Two");
-                                    recyclerView4.setLayoutManager(linearLayoutManager3);
-                                    Log.d("Main Activity", "Three");
-                                    recyclerView4.setAdapter(planAdapter);
-                                    Log.d("Main Activity", "Four");
-*/
+
+
+
 
                                 }
                             }

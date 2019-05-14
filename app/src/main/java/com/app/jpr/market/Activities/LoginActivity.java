@@ -8,12 +8,11 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.models.LoginResponse;
+import com.app.jpr.market.models.Login.LoginResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
 

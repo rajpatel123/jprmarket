@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.AskedQuestionActivity"></activity>
+        <activity android:name=".Activities.SeeAllTopSaversActivity"></activity>
+        <activity android:name=".Activities.SeeAllBlockBusterActivity" />
+        <activity android:name=".Activities.AskedQuestionActivity" />
         <activity
             android:name=".Activities.PriceActivity"
             android:theme="@style/AppTheme6" />

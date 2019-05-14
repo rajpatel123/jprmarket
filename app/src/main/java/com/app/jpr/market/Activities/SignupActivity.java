@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.models.RegistrationResponse;
+import com.app.jpr.market.models.Signup.RegistrationResponse;
 import com.app.jpr.market.retrofit.RestClient;
 
 import okhttp3.MediaType;
