@@ -2,7 +2,9 @@ package com.app.jpr.market.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
@@ -72,6 +74,7 @@ public class ProductActivity extends AppCompatActivity {
         expandableListTitle = new ArrayList<String>(expandableListDetail.keySet());
         expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
+
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
@@ -111,6 +114,7 @@ public class ProductActivity extends AppCompatActivity {
                         expandableListTitle.get(groupPosition)
                                 + " -> "
                                 + expandableListDetail.get(
+
                                 expandableListTitle.get(groupPosition)).get(
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
@@ -161,6 +165,8 @@ public class ProductActivity extends AppCompatActivity {
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
        // indicator.setFillColor(Color.RED);
        // CircleIndicator.setTabIndicatorColor(Color.RED);
+        indicator.setBackgroundDrawable(new ColorDrawable(Color.RED));
+
         indicator.setViewPager(mPager);
 
 

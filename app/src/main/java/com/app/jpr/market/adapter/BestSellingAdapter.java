@@ -2,6 +2,7 @@ package com.app.jpr.market.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,11 @@ import java.util.List;
 public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.MyViewHolder> {
     private List<BestSelling> groseryItemList;
     Context context;
+    private CardView cardView;
+
+//click lisner
+    private SellingListInterface sellingListInterface;///
+
     public BestSellingAdapter(Context context) {
         this.context = context;
     }
@@ -39,19 +45,34 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder ViewHolder,  int position ) {
-       BestSelling allItems = groseryItemList.get(position);
-       ViewHolder.itemName.setText(allItems.getPTitle());
-       Picasso.with(context).load(allItems.getPImage())
-               .error(R.drawable.veg).into(ViewHolder.itemImage);
+    public void onBindViewHolder(@NonNull MyViewHolder ViewHolder, int position) {
+        final BestSelling allItems = groseryItemList.get(position);
+        ViewHolder.itemName.setText(allItems.getPTitle());
+        Picasso.with(context).load(allItems.getPImage())
+                .error(R.drawable.veg).into(ViewHolder.itemImage);
 
-       ViewHolder.itemWeight.setText(allItems.getPQuantity());
-       ViewHolder.totalMoney.setText(allItems.getPPrice());
-       ViewHolder.discountMoney.setText(allItems.getPDiscPrice());
+        ViewHolder.itemWeight.setText(allItems.getPQuantity());
+        ViewHolder.totalMoney.setText(allItems.getPPrice());
+        ViewHolder.discountMoney.setText(allItems.getPDiscPrice());
 
+          /// click Lisner
+        ViewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+            @Override
+            public void onClick(View v) {                                    ///
+                if (sellingListInterface != null) {                           ///
+                    sellingListInterface.sellinglistitem(allItems.getPId());   ///
+                }                                                              ///
+            }                                                                  ///
+        });                                                                    ///
 
 
     }
+
+    ///click Lisner
+    public void setSellingListInterface(SellingListInterface sellingListInterface) {    ///
+        this.sellingListInterface = sellingListInterface;                                 ///
+    }                                                                                     ///
+
 
     @Override
     public int getItemCount() {
@@ -65,22 +86,30 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
         private Button addCart, moneyOff;
         private ImageView itemImage, lock;
         private TextView itemName, itemWeight, totalMoney, discountMoney;
+        private CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            elegantNumberButton =  itemView.findViewById(R.id.addcartbutton);
-            moneyOff =  itemView.findViewById(R.id.moneyOff_btn);
-            itemImage =  itemView.findViewById(R.id.item_image);
-            lock =  itemView.findViewById(R.id.lockIMG);
-            itemName =  itemView.findViewById(R.id.item_name);
-            itemWeight =  itemView.findViewById(R.id.item_weight);
-            totalMoney =  itemView.findViewById(R.id.totalitemmoney);
-            discountMoney =  itemView.findViewById(R.id.afterdiscount);
+            elegantNumberButton = itemView.findViewById(R.id.addcartbutton);
+            moneyOff = itemView.findViewById(R.id.moneyOff_btn);
+            itemImage = itemView.findViewById(R.id.item_image);
+            lock = itemView.findViewById(R.id.lockIMG);
+            itemName = itemView.findViewById(R.id.item_name);
+            itemWeight = itemView.findViewById(R.id.item_weight);
+            totalMoney = itemView.findViewById(R.id.totalitemmoney);
+            discountMoney = itemView.findViewById(R.id.afterdiscount);
+            cardView=itemView.findViewById(R.id.cardview1);
+
 
 
         }
 
     }
+
+///click Lisner
+    public interface SellingListInterface {       ///
+        public void sellinglistitem(String id);   ///
+    }                                             ///
 
 }
