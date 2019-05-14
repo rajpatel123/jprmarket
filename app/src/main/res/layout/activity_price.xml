@@ -4,70 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/nav_welcolor"
+    android:background="@color/colorGray"
     android:orientation="vertical"
+    android:layout_marginBottom="20dp"
     tools:context=".Activities.PriceActivity">
 
     <LinearLayout
         android:orientation="horizontal"
         android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="120dp">
+
 
         <ImageView
-            android:src="@drawable/priceimg"
+            android:background="@drawable/priceimg"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_marginLeft="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
+
             <TextView
-                android:text="@string/Earn"
-                android:textSize="16dp"
-                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
                 android:textColor="@color/colorBlack"
+                android:text="@string/Earn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="@string/Buy"
                 android:textSize="14dp"
-                android:textColor="@color/member"
-                android:layout_marginRight="100dp"
+                android:text="@string/Buy"
+                android:layout_marginRight="80dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+
+
 
         </LinearLayout>
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:background="@color/heading"
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <TextView
-            android:text="@string/ok"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
 
     </LinearLayout>
+
+<Button
+    android:text="@string/Ok"
+    android:textColor="@color/white"
+    android:background="@color/heading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+
+
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -75,641 +75,163 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="499dp"
-        android:background="@drawable/priceimgg" />
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="@string/Earn"
-                    android:textSize="16dp"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/colorBlack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-
-                <TextView
-                    android:text="@string/Buy"
-                    android:textSize="14dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/member"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="@string/gets"
-                    android:textSize="14dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/member"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/card"
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-
-                <TextView
-                    android:text="@string/select"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-                <android.support.v7.widget.CardView
-                    android:layout_marginTop="20dp"
-                    android:id="@+id/cardview"
-                    android:layout_gravity="center"
-                    android:layout_width="150dp"
-                    android:elevation="10sp"
-                    android:background="@drawable/shadow"
-                    android:layout_height="300dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:text="12 months"
-                            android:textColor="@color/card"
-                            android:textStyle="normal"
-                            android:textSize="16dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
+            <ImageView
+                android:background="@drawable/iimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
 
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Rs 259"
-                                android:textSize="20dp"
-                                android:layout_marginTop="20dp"
-                                android:layout_gravity="center"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold" />
 
-                        <TextView
-                            android:text="Rs 1998"
-                            android:textSize="16dp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/member"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
-
-                        <TextView
-                            android:text="Free Eros Now"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:text="Subscription"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-
-                        <TextView
-                            android:text="View"
-                            android:textColor="@color/heading"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
-
-
-                        <Button
-                            android:text="Select"
-                            android:textColor="@color/white"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:background="@color/heading"
-                            android:layout_width="140dp"
-                            android:layout_height="40dp" />
-
-
-
-
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
-
-
-
-            </LinearLayout>
-
-
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:background="@color/white"
-    android:layout_width="match_parent"
-    android:layout_height="200dp">
-
-
-    <TextView
-        android:text="@string/happy"
-        android:textSize="16dp"
-        android:textStyle="bold"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/cards"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:text="@string/selects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
+    </LinearLayout>
 
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_marginTop="10dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:src="@drawable/dr1" />
-
-        <TextView
-            android:text="@string/good"
-            android:textSize="14dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/colorBlack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
 
         <TextView
-            android:text="Prasanthi P, Banglore"
-            android:textSize="14dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
             android:textColor="@color/member"
+            android:text="@string/save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-</LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
 
-                <TextView
-                    android:text="Smart Bachat club "
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorBlack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler2"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardview3"
-                    android:layout_width="150dp"
-                    android:elevation="10sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:layout_height="wrap_content">
+    </LinearLayout>
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content">
 
-                        <ImageView
-                            android:background="@drawable/veg"
-                            android:layout_gravity="center"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp" />
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Rs259"
-                                android:textSize="16dp"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold" />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/member"
+                android:text="@string/Smartss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:textSize="14dp"
-                                android:text="Rs330" />
-                        </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
-                        <TextView
-                            android:text="Chakki Fresh Atta"
-                            android:textColor="@color/colorBlack"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="10 kg"
-                            android:layout_marginLeft="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content" />
-
-
-
-                        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                            android:id="@+id/mybutton1"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerVertical="true"
-                            android:layout_width="130dp"
-                            android:layout_marginBottom="20dp"
-                            app:backGroundColor="@color/text_color"
-                            android:layout_height="30dp">
-
-                        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="150dp"
-                        android:gravity="center"
-                        android:background="#FF9331"
-                        android:layout_marginTop="280dp"
-                        android:layout_height="30dp">
-
-                        <ImageView
-                            android:id="@+id/imageView1"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/navimg">
-                        </ImageView>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rs 254"
-                            android:textSize="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="bold" />
-                        <ImageView
-                            android:id="@+id/lockIMG1"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="40dp"
-                            android:background="@drawable/ic_lock">
-                        </ImageView>
-                        <ImageView
-                            android:id="@+id/IMG1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/ic_chevron_right">
-                        </ImageView>
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-            </LinearLayout>
-
-
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-
-                <TextView
-                    android:text="Saved Beyond Grocery "
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorBlack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cardview2"
-                    android:layout_width="150dp"
-                    android:elevation="10sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/shadow"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:background="@drawable/veg"
-                            android:layout_gravity="center"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Rs259"
-                                android:textSize="16dp"
-                                android:textColor="@color/colorBlack"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:textSize="14dp"
-                                android:text="Rs330" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:text="Chakki Fresh Atta"
-                            android:textColor="@color/colorBlack"
-                            android:layout_marginLeft="10dp"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="10 kg"
-                            android:layout_marginLeft="10dp"
-                            android:layout_width="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content" />
-
-
-
-                        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
-                            android:id="@+id/mybutton"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_centerVertical="true"
-                            android:layout_width="130dp"
-                            android:layout_marginBottom="20dp"
-                            app:backGroundColor="@color/text_color"
-                            android:layout_height="30dp">
-
-                        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="150dp"
-                        android:gravity="center"
-                        android:background="#FF9331"
-                        android:layout_marginTop="280dp"
-                        android:layout_height="30dp">
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="10dp"
-                            android:background="@drawable/navimg">
-                        </ImageView>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rs 254"
-                            android:textSize="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="bold" />
-                        <ImageView
-                            android:id="@+id/lockIMG"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginLeft="40dp"
-                            android:background="@drawable/ic_lock">
-                        </ImageView>
-                        <ImageView
-                            android:id="@+id/IMG"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/ic_chevron_right">
-                        </ImageView>
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/card"
-                android:layout_width="match_parent"
-                android:layout_height="400dp">
-
-                <TextView
-                    android:text="@string/select"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="20dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-                <android.support.v7.widget.CardView
-                    android:layout_marginTop="20dp"
-                    android:id="@+id/cardview1"
-                    android:layout_gravity="center"
-                    android:layout_width="150dp"
-                    android:elevation="10sp"
-                    android:background="@drawable/shadow"
-                    android:layout_height="300dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:text="12 months"
-                            android:textColor="@color/card"
-                            android:textStyle="normal"
-                            android:textSize="16dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
-
-
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Rs 259"
-                            android:textSize="20dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:text="Rs 1998"
-                            android:textSize="16dp"
-                            android:layout_gravity="center"
-                            android:textColor="@color/member"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
-
-                        <TextView
-                            android:text="Free Eros Now"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-                        <TextView
-                            android:text="Subscription"
-                            android:textColor="@color/colorBlack"
-                            android:textStyle="normal"
-                            android:textSize="14dp"
-                            android:layout_gravity="center"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-
-                        <TextView
-                            android:text="View"
-                            android:textColor="@color/heading"
-                            android:layout_width="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content" />
-
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1sp"
-                            android:background="@color/nav_welcolor" />
-
-
-                        <Button
-                            android:text="Select"
-                            android:textColor="@color/white"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:background="@color/heading"
-                            android:layout_width="140dp"
-                            android:layout_height="40dp" />
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/cards"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:text="@string/selects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/asked_question"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:text="Frequently Asked Questions"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:background="@drawable/ic_navigate_next"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+        </LinearLayout>
+        </LinearLayout>
+        </ScrollView>
+        </LinearLayout>

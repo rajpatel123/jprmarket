@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity
 */
         // Icon =findViewById(R.id.action_addcart);
 
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SeeAllActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -283,9 +291,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-
-    public void onResume() {
-        super.onResume();
-
-    }
+    public void onResume()  {
+                             super.onResume();
+                            }
 }

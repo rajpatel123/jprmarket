@@ -1,4 +1,4 @@
-package com.app.jpr.market;
+package com.app.jpr.market.adapter;
 
 import android.content.Intent;
 import android.os.Bundle;
