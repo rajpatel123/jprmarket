@@ -10,9 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.models.SubcategoryResponse;
-import com.app.jpr.market.models.dashboard.BestSelling;
-import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subCategory.SubCategory;
 import com.squareup.picasso.Picasso;
 
@@ -20,6 +17,8 @@ import java.util.List;
 
 public class SubItemListAdapter extends RecyclerView.Adapter<SubItemListAdapter.MyViewHolder> {
     private List<SubCategory> SubItemList;
+
+    private SellingListInterface sellingListInterface;
     Context context;
     public SubItemListAdapter(Context context) {
         this.context = context;
@@ -43,14 +42,30 @@ public class SubItemListAdapter extends RecyclerView.Adapter<SubItemListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull SubItemListAdapter.MyViewHolder ViewHolder, int position) {
-        SubCategory subitems = SubItemList.get(position);
+        final SubCategory subitems = SubItemList.get(position);
         ViewHolder.subcattitle.setText(subitems.getSubTitle());
         Picasso.with(context).load(subitems.getSubImage())
                 .error(R.drawable.veg).into(ViewHolder.subcatimage);
 
         ViewHolder.subcatdiscount.setText(subitems.getDTitle());
-       
+
+        ViewHolder.subcatimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (sellingListInterface != null) {
+                    sellingListInterface.sellinglistitem(subitems.getSubId());
+                }
+
+            }
+        });
+
     }
+    public void setSellingListInterface(SellingListInterface sellingListInterface) {
+
+        this.sellingListInterface = sellingListInterface;
+    }
+       
+
 
     @Override
 
@@ -71,4 +86,8 @@ public class SubItemListAdapter extends RecyclerView.Adapter<SubItemListAdapter.
             subcattitle = itemView.findViewById(R.id.subcat_itemname);
         }
     }
+    public interface SellingListInterface {
+        public void sellinglistitem(String id);
+    }
 }
+

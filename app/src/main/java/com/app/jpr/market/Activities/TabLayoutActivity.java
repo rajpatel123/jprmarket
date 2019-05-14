@@ -25,7 +25,10 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
     ViewPager viewPager;
     TabLayout tabLayout;
     private String sub_cat_id;
-    private  final String TAG = TabLayoutActivity.class.getSimpleName();
+    private final String TAG = TabLayoutActivity.class.getSimpleName();
+
+    public String c_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +58,7 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
             @Override
             public void onResponse(Call<SubChildCatResponse> call, Response<SubChildCatResponse> response) {
                 Utils.dismissProgressDialog();
-                if (response!=null){
+                if (response != null) {
                     addPages(response.body());
                 }
 
@@ -64,21 +67,25 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
             @Override
             public void onFailure(Call<SubChildCatResponse> call, Throwable t) {
                 Utils.dismissProgressDialog();
-                Log.d(TAG," Error in sub cat child api"+t.getMessage());
+                Log.d(TAG, " Error in sub cat child api" + t.getMessage());
 
             }
         });
     }
 
-    private void addPages(SubChildCatResponse body) {
-        MyPagerAdapter pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
-        for (int i = 0; i <body.getSubChildCategories().size(); i++) {
-            SubChildCategory subChildCategory = body.getSubChildCategories().get(i);
 
-            pagerAdapter.addFragment(new Fragment1().init(this,subChildCategory.getCTitle()));
+    private void addPages(SubChildCatResponse body) {
+
+        MyPagerAdapter pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
+
+        for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
+
+            SubChildCategory subChildCategory = body.getSubChildCategories().get(i);
+            pagerAdapter.addFragment(new Fragment1().init(this, subChildCategory.getCTitle()));
+            viewPager.setAdapter(pagerAdapter);
         }
 
-        viewPager.setAdapter(pagerAdapter);
+
     }
 
     public void onTabSelected(TabLayout.Tab tab) {

@@ -4,10 +4,13 @@ package com.app.jpr.market.retrofit;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
-import com.app.jpr.market.models.SubcategoryResponse;
+import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
+import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.subCategory.SubCatResponse;
+import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
+import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
 
 import java.util.List;
 
@@ -39,6 +42,14 @@ public class RestClient {
   //subitem
     public static void SuballItems(SubCatRequest SubCatRequest, Callback<SubCatResponse> callback) {
         RetrofitClient.getClient().getAllSubItem(SubCatRequest).enqueue(callback);
+    }
+
+    public static void getAllSubCatChilds(SubChildCatRequest subChildCatRequest, Callback<SubChildCatResponse> callback) {
+        RetrofitClient.getClient().getAllSubChild(subChildCatRequest).enqueue(callback);
+    }
+
+    public static void tabAllSubChild(TabSubChildCatRequest tabSubChildCatRequest, Callback<TabViewSubChildCatResponse> callback) {
+        RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
     }
 }
 

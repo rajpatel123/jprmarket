@@ -1,5 +1,5 @@
 
-package com.example;
+package com.app.jpr.market.models.subchildcategoryresponse;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

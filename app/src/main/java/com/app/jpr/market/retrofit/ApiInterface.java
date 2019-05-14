@@ -1,26 +1,25 @@
 package com.app.jpr.market.retrofit;
 
 
-import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
-import com.app.jpr.market.models.SubcategoryResponse;
+import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
+import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.subCategory.SubCatResponse;
+import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
+import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
 
 import java.util.List;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
-import retrofit2.http.Query;
 
 public interface ApiInterface {
 
@@ -54,6 +53,14 @@ public interface ApiInterface {
 
     @POST("http://192.168.1.13/grofer_api/sub_catall")
     Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);
+
+    @POST("http://192.168.1.13/grofer_api/child_catall")
+    Call <SubChildCatResponse> getAllSubChild(@Body SubChildCatRequest subChildCatRequest);
+
+    @POST("http://192.168.1.13/grofer_api/fetch_by_cid")
+    Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
+
+
 
 
 

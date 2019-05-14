@@ -52,7 +52,6 @@ public class CategoryDashboardAdapter extends RecyclerView.Adapter<CategoryDashb
         ViewHolder.textView14.setText(alllItems.getCatDesc());
 
         ViewHolder.textView15.setText(alllItems.getDTitle());
-       // AttandancePrefs.putInt(context, "cat_id", Integer.parseInt(alllItems.getCatId()));
 
         ViewHolder.arrowicon.setOnClickListener(new View.OnClickListener() {
             @Override

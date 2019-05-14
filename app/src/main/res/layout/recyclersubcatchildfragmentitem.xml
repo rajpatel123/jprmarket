@@ -1,6 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
 
-</android.support.constraint.ConstraintLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10sp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+
+                android:layout_height="100dp"
+                android:background="@drawable/veg" />
+
+                <ImageView
+                    android:id="@+id/imageViewfragment"
+                    android:layout_width="12dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_height="15dp"
+
+                    android:background="@drawable/navimg">
+
+                </ImageView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/discountmoneysubchild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs259"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nonmembersubchild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="67 for non members"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"/>
+
+                    <TextView
+                        android:id="@+id/itemnamesubchild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kabuli channa"
+                        android:layout_gravity=""
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:id="@+id/ountitysubchild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1 kg"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="20dp"
+                       />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/totalitemmoneysubchild"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Rs330"
+                        android:textSize="14dp" />
+
+
+
+                <Button
+
+                    android:id="@+id/moneyOff_btnsubchild"
+                    android:layout_width="70dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+
+                    android:background="@color/design_default_color_primary"
+                    android:gravity="center"
+                    android:text=" 34% OFF"
+                    android:textColor="@color/white" />
+
+
+                    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                        android:id="@+id/addcartbuttonsubchild"
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+
+
+                        android:layout_marginTop="40dp"
+
+                        android:layout_marginBottom="20dp"
+                        app:backGroundColor="@color/text_color">
+
+                    </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

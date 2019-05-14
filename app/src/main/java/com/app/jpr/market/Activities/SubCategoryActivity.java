@@ -1,5 +1,6 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -80,13 +81,22 @@ public class SubCategoryActivity extends AppCompatActivity {
                                 recyclerViewSubItem.setLayoutManager(gridLayoutManager);
                                 recyclerViewSubItem.setAdapter(subItemListAdapter);
 
+                                subItemListAdapter.setSellingListInterface(new SubItemListAdapter.SellingListInterface() {
+                                    @Override
+                                    public void sellinglistitem(String id) {
+                                        Intent intent = new Intent(SubCategoryActivity.this, TabLayoutActivity.class);
+                                        intent.putExtra("id", id);
+                                        startActivity(intent);
+
+                                    }
+                                });
+
+
                             }
-
                         }
+
                     }
-
                 }
-
                 @Override
                 public void onFailure(Call<SubCatResponse> call, Throwable t) {
                     Toast.makeText(SubCategoryActivity.this, "Failed", Toast.LENGTH_SHORT).show();
