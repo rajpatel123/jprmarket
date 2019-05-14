@@ -1,6 +1,7 @@
 package com.app.jpr.market.retrofit;
 
 
+import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
@@ -39,6 +40,12 @@ public class RestClient {
     //Membership
     public static void allDataItemss(Callback<Membership> callback) {
         RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
+    }
+
+
+    //BestSellingSeeAll
+    public static void SeeAllss(Callback<SeeAllBestSelling> callback) {
+        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
     }
 
 }

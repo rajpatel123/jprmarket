@@ -143,17 +143,12 @@ public class PriceActivity extends AppCompatActivity {
                 public void onFailure(Call<Membership> call, Throwable t) {
                     Toast.makeText(PriceActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     Utils.dismissProgressDialog();
-
                 }
             });
-
-
         }
-
     }
 
-    public void onResume() {
-        super.onResume();
-
-    }
+    public void onResume()    {
+                               super.onResume();
+                              }
 }

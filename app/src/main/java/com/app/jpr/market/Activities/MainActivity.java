@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity
 */
         // Icon =findViewById(R.id.action_addcart);
 
+        seeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,SeeAllActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -214,7 +222,6 @@ public class MainActivity extends AppCompatActivity
 
                             BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
                             bestSellingAdapter.setdata(itemList);
-
                             Log.d("Main Activity", "Done");
                             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
                             Log.d("Main Activity", "Two");

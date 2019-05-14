@@ -2,6 +2,7 @@ package com.app.jpr.market.retrofit;
 
 
 import com.app.jpr.market.adapter.CourseListAdapter;
+import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.LoginResponse;
 import com.app.jpr.market.models.RegistrationResponse;
@@ -51,6 +52,10 @@ public interface ApiInterface {
 //Offer
     @POST("http://192.168.1.13/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
+
+    //BestSellingSeeAll
+    @POST("http://192.168.1.13/grofer_api/best_selling")
+    Call <SeeAllBestSelling> getSeeAlls();
 
 
 

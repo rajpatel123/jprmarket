@@ -88,6 +88,7 @@
 
             </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
         </LinearLayout>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="150dp"
