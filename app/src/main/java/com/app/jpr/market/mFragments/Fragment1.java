@@ -40,9 +40,19 @@ public class Fragment1 extends Fragment {
 
     TabLayoutActivity activity;
     String title;
+
     public Fragment1() {
 
     }
+
+    public static Fragment1 init(String title) {
+        Fragment1 fragment1 = new Fragment1();
+        Bundle args = new Bundle();
+        args.putString("title",title);
+        fragment1.setArguments(args);
+
+        return fragment1;
+          }
 
     @Override
     public void onAttach(Context context) {
@@ -52,14 +62,14 @@ public class Fragment1 extends Fragment {
 
     }
 
-    public Fragment init(TabLayoutActivity tabLayoutActivity, String cTitle) {
-        this.title = cTitle;
-        return new Fragment1();
+    public String getTitle(){
+        return title;
     }
 
-
-    public String getTitle() {
-        return title;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        title = getArguments() != null ? getArguments().getString("title") : title;
     }
 
     @Nullable
@@ -85,8 +95,6 @@ public class Fragment1 extends Fragment {
     }
 
     public void getAllProducts() {
-
-
 
 
         TabSubChildCatRequest tabSubChildCatRequest = new TabSubChildCatRequest();

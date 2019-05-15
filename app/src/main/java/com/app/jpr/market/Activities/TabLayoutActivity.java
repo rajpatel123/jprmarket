@@ -28,6 +28,7 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
     private final String TAG = TabLayoutActivity.class.getSimpleName();
 
     public String c_id;
+    private MyPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,14 +77,15 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
 
     private void addPages(SubChildCatResponse body) {
 
-        MyPagerAdapter pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
+         pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
 
         for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
 
             SubChildCategory subChildCategory = body.getSubChildCategories().get(i);
-            pagerAdapter.addFragment(new Fragment1().init(this, subChildCategory.getCTitle()));
-            viewPager.setAdapter(pagerAdapter);
+            pagerAdapter.addFragment(Fragment1.init(subChildCategory.getCTitle()));
+
         }
+        viewPager.setAdapter(pagerAdapter);
 
 
     }
@@ -101,7 +103,4 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
     }
 
 
-    public void TestUpload() {
-        int i = 1 + 1;
-    }
 }
