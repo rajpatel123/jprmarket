@@ -1,30 +1,18 @@
 package com.app.jpr.market.Activities;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.BestSellingAdapter;
-import com.app.jpr.market.adapter.BlockBusterAdapter;
-import com.app.jpr.market.adapter.CategoryDashboardAdapter;
-import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.adapter.SeeAllBestSelling.SeeAllBestSellingAdapter;
-import com.app.jpr.market.adapter.TopSaverAdapter;
 import com.app.jpr.market.models.BestSellingSeeAll.BestSellingNew;
 import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
-import com.app.jpr.market.models.CatagoryResponse;
-import com.app.jpr.market.models.dashboard.BestSelling;
-import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.retrofit.RestClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,33 +20,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-
-
-        import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-
-import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.CourseListAdapter;
-import com.app.jpr.market.models.CatagoryResponse;
-import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-        public class SeeAllActivity extends AppCompatActivity {
+public class SeeAllActivity extends AppCompatActivity {
             private List<BestSellingNew> itemList;
 
             RecyclerView recyclerView;
@@ -87,7 +51,7 @@ import retrofit2.Response;
                             if (response.body() != null) {
                                 if (response.body().getStatus()) {
                                     itemList = response.body().getBestSelling();
-                                
+
 
                                    SeeAllBestSellingAdapter seeAllBestSellingAdapter = new SeeAllBestSellingAdapter(getApplicationContext());
                                     seeAllBestSellingAdapter.setdata(itemList);

@@ -12,9 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.BestSellingAdapter;
 import com.app.jpr.market.models.BestSellingSeeAll.BestSellingNew;
-import com.app.jpr.market.models.dashboard.BestSelling;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
 

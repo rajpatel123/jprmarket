@@ -11,15 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.BestSellingAdapter;
-import com.app.jpr.market.adapter.BlockBusterAdapter;
-import com.app.jpr.market.adapter.CategoryDashboardAdapter;
 import com.app.jpr.market.adapter.OfferAdapter.PlanAdapter;
 import com.app.jpr.market.adapter.OfferAdapter.SavedBeyondGroceryAdapter;
 import com.app.jpr.market.adapter.OfferAdapter.SmartBachatClubAdapter;
-import com.app.jpr.market.adapter.TopSaverAdapter;
-import com.app.jpr.market.models.dashboard.BestSelling;
-import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.offer.Membership;
 import com.app.jpr.market.models.offer.Plan;
 import com.app.jpr.market.models.offer.SaveBeyondGrocery;

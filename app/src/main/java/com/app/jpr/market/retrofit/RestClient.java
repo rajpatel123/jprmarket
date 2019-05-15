@@ -39,11 +39,35 @@ public class RestClient {
         RetrofitClient.getClient().getCourse().enqueue(callback);
     }
 
+
+    //Offers
+    public static void allDataItemss(Callback<Membership> callback) {
+        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
+    }
+
+    //SeeAllBestSelling
+    public static void allDataItemsss(Callback<SeeAllBestSelling> callback) {
+        RetrofitClient.getClient().getAllMemberItemss().enqueue(callback);
+    }
+
+    //SeeAllBlockBuster
+    public static void allDataItemssss(Callback<SeeAllBlockBuster> callback) {
+        RetrofitClient.getClient().getAllMemberItemsss().enqueue(callback);
+    }
+
+    //SeeAllTopSavers
+    public static void allDataItemsssss(Callback<SeeAllTopSavers> callback) {
+        RetrofitClient.getClient().getAllMemberItemssss().enqueue(callback);
+    }
+
+
    //Dash board
     public static void allItems(Callback<CategoryResponse> callback) {
         RetrofitClient.getClient().getAllItem().enqueue(callback);
     }
-  //subitem
+
+
+    //subitem
     public static void SuballItems(SubCatRequest SubCatRequest, Callback<SubCatResponse> callback) {
         RetrofitClient.getClient().getAllSubItem(SubCatRequest).enqueue(callback);
     }
@@ -56,15 +80,7 @@ public class RestClient {
         RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
     }
 
-    //Membership
-    public static void allDataItemss(Callback<Membership> callback) {
-        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
-    }
 
-    //SeeAllBestSelling
-    public static void allDataItemsss(Callback<SeeAllBestSelling> callback) {
-        RetrofitClient.getClient().getAllMemberItemss().enqueue(callback);
-    }
 
 }
 

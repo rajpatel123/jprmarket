@@ -37,7 +37,6 @@ public interface ApiInterface {
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
-   //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<RegistrationResponse> register(@Part ("u_name")      RequestBody name,
                                          @Part("u_email")     RequestBody email,
                                          @Part ("u_mobile")   RequestBody mobile,
@@ -46,21 +45,33 @@ public interface ApiInterface {
 
 
     //Catagory
-
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
 
-    @POST("grofer_api/list")
-    Call <CategoryResponse> getAllItem();
 
-   //Offer
+    //Offers
     @POST("http://192.168.1.13/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
 
-    //See
+
+    //SeeAllBestSelling
     @POST("http://192.168.1.13/grofer_api/best_selling")
     Call <SeeAllBestSelling> getAllMemberItemss();
+
+    //SeeAllBlockBuster
+    @POST("http://192.168.1.13/grofer_api/blockbuster")
+    Call <SeeAllBlockBuster> getAllMemberItemsss();
+
+    //SeeAllTopSavers
+    @POST("http://192.168.1.13/grofer_api/top_saver")
+    Call <SeeAllTopSavers> getAllMemberItemssss();
+
+
+    //dashboard
+    @POST("grofer_api/list")
+    Call <CategoryResponse> getAllItem();
+
 
     @POST("http://192.168.1.13/grofer_api/sub_catall")
     Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);

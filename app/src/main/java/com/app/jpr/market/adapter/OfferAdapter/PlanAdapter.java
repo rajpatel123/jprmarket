@@ -11,10 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.BestSellingAdapter;
-import com.app.jpr.market.models.dashboard.BestSelling;
 import com.app.jpr.market.models.offer.Plan;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

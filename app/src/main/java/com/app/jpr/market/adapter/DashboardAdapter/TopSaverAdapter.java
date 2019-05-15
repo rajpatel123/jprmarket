@@ -1,4 +1,4 @@
-package com.app.jpr.market.adapter;
+package com.app.jpr.market.adapter.DashboardAdapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

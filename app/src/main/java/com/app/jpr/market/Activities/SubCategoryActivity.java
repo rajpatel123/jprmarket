@@ -6,28 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.BestSellingAdapter;
-import com.app.jpr.market.adapter.BlockBusterAdapter;
-import com.app.jpr.market.adapter.CategoryDashboardAdapter;
 import com.app.jpr.market.adapter.SubItemListAdapter;
-import com.app.jpr.market.adapter.TopSaverAdapter;
-import com.app.jpr.market.models.SubcategoryResponse;
-import com.app.jpr.market.models.dashboard.CategoryResponse;
-import com.app.jpr.market.models.dashboard.TodaySaver;
 import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 import com.app.jpr.market.retrofit.RestClient;
-import com.app.jpr.market.utils.AttandancePrefs;
 import com.app.jpr.market.utils.Utils;
 
-import java.util.List;
-
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

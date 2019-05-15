@@ -1,4 +1,4 @@
-package com.app.jpr.market.adapter;
+package com.app.jpr.market.adapter.DashboardAdapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -46,24 +46,39 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder ViewHolder, int position) {
-        final BestSelling allItems = groseryItemList.get(position);
-        ViewHolder.itemName.setText(allItems.getPTitle());
-        Picasso.with(context).load(allItems.getPImage())
+        final BestSelling bestSelling = groseryItemList.get(position);
+
+        ViewHolder.itemName.setText(bestSelling.getPTitle());
+        Picasso.with(context).load(bestSelling.getPImage())
                 .error(R.drawable.veg).into(ViewHolder.itemImage);
 
-        ViewHolder.itemWeight.setText(allItems.getPQuantity());
-        ViewHolder.totalMoney.setText(allItems.getPPrice());
-        ViewHolder.discountMoney.setText(allItems.getPDiscPrice());
+        ViewHolder.itemWeight.setText(bestSelling.getPQuantity());
+        ViewHolder.totalMoney.setText(bestSelling.getPPrice());
+        ViewHolder.discountMoney.setText(bestSelling.getPDiscPrice());
+        if (bestSelling.getPTitle().equalsIgnoreCase("See All")){
+            ViewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface != null) {                           ///
+                        sellingListInterface.sellinglistitemSeeAll(bestSelling.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
 
-          /// click Lisner
-        ViewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
-            @Override
-            public void onClick(View v) {                                    ///
-                if (sellingListInterface != null) {                           ///
-                    sellingListInterface.sellinglistitem(allItems.getPId());   ///
-                }                                                              ///
-            }                                                                  ///
-        });                                                                    ///
+        }else{
+            ViewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface != null) {                           ///
+                        sellingListInterface.sellinglistitem(bestSelling.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
+
+        }
+
+
+
 
 
     }
@@ -109,7 +124,9 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
 
 ///click Lisner
     public interface SellingListInterface {       ///
-        public void sellinglistitem(String id);   ///
+        public void sellinglistitem(String id);
+        public void sellinglistitemSeeAll(String id);
+        ///
     }                                             ///
 
 }
