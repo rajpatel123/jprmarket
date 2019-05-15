@@ -58,6 +58,10 @@ public interface ApiInterface {
     @POST("http://192.168.1.13/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
 
+    //See
+    @POST("http://192.168.1.13/grofer_api/best_selling")
+    Call <SeeAllBestSelling> getAllMemberItemss();
+
     @POST("http://192.168.1.13/grofer_api/sub_catall")
     Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);
 

@@ -56,9 +56,16 @@ public class RestClient {
         RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
     }
 
+    //Membership
     public static void allDataItemss(Callback<Membership> callback) {
         RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
     }
+
+    //SeeAllBestSelling
+    public static void allDataItemsss(Callback<SeeAllBestSelling> callback) {
+        RetrofitClient.getClient().getAllMemberItemss().enqueue(callback);
+    }
+
 }
 
 
