@@ -11,8 +11,17 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
+import com.app.jpr.market.adapter.BestSellingAdapter;
+import com.app.jpr.market.adapter.BlockBusterAdapter;
+import com.app.jpr.market.adapter.CategoryDashboardAdapter;
 import com.app.jpr.market.adapter.CourseListAdapter;
+import com.app.jpr.market.adapter.SeeAllBestSelling.SeeAllBestSellingAdapter;
+import com.app.jpr.market.adapter.TopSaverAdapter;
+import com.app.jpr.market.models.BestSellingSeeAll.BestSellingNew;
+import com.app.jpr.market.models.BestSellingSeeAll.SeeAllBestSelling;
 import com.app.jpr.market.models.CatagoryResponse;
+import com.app.jpr.market.models.dashboard.BestSelling;
+import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.retrofit.RestClient;
 
 import java.util.ArrayList;
@@ -50,109 +59,66 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
         public class SeeAllActivity extends AppCompatActivity {
-
+            private List<BestSellingNew> itemList;
 
             RecyclerView recyclerView;
-            private List<CatagoryResponse> categoryResponse = new ArrayList<>();
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_see_all);
-                recyclerView = findViewById(R.id.recycler);
-                getCourse();
+                recyclerView = findViewById(R.id.recycler_viewitem);
+                getAllItem();
 
-                ///show back button
-                if(getSupportActionBar()!=null){                                                                                  ///
-                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);                                                       ///
-                    getSupportActionBar().setDisplayShowHomeEnabled(true);                                                       ///
 
-                }
             }
 
-            private void getCourse() {
-
-                //show progress dialog
-               // AppUtils.showProgressDialog(com.app.jpr.market.Activities.SeeAllActivity.this);
-                Utils.showProgressDialog(SeeAllActivity.this,"Please wait...");
 
 
+            private void getAllItem() {
+                Utils.showProgressDialog(this, "Please wait...");
+                if (Utils.isInternetConnected(this)) {
+                    Utils.showProgressDialog(this, "Please wait...");
+                    RestClient.allDataItemsss(new Callback<SeeAllBestSelling>() {
+                        @Override
+                        public void onResponse(Call<SeeAllBestSelling> call, Response<SeeAllBestSelling> response) {
 
-                RestClient.getCourses(new Callback<List<CatagoryResponse>>() {
-                    @Override
-                    public void onResponse(Call<List<CatagoryResponse>> call, Response<List<CatagoryResponse>> response) {
+                            Utils.dismissProgressDialog();
+                            if (response.body() != null) {
+                                if (response.body().getStatus()) {
+                                    itemList = response.body().getBestSelling();
+                                
 
+                                   SeeAllBestSellingAdapter seeAllBestSellingAdapter = new SeeAllBestSellingAdapter(getApplicationContext());
+                                    seeAllBestSellingAdapter.setdata(itemList);
+                                    Log.d("Main Activity", "Done");
+                                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(SeeAllActivity.this,LinearLayoutManager.VERTICAL,false);
+                                    Log.d("Main Activity", "Two");
+                                    recyclerView.setLayoutManager(linearLayoutManager);
+                                    Log.d("Main Activity", "Three");
+                                    recyclerView.setAdapter(seeAllBestSellingAdapter);
+                                    Log.d("Main Activity", "Four");
 
-                        categoryResponse = response.body();
-                        if (response.isSuccessful()) {
-                            if (categoryResponse != null && categoryResponse.size() > 0) {
-                               Utils.dismissProgressDialog(); //dismiss progress dialog
-
-
-
-
-                                Log.d("Api Response :", "Got Success from Api");
-                                CourseListAdapter courseListAdapter = new CourseListAdapter(getApplicationContext());
-                                courseListAdapter.setData(categoryResponse);
-
-                                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                                recyclerView.setLayoutManager(mLayoutManager);
-                                recyclerView.setAdapter(courseListAdapter);
-
-                                Log.d("Api Response :", "Got Success from Api");
-
+                                }
                             }
-                            ;
-                        } else {
-                            Log.d("Api Response :", "Got Success from Api");
 
-
-                            Toast.makeText(com.app.jpr.market.Activities.SeeAllActivity.this, "No data", Toast.LENGTH_SHORT).show();
-                            // noInternet.setVisibility(View.VISIBLE);
-                            // noInternet.setText(getString(R.string.no_project));
                         }
-                    }
 
+                        @Override
+                        public void onFailure(Call<SeeAllBestSelling> call, Throwable t) {
+                            Toast.makeText(SeeAllActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                            Utils.dismissProgressDialog();
 
-                    @Override
-                    public void onFailure(Call<List<CatagoryResponse>> call, Throwable t) {
-                        Utils.dismissProgressDialog();
+                        }
+                    });
 
-                    }
-                });
-
-            }
-
-
-          /*  @Override  //add cart code
-            public boolean onCreateOptionsMenu(Menu menu) {                                             //
-                // Inflate the menu; this adds items to the action bar if it is present.               //
-                getMenuInflater().inflate(R.menu.main, menu);                                         //
-                return true;                                                                          //
-            }
-*/
-
-    /*        @Override
-            public boolean onOptionsItemSelected(MenuItem item) {                                                          //
-                int id = item.getItemId();                                                                                 //
-                switch (id) {                                                                                               //
-                    case R.id.action_settings:                                                                               //
-                        //Toast.makeText(getApplicationContext(), "Item 1 Selected", Toast.LENGTH_LONG).show();
-                        Intent intent= new Intent(com.app.jpr.market.Activities.CategoryActivity.this, AddCard.class);
-                        startActivity(intent);//
-                        return true;
 
                 }
 
-                ///show back button
-                if(item.getItemId()==android.R.id.home)                                                                     ///
-                {                                                                                                           ///
-                    finish();                                                                                               ///
-                    return super.onOptionsItemSelected(item);                                                               ///
-                }                                                                                                          ///
-                return true;
-            }*/
-
+            }
+                public void onResume()  {
+                super.onResume();
+            }
         }
 
 
