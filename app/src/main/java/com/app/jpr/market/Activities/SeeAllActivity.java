@@ -88,6 +88,9 @@ import retrofit2.Response;
                             if (categoryResponse != null && categoryResponse.size() > 0) {
                                Utils.dismissProgressDialog(); //dismiss progress dialog
 
+
+
+
                                 Log.d("Api Response :", "Got Success from Api");
                                 CourseListAdapter courseListAdapter = new CourseListAdapter(getApplicationContext());
                                 courseListAdapter.setData(categoryResponse);
@@ -102,6 +105,7 @@ import retrofit2.Response;
                             ;
                         } else {
                             Log.d("Api Response :", "Got Success from Api");
+
 
                             Toast.makeText(com.app.jpr.market.Activities.SeeAllActivity.this, "No data", Toast.LENGTH_SHORT).show();
                             // noInternet.setVisibility(View.VISIBLE);

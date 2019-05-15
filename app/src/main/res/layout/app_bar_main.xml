@@ -252,6 +252,7 @@
 
 
             <Button
+                android:id="@+id/Block_btn"
                 android:gravity="center"
                 android:text="@string/see_all"
                 android:layout_marginTop="10dp"
@@ -326,12 +327,12 @@
 
 
             <Button
+                android:id="@+id/Savers_btn"
                 android:gravity="center"
                 android:text="@string/see_all"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="100dp"
                 android:textColor="#F44336"
-
                 android:background="@drawable/roundbuttonss"
                 android:layout_width="80dp"
                 android:layout_height="30dp" />
