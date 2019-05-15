@@ -10,6 +10,7 @@ import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
 import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
 import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
+import com.app.jpr.market.models.offer.Membership;
 import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
@@ -53,6 +54,10 @@ public class RestClient {
 
     public static void tabAllSubChild(TabSubChildCatRequest tabSubChildCatRequest, Callback<TabViewSubChildCatResponse> callback) {
         RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
+    }
+
+    public static void allDataItemss(Callback<Membership> callback) {
+        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
     }
 }
 

@@ -56,7 +56,6 @@ public interface ApiInterface {
 
    //Offer
     @POST("http://192.168.1.13/grofer_api/bachat_club")
-
     Call <Membership> getAllMemberItems();
 
     @POST("http://192.168.1.13/grofer_api/sub_catall")

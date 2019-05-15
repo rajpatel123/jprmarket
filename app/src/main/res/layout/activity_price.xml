@@ -57,7 +57,7 @@
     </LinearLayout>
 
 <Button
-    android:text="@string/Ok"
+    android:text="ok"
     android:textColor="@color/white"
     android:background="@color/heading"
     android:layout_width="match_parent"
@@ -108,7 +108,7 @@
             android:textStyle="bold"
             android:textSize="18dp"
             android:textColor="@color/white"
-            android:text="@string/selects"
+            android:text="selects"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -133,7 +133,7 @@
             android:textStyle="bold"
             android:textSize="18dp"
             android:textColor="@color/member"
-            android:text="@string/save"
+            android:text="save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -162,7 +162,7 @@
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:textColor="@color/member"
-                android:text="@string/Smartss"
+                android:text="smart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -187,7 +187,7 @@
                 android:textStyle="bold"
                 android:textSize="18dp"
                 android:textColor="@color/white"
-                android:text="@string/selects"
+                android:text="Select"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
