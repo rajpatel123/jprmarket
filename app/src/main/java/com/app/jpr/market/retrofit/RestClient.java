@@ -7,8 +7,13 @@ import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.Login.LoginResponse;
 import com.app.jpr.market.models.Signup.RegistrationResponse;
 import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
+import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
+import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
-import com.app.jpr.market.models.offer.Membership;
+import com.app.jpr.market.models.subCategory.SubCatResponse;
+import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
+import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
+import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
 
 import java.util.List;
 
@@ -37,29 +42,18 @@ public class RestClient {
     public static void allItems(Callback<CategoryResponse> callback) {
         RetrofitClient.getClient().getAllItem().enqueue(callback);
     }
-
-
-    //Membership
-    public static void allDataItemss(Callback<Membership> callback) {
-        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
+  //subitem
+    public static void SuballItems(SubCatRequest SubCatRequest, Callback<SubCatResponse> callback) {
+        RetrofitClient.getClient().getAllSubItem(SubCatRequest).enqueue(callback);
     }
 
-
-    //BestSellingSeeAll
-    public static void SeeAllss(Callback<SeeAllBestSelling> callback) {
-        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
+    public static void getAllSubCatChilds(SubChildCatRequest subChildCatRequest, Callback<SubChildCatResponse> callback) {
+        RetrofitClient.getClient().getAllSubChild(subChildCatRequest).enqueue(callback);
     }
 
- /*   //BlockBusterSeeAll
-    public static void SeeAllss(Callback<SeeAllBlockBuster> callback) {
-        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
-    }*/
-
-  /*  //TopSaversSeeAll
-    public static void SeeAllss(Callback<SeeAllTopSavers> callback) {
-        RetrofitClient.getClient().getSeeAlls().enqueue(callback);
-    }*/
-
+    public static void tabAllSubChild(TabSubChildCatRequest tabSubChildCatRequest, Callback<TabViewSubChildCatResponse> callback) {
+        RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
+    }
 }
 
 

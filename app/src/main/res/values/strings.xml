@@ -82,15 +82,12 @@
     <string name="textt">Price for Club Members: Rs254</string>
 
     <string name="Earn">Earn 250 WinWin points</string>
-    <string name="Buy">Buy 6 month Bachat Club membership and get 250 WinWin points</string>
+    <string name="Buy">Buy 6 month Bachat Club membership </string>
     <string name="gets">and get 250 WinWin points</string>
-    <string name="Ok">OK, GOT IT</string>
+    <string name="ok">OK, GOT IT</string>
     <string name="select">Select a plan which suits your needs</string>
     <string name="happy">Happy Bachat Club Member</string>
     <string name="good">"Good discount through Bachat Club.we are saving approx. 600 on a purchase of around 4000 in a month"</string>
-    <string name="selects">Select a plan which suits you needs</string>
-    <string name="save">Save Beyond Grocery</string>
-    <string name="Smartss">Smart Bachat Club</string>
 
 
 </resources>

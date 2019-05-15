@@ -7,13 +7,20 @@ import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.Login.LoginResponse;
 import com.app.jpr.market.models.Signup.RegistrationResponse;
 import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
+import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
+import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.offer.Membership;
+import com.app.jpr.market.models.subCategory.SubCatResponse;
+import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
+import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
+import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
 
 import java.util.List;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -38,30 +45,35 @@ public interface ApiInterface {
                                          @Part("u_password")  RequestBody password);
 
 
-
     //Catagory
+
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
-    //Dashboard
+
     @POST("grofer_api/list")
     Call <CategoryResponse> getAllItem();
 
    //Offer
     @POST("http://192.168.1.13/grofer_api/bachat_club")
+
     Call <Membership> getAllMemberItems();
 
-    //BestSellingSeeAll
-    @POST("http://192.168.1.13/grofer_api/best_selling")
-    Call <SeeAllBestSelling> getSeeAlls();
+    @POST("http://192.168.1.13/grofer_api/sub_catall")
+    Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);
 
- /*   //BestSellingSeeAll
-    @POST("http://192.168.1.13/grofer_api/blockbuster")
-    Call <SeeAllBlockBuster> getSeeAlls();*/
+    @POST("http://192.168.1.13/grofer_api/child_catall")
+    Call <SubChildCatResponse> getAllSubChild(@Body SubChildCatRequest subChildCatRequest);
 
- /*   //BestSellingSeeAll
-    @POST("http://192.168.1.13/grofer_api/top_saver")
-    Call <SeeAllTopSavers> getSeeAlls();*/
+    @POST("http://192.168.1.13/grofer_api/fetch_by_cid")
+    Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
+
+
+
+
+
+
+
 
 
 

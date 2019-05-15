@@ -247,12 +247,12 @@ public class MainActivity extends AppCompatActivity
                             /// click listner
                             bestSellingAdapter.setSellingListInterface(new BestSellingAdapter.SellingListInterface() { ///
                                 @Override                                                                             ///
-                                   public void sellinglistitem(String id) {                                            ///
-                                    Intent intent=new Intent(MainActivity.this,ProductActivity.class);    ///
-                                    intent.putExtra("id",id);                                                      ///
-                                    startActivity(intent);                                                              ///
+                                   public void sellinglistitem(String id) {
+                                    Intent intent=new Intent(MainActivity.this,ProductActivity.class);
+                                    intent.putExtra("id",id);
+                                    startActivity(intent);
                                 }                                                                                        ///
-                            });                                                                                          ////
+                            });
 
 
                             BlockBusterAdapter blockBusterAdapter = new BlockBusterAdapter(getApplicationContext());
@@ -269,11 +269,24 @@ public class MainActivity extends AppCompatActivity
                             recyclerView2.setAdapter(blockBusterAdapter);
                             Log.d("Main Activity", "Four");
 
+
                             CategoryDashboardAdapter categoryDashboardAdapter = new CategoryDashboardAdapter(getApplicationContext());
                             categoryDashboardAdapter.setdata(itemList3);
                             LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false);
                             recyclerView3.setLayoutManager(linearLayoutManager3);
                             recyclerView3.setAdapter(categoryDashboardAdapter);
+
+
+                            categoryDashboardAdapter.setSellingListInterface(new CategoryDashboardAdapter.SellingListInterface() {
+                                @Override
+                                public void sellinglistitem(String id) {
+                                    Intent intent = new Intent(MainActivity.this,SubCategoryActivity.class);
+                                    intent.putExtra("id",id);
+                                    startActivity(intent);
+
+                                }
+                            });
+
 
                         }
                     }
@@ -296,4 +309,6 @@ public class MainActivity extends AppCompatActivity
     public void onResume()  {
                              super.onResume();
                             }
+
+
 }
