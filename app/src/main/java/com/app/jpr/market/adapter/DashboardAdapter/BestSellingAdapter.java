@@ -56,6 +56,7 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
         viewHolder.itemWeight.setText(bestSelling.getPQuantity());
         viewHolder.totalMoney.setText(bestSelling.getPPrice());
         viewHolder.discountMoney.setText(bestSelling.getPDiscPrice());
+        // seeall after all data from api
         if (bestSelling.getPTitle().equalsIgnoreCase("See All")) {
             viewHolder.seeall.setVisibility(View.VISIBLE);
             viewHolder.productDeatail.setVisibility(View.GONE);
