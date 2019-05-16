@@ -1,5 +1,6 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -24,10 +25,10 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
 
     ViewPager viewPager;
     TabLayout tabLayout;
-    private String sub_cat_id;
+    private String sub_cat_id,cat_id;
     private final String TAG = TabLayoutActivity.class.getSimpleName();
 
-    public String c_id;
+
     private MyPagerAdapter pagerAdapter;
 
     @Override
@@ -41,6 +42,7 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
         viewPager = findViewById(R.id.mViewpager_ID);
 
         getAllSubCategories(sub_cat_id);
+
         tabLayout = findViewById(R.id.mTab_ID);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(viewPager);
@@ -59,6 +61,7 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
             @Override
             public void onResponse(Call<SubChildCatResponse> call, Response<SubChildCatResponse> response) {
                 Utils.dismissProgressDialog();
+
                 if (response != null) {
                     addPages(response.body());
                 }
@@ -74,17 +77,25 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
         });
     }
 
-
+//view pager
     private void addPages(SubChildCatResponse body) {
 
          pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
 
-        for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
+         for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
 
             SubChildCategory subChildCategory = body.getSubChildCategories().get(i);
-            pagerAdapter.addFragment(Fragment1.init(subChildCategory.getCTitle()));
 
-        }
+            pagerAdapter.addFragment(Fragment1.init(subChildCategory.getCTitle()));
+             cat_id = subChildCategory.getCId();
+
+            
+
+
+
+         }
+        viewPager.setOffscreenPageLimit(body.getSubChildCategories().size());
+
         viewPager.setAdapter(pagerAdapter);
 
 

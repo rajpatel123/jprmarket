@@ -1,30 +1,21 @@
 package com.app.jpr.market.mFragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.app.jpr.market.Activities.MainActivity;
-import com.app.jpr.market.Activities.SubCategoryActivity;
 import com.app.jpr.market.Activities.TabLayoutActivity;
 import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.SubClassChildAdapter;
-import com.app.jpr.market.adapter.SubItemListAdapter;
 import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
 import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
-import com.app.jpr.market.models.subCategory.SubCatResponse;
-import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
-import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
 
@@ -46,13 +37,13 @@ public class Fragment1 extends Fragment {
     }
 
     public static Fragment1 init(String title) {
+
         Fragment1 fragment1 = new Fragment1();
         Bundle args = new Bundle();
-        args.putString("title",title);
+        args.putString("title", title);
         fragment1.setArguments(args);
-
         return fragment1;
-          }
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -62,7 +53,7 @@ public class Fragment1 extends Fragment {
 
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
@@ -119,7 +110,6 @@ public class Fragment1 extends Fragment {
                                 SubClassChildAdapter subClassChildAdapter = new SubClassChildAdapter(activity.getApplicationContext());
 
                                 subClassChildAdapter.setdata(tabcatitem.getProducts());
-
                                 LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                                 linearLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
                                 recyclerViewSubItem1.setLayoutManager(linearLayoutManager1);

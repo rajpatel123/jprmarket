@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.SeeAllTopSaversActivity"></activity>
+        <activity android:name=".Activities.TabLayoutActivity2"></activity>
+        <activity android:name=".Activities.SeeAllTopSaversActivity" />
         <activity android:name=".Activities.SeeAllBlockBusterActivity" />
         <activity android:name=".Activities.AskedQuestionActivity" />
         <activity android:name=".Activities.SubCategoryActivity" />
@@ -34,7 +35,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.TabLayoutActivity"></activity>
+        <activity android:name=".Activities.TabLayoutActivity" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/app_name"
