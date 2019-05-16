@@ -88,6 +88,12 @@
     <string name="select">Select a plan which suits your needs</string>
     <string name="happy">Happy Bachat Club Member</string>
     <string name="good">"Good discount through Bachat Club.we are saving approx. 600 on a purchase of around 4000 in a month"</string>
+    <!--<string name="Selling">Best Selling Items</string>
+    <string name="Selling">Block Buster Items Items</string>
+    <string name="Selling">Top Sa Items</string>-->
+
+
+
 
 
 </resources>
