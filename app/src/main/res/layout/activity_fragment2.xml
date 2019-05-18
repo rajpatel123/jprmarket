@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.app.jpr.market.Activities.SeeAllBlockBusterActivity">
-
-   <!-- <android.support.v7.widget.RecyclerView
-        android:id="@+id/fragmentrecycler1"
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.app.jpr.market.Activities.TabLayoutActivity2">
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.jpr.market.Activities.TabLayoutActivity2">
+
 
     <android.support.v7.widget.RecyclerView
 
@@ -21,18 +22,10 @@
         android:layout_height="wrap_content">
 
 
-    </android.support.v7.widget.RecyclerView>-->
-
-    <TextView
-        android:text="Kishan Gupta"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.design.widget.CoordinatorLayout>
 
-    </android.support.v7.widget.RecyclerView>
+
 
 </android.support.design.widget.CoordinatorLayout>

@@ -40,7 +40,8 @@ public interface ApiInterface {
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
-    Call<RegistrationResponse> register(@Part ("u_name")      RequestBody name,
+  
+
    //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<RegistrationResponse> register( @Part ("u_name")     RequestBody name,
                                          @Part("u_email")     RequestBody email,
@@ -50,6 +51,7 @@ public interface ApiInterface {
 
 
     //Catagory
+
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
@@ -61,8 +63,7 @@ public interface ApiInterface {
     @POST("http://vrok.in/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
 
-
-    //SeeAllBestSelling
+    //See
     @POST("http://vrok.in/grofer_api/best_selling")
     Call <SeeAllBestSelling> getAllMemberItemss();
 
@@ -75,9 +76,7 @@ public interface ApiInterface {
     Call <SeeAllTopSavers> getAllMemberItemssss();
 
 
-    //dashboard
-    @POST("grofer_api/list")
-    Call <CategoryResponse> getAllItem();
+
 
 
     @POST("http://vrok.in/grofer_api/sub_catall")

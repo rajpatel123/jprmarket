@@ -89,9 +89,7 @@ public class RestClient {
         RetrofitClient.getClient().tab2Products(tab2SubChildCatRequest).enqueue(callback);
     }
     //Membership
-    public static void allDataItemss(Callback<Membership> callback) {
-        RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
-    }
+//tablayout2api
 
 
 
