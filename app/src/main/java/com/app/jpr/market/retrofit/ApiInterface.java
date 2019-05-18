@@ -40,7 +40,7 @@ public interface ApiInterface {
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
-  
+
 
    //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<RegistrationResponse> register( @Part ("u_name")     RequestBody name,
