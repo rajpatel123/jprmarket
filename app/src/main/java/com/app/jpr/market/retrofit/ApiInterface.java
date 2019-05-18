@@ -32,17 +32,18 @@ public interface ApiInterface {
     //login
     @Multipart
     @POST("cat_api/test_api.php?action=login")
+
     //@Headers({"Content-Type: application/json", "Accept: application/json"})
-    Call<LoginResponse>  login(@Part("u_email") RequestBody u_email,
+    Call<LoginResponse>  login(@Part("u_email")    RequestBody u_email,
                                @Part("u_password") RequestBody u_password);
 
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
    //@Headers({"Content-Type: application/json", "Accept: application/json"})
-    Call<RegistrationResponse> register(@Part ("u_name")      RequestBody name,
+    Call<RegistrationResponse> register( @Part ("u_name")     RequestBody name,
                                          @Part("u_email")     RequestBody email,
-                                         @Part ("u_mobile")   RequestBody mobile,
+                                         @Part("u_mobile")    RequestBody mobile,
                                          @Part("u_country")   RequestBody country,
                                          @Part("u_password")  RequestBody password);
 
