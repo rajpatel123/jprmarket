@@ -21,6 +21,10 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
 
     private List<BlockbusterSaver> groseryItemList1;
     Context context;
+
+/*    //click lisner
+    private SellingListInterface sellingListInterface;///*/
+
     public BlockBusterAdapter(Context context) {
         this.context = context;
     }
@@ -50,7 +54,45 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
         ViewHolder.totalMoney1.setText(alItems.getPPrice());
         ViewHolder.discountMoney1.setText(alItems.getPDiscPrice());
 
+
+       /* // seeall after all data from api
+        if (bestSelling.getPTitle().equalsIgnoreCase("See All")) {
+            viewHolder.seeall.setVisibility(View.VISIBLE);
+            viewHolder.productDeatail.setVisibility(View.GONE);
+
+            viewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface != null) {                           ///
+                        sellingListInterface.sellinglistitemSeeAll(bestSelling.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
+
+        } else {
+
+            viewHolder.seeall.setVisibility(View.GONE);
+            viewHolder.productDeatail.setVisibility(View.VISIBLE);
+
+            viewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface != null) {                           ///
+                        sellingListInterface.sellinglistitem(bestSelling.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
+
+        }*/
+
     }
+
+
+  /*  ///click Lisner
+    public void setSellingListInterface(BestSellingAdapter.SellingListInterface sellingListInterface) {    ///
+        this.sellingListInterface = sellingListInterface;                                 ///
+    }                                                                                     ///
+*/
 
     @Override
     public int getItemCount() {
@@ -78,4 +120,13 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
 
         }
     }
+
+  /*  ///click Lisner
+    public interface SellingListInterface {       ///
+        public void sellinglistitem(String id);
+
+        public void sellinglistitemSeeAll(String id);
+
+    }*/
+
 }
