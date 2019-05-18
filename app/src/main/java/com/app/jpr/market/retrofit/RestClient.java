@@ -51,14 +51,19 @@ public class RestClient {
     }
 
     //SeeAllBlockBuster
-    public static void allDataItemssss(Callback<SeeAllBlockBuster> callback) {
-        RetrofitClient.getClient().getAllMemberItemsss().enqueue(callback);
+   /* public static void allBlockDataItems(  Callback<SeeAllBlockBuster> callback) {
+        RetrofitClient.getClient().getAllBlockBusterMemberItems().enqueue(callback);
     }
+*/
+  /*  public static void tabAllSubChild(TabSubChildCatRequest tabSubChildCatRequest, Callback<TabViewSubChildCatResponse> callback) {
+        RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
+    }*/
 
-    //SeeAllTopSavers
+
+   /* //SeeAllTopSavers
     public static void allDataItemsssss(Callback<SeeAllTopSavers> callback) {
         RetrofitClient.getClient().getAllMemberItemssss().enqueue(callback);
-    }
+    }*/
 
 
    //Dash board
