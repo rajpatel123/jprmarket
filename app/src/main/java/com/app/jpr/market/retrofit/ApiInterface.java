@@ -82,13 +82,4 @@ public interface ApiInterface {
     @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
 
-
-
-
-
-
-
-
-
-
 }
