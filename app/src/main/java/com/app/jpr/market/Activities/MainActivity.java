@@ -281,6 +281,26 @@ public class MainActivity extends AppCompatActivity
                             recyclerView1.setLayoutManager(linearLayoutManager1);
                             recyclerView1.setAdapter(blockBusterAdapter);
 
+                           /* /// click listner
+                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
+                                @Override
+                                ///
+                                public void sellinglistitem(String id) {
+                                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                                    intent.putExtra("id", id);
+                                    startActivity(intent);
+                                }                                                                                        ///
+
+                                @Override
+                                public void sellinglistitemSeeAll(String id) {
+                                    //open see all activity
+                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
+                                    intent.putExtra("id", id);
+                                    startActivity(intent);
+
+                                }
+                            });*/
+
 
                             TopSaverAdapter topSaverAdapter = new TopSaverAdapter(getApplicationContext());
                             topSaverAdapter.setdata(itemList2);
@@ -288,6 +308,26 @@ public class MainActivity extends AppCompatActivity
                             recyclerView2.setLayoutManager(linearLayoutManager2);
                             recyclerView2.setAdapter(blockBusterAdapter);
                             Log.d("Main Activity", "Four");
+
+                             /* /// click listner
+                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
+                                @Override
+                                ///
+                                public void sellinglistitem(String id) {
+                                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
+                                    intent.putExtra("id", id);
+                                    startActivity(intent);
+                                }                                                                                        ///
+
+                                @Override
+                                public void sellinglistitemSeeAll(String id) {
+                                    //open see all activity
+                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
+                                    intent.putExtra("id", id);
+                                    startActivity(intent);
+
+                                }
+                            });*/
 
 
                             CategoryDashboardAdapter categoryDashboardAdapter = new CategoryDashboardAdapter(getApplicationContext());
