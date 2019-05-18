@@ -51,20 +51,20 @@ public interface ApiInterface {
 
 
     //Offers
-    @POST("http://192.168.1.13/grofer_api/bachat_club")
+    @POST("http://vrok.in/grofer_api/bachat_club")
     Call <Membership> getAllMemberItems();
 
 
     //SeeAllBestSelling
-    @POST("http://192.168.1.13/grofer_api/best_selling")
+    @POST("http://vrok.in/grofer_api/best_selling")
     Call <SeeAllBestSelling> getAllMemberItemss();
 
     //SeeAllBlockBuster
-    @POST("http://192.168.1.13/grofer_api/blockbuster")
+    @POST("http://vrok.in/grofer_api/blockbuster")
     Call <SeeAllBlockBuster> getAllMemberItemsss();
 
     //SeeAllTopSavers
-    @POST("http://192.168.1.13/grofer_api/top_saver")
+    @POST("http://vrok.in/grofer_api/top_saver")
     Call <SeeAllTopSavers> getAllMemberItemssss();
 
 
@@ -73,13 +73,13 @@ public interface ApiInterface {
     Call <CategoryResponse> getAllItem();
 
 
-    @POST("http://192.168.1.13/grofer_api/sub_catall")
+    @POST("http://vrok.in/grofer_api/sub_catall")
     Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);
 
-    @POST("http://192.168.1.13/grofer_api/child_catall")
+    @POST("http://vrok.in/grofer_api/child_catall")
     Call <SubChildCatResponse> getAllSubChild(@Body SubChildCatRequest subChildCatRequest);
 
-    @POST("http://192.168.1.13/grofer_api/fetch_by_cid")
+    @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
 
 
