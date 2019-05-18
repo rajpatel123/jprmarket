@@ -43,7 +43,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
 
-//holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getCatId());
+        //holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getCatId());
         holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getDTitle());
         holder.second.setText(categoryResponse.get(holder.getAdapterPosition()).getCatTitle());
         holder.third.setText(categoryResponse.get(holder.getAdapterPosition()).getCatDesc());
