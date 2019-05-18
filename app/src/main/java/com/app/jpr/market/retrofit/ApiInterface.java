@@ -15,6 +15,8 @@ import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatRequest;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatResponse;
 
 import java.util.List;
 
@@ -70,6 +72,9 @@ public interface ApiInterface {
 
     @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
+
+    @POST("http://vrok.in/grofer_api/fetch_by_cid")
+    Call <Tab2SubChildCatResponse> tab2Products(@Body Tab2SubChildCatRequest tab2SubChildCatRequest);
 
 
 

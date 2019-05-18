@@ -66,8 +66,17 @@ public class MainActivity extends AppCompatActivity
 
         cardView = findViewById(R.id.cardview1);
         seeAll = findViewById(R.id.SeeAll_BTN);
-        block = findViewById(R.id.Block_btn);
+        block = findViewById(R.id.Block_btnnew);
         saver = findViewById(R.id.Savers_btn);
+
+        block.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  intent = new Intent(MainActivity.this,TabLayoutActivity2.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 

@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Activities.TabLayoutActivity2">
+    tools:context="com.app.jpr.market.Activities.TabLayoutActivity2">
 
-    <android.support.design.widget.TabLayout
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
 
-        android:id="@+id/tablayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <android.support.design.widget.TabLayout
 
-    </android.support.design.widget.TabLayout>
+            android:background="@color/view_color"
+            android:id="@+id/mTab2_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:tabMode="scrollable" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/show_fragments2" />
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/ViewPager2"
+        android:id="@+id/mViewpager_ID2"
+        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="80dp" />
 
-    </android.support.v4.view.ViewPager>
-
-
-</LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>

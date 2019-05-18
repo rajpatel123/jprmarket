@@ -15,6 +15,8 @@ import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatRequest;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatResponse;
 
 import java.util.List;
 
@@ -55,7 +57,10 @@ public class RestClient {
     public static void tabAllSubChild(TabSubChildCatRequest tabSubChildCatRequest, Callback<TabViewSubChildCatResponse> callback) {
         RetrofitClient.getClient().tabProducts(tabSubChildCatRequest).enqueue(callback);
     }
-
+//tablayout2api
+    public static void tab2AllSubChild(Tab2SubChildCatRequest tab2SubChildCatRequest, Callback<Tab2SubChildCatResponse> callback) {
+        RetrofitClient.getClient().tab2Products(tab2SubChildCatRequest).enqueue(callback);
+    }
     //Membership
     public static void allDataItemss(Callback<Membership> callback) {
         RetrofitClient.getClient().getAllMemberItems().enqueue(callback);
