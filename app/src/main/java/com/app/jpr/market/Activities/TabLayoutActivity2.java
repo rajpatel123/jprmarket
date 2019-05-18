@@ -1,13 +1,14 @@
 package com.app.jpr.market.Activities;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.app.jpr.market.R;
+import com.app.jpr.market.mFragment2.Fragment2;
+import com.app.jpr.market.mFragment2.MyPagerAdapter2;
 import com.app.jpr.market.mFragments.Fragment1;
 import com.app.jpr.market.mFragments.MyPagerAdapter;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
@@ -20,43 +21,42 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+public class TabLayoutActivity2 extends AppCompatActivity {
 
-public class TabLayoutActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
-
-    ViewPager viewPager;
+    ViewPager viewPager1;
     TabLayout tabLayout;
-    private String sub_cat_id,cat_id;
-    private final String TAG = TabLayoutActivity.class.getSimpleName();
+    private String sub_cat_id;
+    private final String TAG = TabLayoutActivity2.class.getSimpleName();
 
 
-    private MyPagerAdapter pagerAdapter;
+    private MyPagerAdapter2 mypagerAdapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tablayout);
+        setContentView(R.layout.activity_tab_layout2);
 
         if (getIntent().hasExtra("id")) {
             sub_cat_id = getIntent().getStringExtra("id");
         }
-        viewPager = findViewById(R.id.mViewpager_ID);
+        viewPager1 = findViewById(R.id.mViewpager_ID2);
 
-        getAllSubCategories(sub_cat_id);
+        getAllSubCategoriesNew(sub_cat_id);
 
-        tabLayout = findViewById(R.id.mTab_ID);
+        tabLayout = findViewById(R.id.mTab2_ID);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setOnTabSelectedListener(this);
+        tabLayout.setupWithViewPager(viewPager1);
+        tabLayout.setOnTabSelectedListener((TabLayout.BaseOnTabSelectedListener) this);
 
 
     }
 
-    private void getAllSubCategories(String sub_cat_id) {
+    private void getAllSubCategoriesNew(String sub_cat_id) {
 
         SubChildCatRequest subChildCatRequest = new SubChildCatRequest();
         subChildCatRequest.setSubId(sub_cat_id);
 
-        Utils.showProgressDialog(TabLayoutActivity.this, "Please wait...");
+        Utils.showProgressDialog(TabLayoutActivity2.this, "Please wait...");
         RestClient.getAllSubCatChilds(subChildCatRequest, new Callback<SubChildCatResponse>() {
             @Override
             public void onResponse(Call<SubChildCatResponse> call, Response<SubChildCatResponse> response) {
@@ -77,40 +77,32 @@ public class TabLayoutActivity extends AppCompatActivity implements TabLayout.On
         });
     }
 
-//view pager
+    //view pager
     private void addPages(SubChildCatResponse body) {
 
-         pagerAdapter = new MyPagerAdapter(this.getSupportFragmentManager());
+        mypagerAdapter2 = new MyPagerAdapter2(this.getSupportFragmentManager());
 
-         for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
+        for (int i = 0 ; i < body.getSubChildCategories().size(); i++) {
 
             SubChildCategory subChildCategory = body.getSubChildCategories().get(i);
 
-            pagerAdapter.addFragment(Fragment1.init(subChildCategory.getCTitle()));
-             cat_id = subChildCategory.getCId();
-
-            
+            mypagerAdapter2.addFragment(Fragment2.init(subChildCategory.getCTitle()));
 
 
 
-         }
-        viewPager.setOffscreenPageLimit(body.getSubChildCategories().size());
 
-        viewPager.setAdapter(pagerAdapter);
+
+
+        }
+        viewPager1.setOffscreenPageLimit(body.getSubChildCategories().size());
+
+        viewPager1.setAdapter(mypagerAdapter2);
 
 
     }
 
     public void onTabSelected(TabLayout.Tab tab) {
-        viewPager.setCurrentItem(tab.getPosition());
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
+        viewPager1.setCurrentItem(tab.getPosition());
     }
 
 

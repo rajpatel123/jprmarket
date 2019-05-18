@@ -1,4 +1,4 @@
-package com.app.jpr.market.mFragments;
+package com.app.jpr.market.mFragment2;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,10 +12,14 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.app.jpr.market.Activities.TabLayoutActivity;
+import com.app.jpr.market.Activities.TabLayoutActivity2;
 import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.SubClassChildAdapter;
+import com.app.jpr.market.adapter.Tablayout2DataAdapter;
 import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
 import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatRequest;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatResponse;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
 
@@ -24,31 +28,31 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Fragment1 extends Fragment {
-    private String catid;
-    private TabViewSubChildCatResponse tabcatitem;
-    private RecyclerView recyclerViewSubItem1;
+public class Fragment2 extends Fragment {
+    private String  catid;
+    private Tab2SubChildCatResponse tabcatitem3;
+    private RecyclerView recyclerViewSubItem2;
 
-    TabLayoutActivity activity;
+    TabLayoutActivity2 activity;
     String title;
 
-    public Fragment1() {
+    public Fragment2() {
 
     }
 
-    public static Fragment1 init(String title) {
+    public static Fragment2 init(String title) {
 
-        Fragment1 fragment1 = new Fragment1();
+        Fragment2 fragment2 = new Fragment2();
         Bundle args = new Bundle();
         args.putString("title", title);
-        fragment1.setArguments(args);
-        return fragment1;
+        fragment2.setArguments(args);
+        return fragment2;
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        activity = (TabLayoutActivity) getActivity();
+        activity = (TabLayoutActivity2) getActivity();
 
 
     }
@@ -68,14 +72,14 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_fragment1, container, false);
-        recyclerViewSubItem1 = rootView.findViewById(R.id.fragmentrecycler);
+        recyclerViewSubItem2 = rootView.findViewById(R.id.fragment2recycler);
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getAllProducts();
+        getAllProducts2();
 
     }
 
@@ -85,35 +89,35 @@ public class Fragment1 extends Fragment {
         return title;
     }
 
-    public void getAllProducts() {
+    public void getAllProducts2() {
 
 
-        TabSubChildCatRequest tabSubChildCatRequest = new TabSubChildCatRequest();
+        Tab2SubChildCatRequest tab2SubChildCatRequest = new Tab2SubChildCatRequest();
 
-        tabSubChildCatRequest.setCId("2");
+        tab2SubChildCatRequest.setCId("2");
 
         Utils.showProgressDialog(getContext(), "Please wait...");
         if (Utils.isInternetConnected(getContext())) {
             Utils.showProgressDialog(getContext(), "Please wait...");
-            RestClient.tabAllSubChild(tabSubChildCatRequest, new Callback<TabViewSubChildCatResponse>() {
+            RestClient.tab2AllSubChild(tab2SubChildCatRequest, new Callback<Tab2SubChildCatResponse>() {
                 @Override
-                public void onResponse(Call<TabViewSubChildCatResponse> call, Response<TabViewSubChildCatResponse> response) {
+                public void onResponse(Call<Tab2SubChildCatResponse> call, Response<Tab2SubChildCatResponse> response) {
 
                     Utils.dismissProgressDialog();
                     if (response.body() != null) {
 
                         if (response.body().getStatus()) {
 
-                            tabcatitem = response.body();
-                            if (tabcatitem != null && tabcatitem.getProducts().size() > 0) {
+                            tabcatitem3 = response.body();
+                            if (tabcatitem3 != null && tabcatitem3.getProducts().size() > 0) {
 
-                                SubClassChildAdapter subClassChildAdapter = new SubClassChildAdapter(activity.getApplicationContext());
+                                Tablayout2DataAdapter tablayout2DataAdapter = new Tablayout2DataAdapter(activity.getApplicationContext());
 
-                                subClassChildAdapter.setdata(tabcatitem.getProducts());
+                                tablayout2DataAdapter.setdata(tabcatitem3.getProducts());
                                 LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                                 linearLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
-                                recyclerViewSubItem1.setLayoutManager(linearLayoutManager1);
-                                recyclerViewSubItem1.setAdapter(subClassChildAdapter);
+                                recyclerViewSubItem2.setLayoutManager(linearLayoutManager1);
+                                recyclerViewSubItem2.setAdapter(tablayout2DataAdapter);
 
                             }
                         }
@@ -122,7 +126,7 @@ public class Fragment1 extends Fragment {
                 }
 
                 @Override
-                public void onFailure(Call<TabViewSubChildCatResponse> call, Throwable t) {
+                public void onFailure(Call<Tab2SubChildCatResponse> call, Throwable t) {
                     Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                     Utils.dismissProgressDialog();
 

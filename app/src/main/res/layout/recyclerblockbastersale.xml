@@ -79,7 +79,7 @@
 
                             android:layout_width="15dp"
                             android:layout_marginRight="15dp"
-                            android:visibility="gone"
+
                             android:layout_height="12dp"
 
                             android:background="@drawable/navimg"></ImageView>

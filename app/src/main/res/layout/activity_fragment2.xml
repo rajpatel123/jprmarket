@@ -7,6 +7,16 @@
 
    <!-- <android.support.v7.widget.RecyclerView
         android:id="@+id/fragmentrecycler1"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.jpr.market.Activities.TabLayoutActivity2">
+
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/fragment2recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -20,5 +30,9 @@
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+</android.support.design.widget.CoordinatorLayout>
+
+    </android.support.v7.widget.RecyclerView>
 
 </android.support.design.widget.CoordinatorLayout>

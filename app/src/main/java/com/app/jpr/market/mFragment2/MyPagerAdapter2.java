@@ -1,4 +1,4 @@
-package com.app.jpr.market.mFragments;
+package com.app.jpr.market.mFragment2;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,11 +7,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 
-public class MyPagerAdapter extends FragmentPagerAdapter {
+public class MyPagerAdapter2 extends FragmentPagerAdapter {
 
     ArrayList <Fragment> fragments = new ArrayList<>();
 
-    public MyPagerAdapter(FragmentManager fm) {
+    public MyPagerAdapter2(FragmentManager fm) {
         super(fm);
     }
 
@@ -36,6 +36,6 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
 
-        return ((Fragment1)fragments.get(position)).getTitle();
+        return ((Fragment2)fragments.get(position)).getTitle();
     }
 }

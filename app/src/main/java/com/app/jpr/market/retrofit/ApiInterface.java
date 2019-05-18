@@ -15,6 +15,8 @@ import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatRequest;
+import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatResponse;
 
 import java.util.List;
 
@@ -30,16 +32,19 @@ public interface ApiInterface {
     //login
     @Multipart
     @POST("cat_api/test_api.php?action=login")
+
     //@Headers({"Content-Type: application/json", "Accept: application/json"})
-    Call<LoginResponse>  login(@Part("u_email") RequestBody u_email,
+    Call<LoginResponse>  login(@Part("u_email")    RequestBody u_email,
                                @Part("u_password") RequestBody u_password);
 
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
     Call<RegistrationResponse> register(@Part ("u_name")      RequestBody name,
+   //@Headers({"Content-Type: application/json", "Accept: application/json"})
+    Call<RegistrationResponse> register( @Part ("u_name")     RequestBody name,
                                          @Part("u_email")     RequestBody email,
-                                         @Part ("u_mobile")   RequestBody mobile,
+                                         @Part("u_mobile")    RequestBody mobile,
                                          @Part("u_country")   RequestBody country,
                                          @Part("u_password")  RequestBody password);
 
@@ -49,6 +54,8 @@ public interface ApiInterface {
     Call <List<CatagoryResponse>> getCourse();
 
 
+    @POST("grofer_api/list")
+    Call <CategoryResponse> getAllItem();
 
     //Offers
     @POST("http://vrok.in/grofer_api/bachat_club")
@@ -81,5 +88,17 @@ public interface ApiInterface {
 
     @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
+
+    @POST("http://vrok.in/grofer_api/fetch_by_cid")
+    Call <Tab2SubChildCatResponse> tab2Products(@Body Tab2SubChildCatRequest tab2SubChildCatRequest);
+
+
+
+
+
+
+
+
+
 
 }
