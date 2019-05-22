@@ -6,17 +6,23 @@ import com.app.jpr.market.models.BlockBusterSeeAll.SeeAllBlockBuster;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.Login.LoginResponse;
 import com.app.jpr.market.models.Signup.RegistrationResponse;
+import com.app.jpr.market.models.TabSubChildCatRequestNew;
+import com.app.jpr.market.models.TabSubChildCatResponseNew;
 import com.app.jpr.market.models.TopSaversSeeAll.SeeAllTopSavers;
-import com.app.jpr.market.models.TabViewSubList.TabSubChildCatRequest;
-import com.app.jpr.market.models.TabViewSubList.TabViewSubChildCatResponse;
+import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragment;
+import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragmentRequest;
+import com.app.jpr.market.models.tablayoutresponse.TabSubChildCatRequest;
+import com.app.jpr.market.models.tablayoutresponse.TabViewSubChildCatResponse;
 import com.app.jpr.market.models.dashboard.CategoryResponse;
 import com.app.jpr.market.models.offer.Membership;
 import com.app.jpr.market.models.subCategory.SubCatResponse;
 import com.app.jpr.market.models.subcatchildrequest.SubChildCatRequest;
 import com.app.jpr.market.models.subcategoryrequest.SubCatRequest;
 import com.app.jpr.market.models.subchildcategoryresponse.SubChildCatResponse;
-import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatRequest;
-import com.app.jpr.market.models.tablayout2response.Tab2SubChildCatResponse;
+import com.app.jpr.market.models.tablayout3response.Tab2SubChildCatRequest;
+import com.app.jpr.market.models.tablayout3response.Tab2SubChildCatResponse;
+import com.app.jpr.market.models.tablayouttitle.TabLayoutTitleRequest;
+import com.app.jpr.market.models.tablayouttitle.TabLayoutTitleResponse;
 
 import java.util.List;
 
@@ -29,10 +35,18 @@ import retrofit2.http.Part;
 
 public interface ApiInterface {
 
+
+//show tablayout
+    @POST("http://vrok.in/grofer_api/child_catall")
+    Call<TabSubChildCatResponseNew> getAllSubChildNew(@Body TabSubChildCatRequestNew tabSubChildCatRequestNew);
+//show fragment
+    @POST("http://vrok.in/grofer_api/fetch_by_cid")
+    Call<TabSubChildFragment> getAllSubChildFragment(@Body TabSubChildFragmentRequest tabSubChildFragmentRequest);
+
+
     //login
     @Multipart
     @POST("cat_api/test_api.php?action=login")
-
     //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<LoginResponse>  login(@Part("u_email")    RequestBody u_email,
                                @Part("u_password") RequestBody u_password);
@@ -40,9 +54,7 @@ public interface ApiInterface {
     //Registration
     @Multipart
     @POST("cat_api/test_api.php?action=reg")
-
-
-   //@Headers({"Content-Type: application/json", "Accept: application/json"})
+    //@Headers({"Content-Type: application/json", "Accept: application/json"})
     Call<RegistrationResponse> register( @Part ("u_name")     RequestBody name,
                                          @Part("u_email")     RequestBody email,
                                          @Part("u_mobile")    RequestBody mobile,
@@ -51,7 +63,6 @@ public interface ApiInterface {
 
 
     //Catagory
-
     @POST("cat_api/test_api.php?action=fetch_all")
     Call <List<CatagoryResponse>> getCourse();
 
@@ -82,14 +93,23 @@ public interface ApiInterface {
     @POST("http://vrok.in/grofer_api/sub_catall")
     Call <SubCatResponse> getAllSubItem(@Body SubCatRequest subCatRequest);
 
+
+    //tablayout
     @POST("http://vrok.in/grofer_api/child_catall")
     Call <SubChildCatResponse> getAllSubChild(@Body SubChildCatRequest subChildCatRequest);
+
+
 
     @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <TabViewSubChildCatResponse> tabProducts(@Body TabSubChildCatRequest tabSubChildCatRequest);
 
+
     @POST("http://vrok.in/grofer_api/fetch_by_cid")
     Call <Tab2SubChildCatResponse> tab2Products(@Body Tab2SubChildCatRequest tab2SubChildCatRequest);
+
+
+    @POST("http://vrok.in/grofer_api/sub_catall")
+    Call <TabLayoutTitleResponse> getAlltitleSubItem(@Body TabLayoutTitleRequest tabLayoutTitleRequest);
 
 
 

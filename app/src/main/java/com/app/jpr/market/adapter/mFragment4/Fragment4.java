@@ -1,4 +1,4 @@
-package com.app.jpr.market.mFragments;
+package com.app.jpr.market.adapter.mFragment4;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,35 +11,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.app.jpr.market.Activities.TabLayoutActivity;
+import com.app.jpr.market.Activities.TabLayoutActivity4;
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.SubClassChildAdapter;
-import com.app.jpr.market.mFragment3.Fragment3;
-import com.app.jpr.market.models.tablayoutresponse.TabSubChildCatRequest;
-import com.app.jpr.market.models.tablayoutresponse.TabViewSubChildCatResponse;
+import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragment;
+import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragmentRequest;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Fragment1 extends Fragment {
+public class Fragment4 extends Fragment {
     private String catid;
-    private TabViewSubChildCatResponse tabcatitem;
+    private TabSubChildFragment tabcatitem;
     private RecyclerView recyclerViewSubItem1;
 
-    TabLayoutActivity activity;
+    TabLayoutActivity4 activity;
     String title;
 
-    public Fragment1() {
+    public Fragment4() {
 
     }
 
-    public static Fragment1 init(String title) {
+    public static Fragment4 init(String title) {
 
-        Fragment1 fragment1 = new Fragment1();
+        Fragment4 fragment1 = new Fragment4();
         Bundle args = new Bundle();
         args.putString("title", title);
         fragment1.setArguments(args);
@@ -49,7 +48,7 @@ public class Fragment1 extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        activity = (TabLayoutActivity) getActivity();
+        activity = (TabLayoutActivity4) getActivity();
 
 
     }
@@ -68,15 +67,15 @@ public class Fragment1 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_fragment1, container, false);
-        recyclerViewSubItem1 = rootView.findViewById(R.id.fragmentrecycler);
+        View rootView = inflater.inflate(R.layout.activity_fragment4, container, false);
+        recyclerViewSubItem1 = rootView.findViewById(R.id.fragmentrecycler4);
         return rootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        getAllProducts();
+getAllProducts();
 
     }
 
@@ -85,20 +84,19 @@ public class Fragment1 extends Fragment {
 
         return title;
     }
-
     public void getAllProducts() {
 
 
-        TabSubChildCatRequest tabSubChildCatRequest = new TabSubChildCatRequest();
+        TabSubChildFragmentRequest tabSubChildCatRequest = new TabSubChildFragmentRequest();
 
         tabSubChildCatRequest.setCId("2");
 
         Utils.showProgressDialog(getContext(), "Please wait...");
         if (Utils.isInternetConnected(getContext())) {
             Utils.showProgressDialog(getContext(), "Please wait...");
-            RestClient.tabAllSubChild(tabSubChildCatRequest, new Callback<TabViewSubChildCatResponse>() {
+            RestClient.tabAllSubChildNewFragment(tabSubChildCatRequest, new Callback<TabSubChildFragment>() {
                 @Override
-                public void onResponse(Call<TabViewSubChildCatResponse> call, Response<TabViewSubChildCatResponse> response) {
+                public void onResponse(Call<TabSubChildFragment> call, Response<TabSubChildFragment> response) {
 
                     Utils.dismissProgressDialog();
                     if (response.body() != null) {
@@ -108,7 +106,7 @@ public class Fragment1 extends Fragment {
                             tabcatitem = response.body();
                             if (tabcatitem != null && tabcatitem.getProducts().size() > 0) {
 
-                                SubClassChildAdapter subClassChildAdapter = new SubClassChildAdapter(activity.getApplicationContext());
+                                SubClassChildAdapter4 subClassChildAdapter = new SubClassChildAdapter4(activity.getApplicationContext());
 
                                 subClassChildAdapter.setdata(tabcatitem.getProducts());
                                 LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
@@ -123,7 +121,7 @@ public class Fragment1 extends Fragment {
                 }
 
                 @Override
-                public void onFailure(Call<TabViewSubChildCatResponse> call, Throwable t) {
+                public void onFailure(Call<TabSubChildFragment> call, Throwable t) {
                     Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                     Utils.dismissProgressDialog();
 
@@ -133,3 +131,4 @@ public class Fragment1 extends Fragment {
         }
     }
 }
+

@@ -125,7 +125,7 @@
                     android:textColor="@color/white" />
 
 
-                <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+          <!--      <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
                     android:id="@+id/addcartbuttonsubchild"
                     android:layout_width="100dp"
                     android:layout_height="20dp"
@@ -138,7 +138,7 @@
                     android:layout_marginBottom="20dp"
                     app:backGroundColor="@color/text_color">
 
-                </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+                </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>-->
 
 
             </LinearLayout>

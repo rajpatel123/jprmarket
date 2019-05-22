@@ -71,10 +71,11 @@ public class MainActivity extends AppCompatActivity
         block = findViewById(R.id.Block_btnnew);
         saver = findViewById(R.id.Savers_btn);
 
+
         block.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent  intent = new Intent(MainActivity.this,TabLayoutActivity2.class);
+                Intent  intent = new Intent(MainActivity.this,TabLayoutActivity3.class);
                 startActivity(intent);
 
             }
@@ -104,18 +105,18 @@ public class MainActivity extends AppCompatActivity
         block.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SeeAllBlockBusterActivity.class);
+                Intent intent = new Intent(MainActivity.this, TabLayoutActivity3.class);
                 startActivity(intent);
             }
         });
 
-        saver.setOnClickListener(new View.OnClickListener() {
+    /*    saver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SeeAllTopSaversActivity.class);
+                Intent intent = new Intent(MainActivity.this, TabLayoutActivity4.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
         button.setOnClickListener(new View.OnClickListener() {

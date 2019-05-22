@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.app.jpr.market.Activities.TabLayoutActivity3">
+    tools:context=".Activities.TabLayoutActivity4">
 
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        >
 
         <android.support.design.widget.TabLayout
-
-            android:background="@color/view_color"
-            android:id="@+id/mTab2_ID"
+            android:background="@color/colorAccent"
+            android:id="@+id/mTab_ID2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -21,13 +21,14 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/show_fragments2" />
+    <include layout="@layout/show_fragments4" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/mViewpager_ID2"
         android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="80dp" />
+        android:paddingBottom="80dp"
+        />
 
-    </android.support.design.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

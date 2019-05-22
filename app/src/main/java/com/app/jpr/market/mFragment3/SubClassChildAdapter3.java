@@ -1,4 +1,4 @@
-package com.app.jpr.market.adapter;
+package com.app.jpr.market.mFragment3;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,21 +11,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.models.tablayoutresponse.Product;
+import com.app.jpr.market.models.fragmentdatamodel.Product;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SubClassChildAdapter  extends RecyclerView.Adapter<SubClassChildAdapter.MyViewHolder> {
+public class SubClassChildAdapter3 extends RecyclerView.Adapter<SubClassChildAdapter3.MyViewHolder> {
 
     private List<Product> subChildItemList3;
 
-    private SubItemListAdapter.SellingListInterface sellingListInterface;
+
 
     Context context;
 
-    public SubClassChildAdapter(Context context) {
+    public SubClassChildAdapter3(Context context) {
         this.context = context;
     }
 
@@ -35,13 +35,13 @@ public class SubClassChildAdapter  extends RecyclerView.Adapter<SubClassChildAda
 
     @NonNull
     @Override
-    public SubClassChildAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public SubClassChildAdapter3.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.recyclersubcatchildfragmentitem, viewGroup, false);
 
 
-        return new SubClassChildAdapter.MyViewHolder(itemView);
+        return new SubClassChildAdapter3.MyViewHolder(itemView);
     }
 
     public void setdata(List<Product> itemList) {
@@ -50,12 +50,12 @@ public class SubClassChildAdapter  extends RecyclerView.Adapter<SubClassChildAda
 
 
     @Override
-    public void onBindViewHolder(@NonNull SubClassChildAdapter.MyViewHolder ViewHolder, int position) {
+    public void onBindViewHolder(@NonNull SubClassChildAdapter3.MyViewHolder ViewHolder, int position) {
 
        final Product subItems = subChildItemList3.get(position);
         ViewHolder.subItemName.setText(subItems.getPTitle());
        Picasso.with(context).load(subItems.getPImage())
-                .error(R.drawable.veg).into(ViewHolder.subItemimage);
+                .error(R.drawable.ic_launcher_background).into(ViewHolder.subItemimage);
 
         ViewHolder.subItemQuantity.setText(subItems.getPQuantity());
 
