@@ -11,17 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
+import com.app.jpr.market.mFragment3.SubClassChildAdapter3;
 import com.app.jpr.market.models.fragmentdatamodel.Product;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SubClassChildAdapter4 extends RecyclerView.Adapter<SubClassChildAdapter4.MyViewHolder> {
+public class SubClassChildAdapter4 extends RecyclerView.Adapter<SubClassChildAdapter4.ViewHolder> {
 
-    private List<Product> subChildItemList3;
-
+    private List<Product> subChildItemList4;
 
 
 
@@ -33,57 +32,56 @@ public class SubClassChildAdapter4 extends RecyclerView.Adapter<SubClassChildAda
 
 
 
-
-
     @NonNull
     @Override
-    public SubClassChildAdapter4.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recyclersubcatchildfragmentitem, viewGroup, false);
+                .inflate(R.layout.recyclersubcatchildfragmentitem4, viewGroup, false);
 
 
-        return new SubClassChildAdapter4.MyViewHolder(itemView);
+        return new SubClassChildAdapter4.ViewHolder(itemView);
+
     }
 
     public void setdata(List<Product> itemList) {
-        this.subChildItemList3 = itemList;
+        this.subChildItemList4 = itemList;
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull SubClassChildAdapter4.MyViewHolder ViewHolder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
-       final Product subItems = subChildItemList3.get(position);
-        ViewHolder.subItemName.setText(subItems.getPTitle());
-       Picasso.with(context).load(subItems.getPImage())
-                .error(R.drawable.ic_launcher_background).into(ViewHolder.subItemimage);
+        final Product subItems = subChildItemList4.get(i);
+        viewHolder.subItemName.setText(subItems.getPTitle());
+        Picasso.with(context).load(subItems.getPImage())
+                .error(R.drawable.ic_launcher_background).into(viewHolder.subItemimage);
 
-        ViewHolder.subItemQuantity.setText(subItems.getPQuantity());
+        viewHolder.subItemQuantity.setText(subItems.getPQuantity());
 
-        ViewHolder.subChildTotalMoney.setText(subItems.getPPrice());
-        ViewHolder.subChildDiscountMoney.setText(subItems.getPDiscPrice());
+        viewHolder.subChildTotalMoney.setText(subItems.getPPrice());
+        viewHolder.subChildDiscountMoney.setText(subItems.getPDiscPrice());
 
-        ViewHolder.offButtonMoney.setText(subItems.getDTitle());
-
+        viewHolder.offButtonMoney.setText(subItems.getDTitle());
 
 
     }
 
     @Override
     public int getItemCount() {
-        return subChildItemList3.size();
+        return subChildItemList4.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView subItemimage;
         TextView nonMember,subItemName,subItemQuantity,subChildTotalMoney,subChildDiscountMoney;
         Button offButtonMoney;
         ElegantNumberButton subchildelegent;
-        public MyViewHolder(@NonNull View itemView) {
 
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             subItemimage= itemView.findViewById(R.id.item_image);
             subItemName = itemView.findViewById(R.id.itemnamesubchild);
             nonMember =itemView.findViewById(R.id.nonmembersubchild);

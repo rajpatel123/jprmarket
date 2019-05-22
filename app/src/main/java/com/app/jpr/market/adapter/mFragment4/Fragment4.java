@@ -11,20 +11,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.app.jpr.market.Activities.TabLayoutActivity3;
 import com.app.jpr.market.Activities.TabLayoutActivity4;
 import com.app.jpr.market.R;
+import com.app.jpr.market.mFragment3.Fragment3;
+import com.app.jpr.market.mFragment3.SubClassChildAdapter3;
+import com.app.jpr.market.models.TabSubChildCatResponseNew;
 import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragment;
 import com.app.jpr.market.models.fragmentdatamodel.TabSubChildFragmentRequest;
 import com.app.jpr.market.retrofit.RestClient;
 import com.app.jpr.market.utils.Utils;
 
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class Fragment4 extends Fragment {
+
     private String catid;
     private TabSubChildFragment tabcatitem;
     private RecyclerView recyclerViewSubItem1;
@@ -38,11 +41,11 @@ public class Fragment4 extends Fragment {
 
     public static Fragment4 init(String title) {
 
-        Fragment4 fragment1 = new Fragment4();
+        Fragment4 fragment4 = new Fragment4();
         Bundle args = new Bundle();
         args.putString("title", title);
-        fragment1.setArguments(args);
-        return fragment1;
+        fragment4.setArguments(args);
+        return fragment4;
     }
 
     @Override
@@ -50,12 +53,13 @@ public class Fragment4 extends Fragment {
         super.onAttach(context);
         activity = (TabLayoutActivity4) getActivity();
 
-
     }
 
     public String getTitle() {
         return title;
     }
+
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,7 +79,8 @@ public class Fragment4 extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-getAllProducts();
+        getAllItemss();
+
 
     }
 
@@ -84,7 +89,9 @@ getAllProducts();
 
         return title;
     }
-    public void getAllProducts() {
+
+
+    public void getAllItemss() {
 
 
         TabSubChildFragmentRequest tabSubChildCatRequest = new TabSubChildFragmentRequest();
@@ -106,13 +113,13 @@ getAllProducts();
                             tabcatitem = response.body();
                             if (tabcatitem != null && tabcatitem.getProducts().size() > 0) {
 
-                                SubClassChildAdapter4 subClassChildAdapter = new SubClassChildAdapter4(activity.getApplicationContext());
+                                SubClassChildAdapter4 subClassChildAdapter4 = new SubClassChildAdapter4(activity.getApplicationContext());
 
-                                subClassChildAdapter.setdata(tabcatitem.getProducts());
+                                subClassChildAdapter4.setdata(tabcatitem.getProducts());
                                 LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
                                 linearLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
                                 recyclerViewSubItem1.setLayoutManager(linearLayoutManager1);
-                                recyclerViewSubItem1.setAdapter(subClassChildAdapter);
+                                recyclerViewSubItem1.setAdapter(subClassChildAdapter4);
 
                             }
                         }
@@ -129,6 +136,6 @@ getAllProducts();
 
             });
         }
-    }
-}
 
+
+}}

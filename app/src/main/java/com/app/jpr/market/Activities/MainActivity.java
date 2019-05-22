@@ -110,13 +110,13 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-    /*    saver.setOnClickListener(new View.OnClickListener() {
+        saver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TabLayoutActivity4.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         button.setOnClickListener(new View.OnClickListener() {

@@ -9,6 +9,7 @@ import android.util.Log;
 import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.mFragment4.Fragment4;
 import com.app.jpr.market.adapter.mFragment4.MyPagerAdapter4;
+import com.app.jpr.market.mFragments.MyPagerAdapter;
 import com.app.jpr.market.models.TabSubChildCatRequestNew;
 import com.app.jpr.market.models.TabSubChildCatResponseNew;
 import com.app.jpr.market.models.TabSubChildCategoryNew;
@@ -21,6 +22,7 @@ import retrofit2.Response;
 
 public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener {
 
+
     ViewPager viewPager;
     TabLayout tabLayout;
     private String sub_cat_id="5";
@@ -32,12 +34,11 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tablayout4);
-
+        setContentView(R.layout.activity_tab_layout4);
 
         viewPager = findViewById(R.id.mViewpager_ID2);
 
-        getAllSubCategories( sub_cat_id);
+        getAllSubCategoriess( sub_cat_id);
 
         tabLayout = findViewById(R.id.mTab_ID2);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -47,7 +48,7 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
 
     }
 
-    private void getAllSubCategories( String sub_cat_id) {
+    private void getAllSubCategoriess( String sub_cat_id) {
 
         TabSubChildCatRequestNew tabSubChildCatRequestNew = new TabSubChildCatRequestNew();
         tabSubChildCatRequestNew.setSubId(sub_cat_id);
@@ -97,8 +98,11 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
 
     }
 
+    @Override
     public void onTabSelected(TabLayout.Tab tab) {
+
         viewPager.setCurrentItem(tab.getPosition());
+
     }
 
     @Override
@@ -110,6 +114,4 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
     public void onTabReselected(TabLayout.Tab tab) {
 
     }
-
-
 }
