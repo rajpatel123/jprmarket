@@ -11,82 +11,71 @@ import android.widget.TextView;
 
 import com.app.jpr.market.Activities.CategoryActivity;
 import com.app.jpr.market.R;
+import com.app.jpr.market.adapter.DashboardAdapter.CategoryDashboardAdapter;
 import com.app.jpr.market.models.CatagoryResponse;
+import com.app.jpr.market.models.dashboard.Category;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
 public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.ViewHolder> {
+    //private CategoryDashboardAdapter.SellingListInterface sellingListInterface;
+    private List<Category> groseryItemList;
+    Context context;
 
-    //img
-    private Context applicationContext;//
-    private List<CatagoryResponse> categoryResponse;
-
-    public CourseListAdapter(Context applicationContext) {
-        this.applicationContext = applicationContext;
+    public CourseListAdapter(Context context) {
+        this.context = context;
     }
 
-
-    public void setData(List<CatagoryResponse> CourseLists) {
-        this.categoryResponse = CourseLists;
-    }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public CourseListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        View itemView = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.recycler_item, viewGroup, false);
 
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_item, viewGroup, false);
-        return new ViewHolder(view);
+        return new CourseListAdapter.ViewHolder(itemView);
     }
 
+    public void setdata(List<Category> itemList) {
+        this.groseryItemList = itemList;
+    }
+
+
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull CourseListAdapter.ViewHolder viewHolder, int i) {
 
-        //holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getCatId());
-        holder.first.setText(categoryResponse.get(holder.getAdapterPosition()).getDTitle());
-        holder.second.setText(categoryResponse.get(holder.getAdapterPosition()).getCatTitle());
-        holder.third.setText(categoryResponse.get(holder.getAdapterPosition()).getCatDesc());
+        final Category alllItems = groseryItemList.get(i);
+        viewHolder.textView13.setText(alllItems.getCatTitle());
+        Picasso.with(context).load(alllItems.getCatImage())
+                .error(R.drawable.veg).into(viewHolder.itemImage16);
 
+        viewHolder.textView14.setText(alllItems.getCatDesc());
 
-
-        ////image
-        Picasso.with(applicationContext)                                                             //
-                .load(categoryResponse.get(holder.getAdapterPosition()).getCatImage())               //
-                .error(R.drawable.veg)                                                    //
-                .into(holder.imageView);                                                              //
-
+        viewHolder.textView15.setText(alllItems.getDTitle());
 
     }
 
     @Override
     public int getItemCount() {
-
-        if (categoryResponse != null && categoryResponse.size() > 0) {
-            return categoryResponse.size();
-        } else {
-            return 0;
-        }
+        return groseryItemList.size();
     }
-
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView first, second, third;
 
-        ImageView imageView;
+        private ImageView itemImage16, arrowicon;
+        private TextView textView13, textView14, textView15, textView4;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            first = itemView.findViewById(R.id.text1);
-            second = itemView.findViewById(R.id.text2);
-            third = itemView.findViewById(R.id.text3);
-            imageView = itemView.findViewById(R.id.logoID);  //ImageView
 
+            textView13 = itemView.findViewById(R.id.text_tv11);
+            textView14 = itemView.findViewById(R.id.text_tv11);
+            textView15 = itemView.findViewById(R.id.text_tv11);
+            itemImage16 = itemView.findViewById(R.id.logoID1);
+            arrowicon = itemView.findViewById(R.id.arrow);
 
         }
     }
-
-
 }

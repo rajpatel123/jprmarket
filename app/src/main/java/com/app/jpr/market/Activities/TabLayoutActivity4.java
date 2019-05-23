@@ -1,10 +1,14 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.mFragment4.Fragment4;
@@ -27,7 +31,7 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
     TabLayout tabLayout;
     private String sub_cat_id="5";
     private final String TAG = TabLayoutActivity4.class.getSimpleName();
-
+    private ImageView arrowimg2;
 
     private MyPagerAdapter4 pagerAdapter;
 
@@ -37,6 +41,8 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
         setContentView(R.layout.activity_tab_layout4);
 
         viewPager = findViewById(R.id.mViewpager_ID2);
+       arrowimg2 = findViewById(R.id.arrowimg2);
+
 
         getAllSubCategoriess( sub_cat_id);
 
@@ -44,6 +50,14 @@ public class TabLayoutActivity4 extends AppCompatActivity implements TabLayout.B
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(this);
+
+        arrowimg2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TabLayoutActivity4.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

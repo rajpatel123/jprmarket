@@ -13,15 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activities.TabLayoutActivity4"></activity>
+        <activity android:name=".Activities.TabLayoutActivity4"  android:theme="@style/AppTheme7" ></activity>
         <activity android:name=".Activities.SeeAllTopSaversActivity" />
-        <activity android:name=".Activities.TabLayoutActivity3" />
+        <activity android:name=".Activities.TabLayoutActivity3"        android:theme="@style/AppTheme7" />
         <activity android:name=".Activities.AskedQuestionActivity" />
         <activity android:name=".Activities.SubCategoryActivity" />
         <activity
             android:name=".Activities.PriceActivity"
             android:theme="@style/AppTheme6" />
-        <activity android:name=".Activities.SeeAllActivity" />
+        <activity android:name=".Activities.SeeAllActivity" android:theme="@style/AppTheme7" />
         <activity android:name=".Activities.About_us" />
         <activity
             android:name=".Activities.SplashActivity"

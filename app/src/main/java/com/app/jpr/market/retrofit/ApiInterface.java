@@ -67,7 +67,7 @@ public interface ApiInterface {
     Call <List<CatagoryResponse>> getCourse();
 
 
-    @POST("grofer_api/list")
+    @POST("http://vrok.in/grofer_api/list")
     Call <CategoryResponse> getAllItem();
 
     //Offers

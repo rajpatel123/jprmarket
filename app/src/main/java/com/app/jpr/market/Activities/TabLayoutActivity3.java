@@ -1,10 +1,13 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.app.jpr.market.mFragment3.MyPagerAdapter3;
 import com.app.jpr.market.mFragment3.Fragment3;
@@ -25,6 +28,7 @@ import retrofit2.Response;
 
 public class TabLayoutActivity3 extends AppCompatActivity  implements TabLayout.OnTabSelectedListener {
     ViewPager viewPager;
+    private ImageView arrowimg;
     TabLayout tabLayout;
 
     private String sub_cat_id="5";
@@ -43,12 +47,21 @@ public class TabLayoutActivity3 extends AppCompatActivity  implements TabLayout.
         setContentView(R.layout.activity_tab_layout3);
 
         viewPager = (ViewPager) findViewById(R.id.mViewpager_ID2);
+        arrowimg=findViewById(R.id.arrowimg1);
 
         getAllSubCategories(  sub_cat_id);
         tabLayout =  findViewById(R.id.mTab_ID2);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setOnTabSelectedListener(this);
+
+        arrowimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(TabLayoutActivity3.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
