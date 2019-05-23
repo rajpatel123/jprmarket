@@ -22,7 +22,7 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
     private List<BlockbusterSaver> groseryItemList1;
     Context context;
 
-/*    //click lisner
+   /* //click lisner
     private SellingListInterface sellingListInterface;///*/
 
     public BlockBusterAdapter(Context context) {
@@ -45,7 +45,7 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder ViewHolder, int position) {
 
-        BlockbusterSaver alItems = groseryItemList1.get(position);
+        final BlockbusterSaver alItems = groseryItemList1.get(position);
         ViewHolder.itemName1.setText(alItems.getPTitle());
         Picasso.with(context).load(alItems.getPImage())
                 .error(R.drawable.veg).into(ViewHolder.itemImage1);
@@ -55,16 +55,16 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
         ViewHolder.discountMoney1.setText(alItems.getPDiscPrice());
 
 
-       /* // seeall after all data from api
-        if (bestSelling.getPTitle().equalsIgnoreCase("See All")) {
-            viewHolder.seeall.setVisibility(View.VISIBLE);
-            viewHolder.productDeatail.setVisibility(View.GONE);
+      /*  // seeall after all data from api
+        if (alItems.getPTitle().equalsIgnoreCase("See All")) {
+            ViewHolder.seeall.setVisibility(View.VISIBLE);
+            ViewHolder.productDeatail.setVisibility(View.GONE);
 
-            viewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+            ViewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
                 @Override
                 public void onClick(View v) {                                    ///
                     if (sellingListInterface != null) {                           ///
-                        sellingListInterface.sellinglistitemSeeAll(bestSelling.getPId());   ///
+                        sellingListInterface.sellinglistitemSeeAll(alItems.getPId());   ///
                     }                                                              ///
                 }                                                                  ///
             });                                                                    ///
@@ -74,11 +74,11 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
             viewHolder.seeall.setVisibility(View.GONE);
             viewHolder.productDeatail.setVisibility(View.VISIBLE);
 
-            viewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
+            iewHolder.cardView.setOnClickListener(new View.OnClickListener() { ///
                 @Override
                 public void onClick(View v) {                                    ///
                     if (sellingListInterface != null) {                           ///
-                        sellingListInterface.sellinglistitem(bestSelling.getPId());   ///
+                        sellingListInterface.sellinglistitem(alItems.getPId());   ///
                     }                                                              ///
                 }                                                                  ///
             });                                                                    ///
@@ -87,12 +87,11 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
 
     }
 
-
-  /*  ///click Lisner
+/*
+    ///click Lisner
     public void setSellingListInterface(BestSellingAdapter.SellingListInterface sellingListInterface) {    ///
         this.sellingListInterface = sellingListInterface;                                 ///
-    }                                                                                     ///
-*/
+    }  */                                                                                   ///
 
     @Override
     public int getItemCount() {
