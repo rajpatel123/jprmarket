@@ -34,7 +34,7 @@ public class BlockBusterAdapter  extends RecyclerView.Adapter<BlockBusterAdapter
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())   ////
-                .inflate(R.layout.recyclerblockbastersale, viewGroup, false);   ////
+                .inflate(R.layout.recycler_blockbastersale, viewGroup, false);   ////
 
         return new ViewHolder(itemView);  ////
     }

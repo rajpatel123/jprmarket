@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.models.dashboard.BestSelling;
-import com.app.jpr.market.models.dashboard.BlockbusterSaver;
 import com.app.jpr.market.models.dashboard.TodaySaver;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
@@ -39,7 +37,7 @@ public class TopSaverAdapter extends RecyclerView.Adapter<TopSaverAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recyclertopsaverstoday, viewGroup, false);
+                .inflate(R.layout.recycler_topsaverstoday, viewGroup, false);
 
         return new TopSaverAdapter.ViewHolder(itemView);
     }

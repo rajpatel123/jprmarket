@@ -38,7 +38,7 @@ public class SubClassChildAdapter  extends RecyclerView.Adapter<SubClassChildAda
     public SubClassChildAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recyclersubcatchildfragmentitem, viewGroup, false);
+                .inflate(R.layout.recycler_subcatchildfragmentitem, viewGroup, false);
 
 
         return new SubClassChildAdapter.MyViewHolder(itemView);

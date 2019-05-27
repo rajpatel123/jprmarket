@@ -9,10 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.app.jpr.market.Activities.CategoryActivity;
 import com.app.jpr.market.R;
-import com.app.jpr.market.adapter.DashboardAdapter.CategoryDashboardAdapter;
-import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.dashboard.Category;
 import com.squareup.picasso.Picasso;
 
@@ -35,7 +32,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
     @Override
     public CourseListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recycler_item, viewGroup, false);
+                .inflate(R.layout.recycler_category, viewGroup, false);
 
         return new CourseListAdapter.ViewHolder(itemView);
     }

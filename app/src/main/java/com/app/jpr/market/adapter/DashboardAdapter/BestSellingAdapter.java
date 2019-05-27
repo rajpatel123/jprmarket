@@ -36,7 +36,7 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recyclerbestselling_item, viewGroup, false);
+                .inflate(R.layout.recycler_bestsellingitems, viewGroup, false);
 
         return new MyViewHolder(itemView);
     }

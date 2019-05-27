@@ -9,7 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -39,7 +41,7 @@ public class CategoryActivity extends AppCompatActivity {
 
     private List<Category> itemList1;
     private RecyclerView recyclerView1;
-
+    private ImageView arrow;
 
 
     @Override
@@ -47,6 +49,16 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         recyclerView1 = findViewById(R.id.recycler);
+        arrow = findViewById(R.id.arrowimg1);
+
+        arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(CategoryActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         getAllItem();
 
         ///show back button

@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
-import com.app.jpr.market.mFragment3.SubClassChildAdapter3;
 import com.app.jpr.market.models.fragmentdatamodel.Product;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
@@ -37,7 +36,7 @@ public class SubClassChildAdapter4 extends RecyclerView.Adapter<SubClassChildAda
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View itemView = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.recyclersubcatchildfragmentitem4, viewGroup, false);
+                .inflate(R.layout.recycler_subcatchildfragmentitem4, viewGroup, false);
 
 
         return new SubClassChildAdapter4.ViewHolder(itemView);
