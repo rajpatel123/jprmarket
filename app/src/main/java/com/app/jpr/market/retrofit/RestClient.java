@@ -49,9 +49,9 @@ public class RestClient {
    }
 
     //Category
-    public static void getCourses(Callback <List<CatagoryResponse>> callback) {
-        RetrofitClient.getClient().getCourse().enqueue(callback);
-    }
+   // public static void getCourses(Callback <List<CatagoryResponse>> callback) {
+       // RetrofitClient.getClient().getCourse().enqueue(callback);
+    //}
 
 
     //Offers

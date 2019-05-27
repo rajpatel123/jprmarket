@@ -22,6 +22,7 @@ import com.app.jpr.market.R;
 import com.app.jpr.market.adapter.DashboardAdapter.BestSellingAdapter;
 import com.app.jpr.market.adapter.DashboardAdapter.BlockBusterAdapter;
 import com.app.jpr.market.adapter.DashboardAdapter.CategoryDashboardAdapter;
+
 import com.app.jpr.market.adapter.DashboardAdapter.TopSaverAdapter;
 import com.app.jpr.market.models.dashboard.BestSelling;
 import com.app.jpr.market.models.dashboard.BlockbusterSaver;
@@ -39,10 +40,10 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private List<BestSelling> itemList;
-    private List<BlockbusterSaver> itemList1;
-    private List<TodaySaver> itemList2;
-    private List<Category> itemList3;
+    private List<BestSelling> itemList1;
+    private List<BlockbusterSaver> itemList2;
+    private List<TodaySaver> itemList3;
+    private List<Category> itemList4;
     private RecyclerView recyclerView, recyclerView2, recyclerView1, recyclerView3;
 
     private CardView cardView, cardview_item;
@@ -244,17 +245,26 @@ public class MainActivity extends AppCompatActivity
                     Utils.dismissProgressDialog();
                     if (response.body() != null) {
                         if (response.body().getStatus()) {
-                            itemList = response.body().getBestSelling();
+                            itemList1 = response.body().getBestSelling();
 
                             BestSelling bestSelling = new BestSelling();
                             bestSelling.setPTitle("See All");
-                            itemList.add(bestSelling);
-                            itemList1 = response.body().getBlockbusterSavers();
-                            itemList2 = response.body().getTodaySavers();
-                            itemList3 = response.body().getCategories();
+                            itemList1.add(bestSelling);
+
+                            /*BlockbusterSaver blockbusterSaver=new BlockbusterSaver();
+                            blockbusterSaver.setPDesc("See All");
+                            itemList2.add(blockbusterSaver);*/
+
+                       /*    TodaySaver todaySaver=new TodaySaver();
+                           todaySaver.setPDesc("See All");
+                          itemList3.add(todaySaver);*/
+
+                            itemList2 = response.body().getBlockbusterSavers();
+                            itemList3 = response.body().getTodaySavers();
+                            itemList4 = response.body().getCategories();
 
                             BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
-                            bestSellingAdapter.setdata(itemList);
+                            bestSellingAdapter.setdata(itemList1);
                             Log.d("Main Activity", "Done");
                             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
                             Log.d("Main Activity", "Two");
@@ -285,63 +295,62 @@ public class MainActivity extends AppCompatActivity
                             });
 
 
-                            BlockBusterAdapter blockBusterAdapter = new BlockBusterAdapter(getApplicationContext());
-                            blockBusterAdapter.setdata(itemList1);
-                            LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+                            BlockBusterAdapter blockBusterAdapter=new BlockBusterAdapter(getApplicationContext());
+                            blockBusterAdapter.setdata(itemList2);
+                            LinearLayoutManager linearLayoutManager1=new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false);
                             recyclerView1.setLayoutManager(linearLayoutManager1);
                             recyclerView1.setAdapter(blockBusterAdapter);
 
-                           /* /// click listner
-                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
+                            /// click listner
+                            blockBusterAdapter.setSellingListInterface1(new BlockBusterAdapter.SellingListInterface() { ///
                                 @Override
                                 ///
-                                public void sellinglistitem(String id) {
+                                public void sellinglistitem1(String id) {
                                     Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                                     intent.putExtra("id", id);
                                     startActivity(intent);
                                 }                                                                                        ///
 
                                 @Override
-                                public void sellinglistitemSeeAll(String id) {
+                                public void sellinglistitemSeeAll1(String id) {
                                     //open see all activity
-                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
+                                    Intent intent = new Intent(MainActivity.this, TabLayoutActivity3.class);
                                     intent.putExtra("id", id);
                                     startActivity(intent);
 
                                 }
-                            });*/
+                            });
+
 
 
                             TopSaverAdapter topSaverAdapter = new TopSaverAdapter(getApplicationContext());
-                            topSaverAdapter.setdata(itemList2);
+                            topSaverAdapter.setdata(itemList3);
                             LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
                             recyclerView2.setLayoutManager(linearLayoutManager2);
-                            recyclerView2.setAdapter(blockBusterAdapter);
+                            recyclerView2.setAdapter(topSaverAdapter);
                             Log.d("Main Activity", "Four");
-
-                             /* /// click listner
-                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
+                 /*             /// click listner
+                            todaySaver.setSellingListInterface2(new TopSaverAdapter.SellingListInterface() { ///
                                 @Override
                                 ///
-                                public void sellinglistitem(String id) {
+                                public void sellinglistitem2(String id) {
                                     Intent intent = new Intent(MainActivity.this, ProductActivity.class);
                                     intent.putExtra("id", id);
                                     startActivity(intent);
                                 }                                                                                        ///
 
                                 @Override
-                                public void sellinglistitemSeeAll(String id) {
+                                public void sellinglistitemSeeAll2(String id) {
                                     //open see all activity
                                     Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
                                     intent.putExtra("id", id);
                                     startActivity(intent);
 
                                 }
-                            });*/
-
-
+                            });
+*/
                             CategoryDashboardAdapter categoryDashboardAdapter = new CategoryDashboardAdapter(getApplicationContext());
-                            categoryDashboardAdapter.setdata(itemList3);
+                            categoryDashboardAdapter.setdata(itemList4);
                             LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
                             recyclerView3.setLayoutManager(linearLayoutManager3);
                             recyclerView3.setAdapter(categoryDashboardAdapter);

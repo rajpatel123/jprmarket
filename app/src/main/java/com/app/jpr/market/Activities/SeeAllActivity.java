@@ -1,10 +1,13 @@
 package com.app.jpr.market.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.app.jpr.market.R;
@@ -24,6 +27,7 @@ import com.app.jpr.market.utils.Utils;
 
 public class SeeAllActivity extends AppCompatActivity {
             private List<BestSellingNew> itemList;
+            private ImageView arrow;
 
             RecyclerView recyclerView;
 
@@ -32,6 +36,16 @@ public class SeeAllActivity extends AppCompatActivity {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_see_all);
                 recyclerView = findViewById(R.id.recycler_viewitem);
+                arrow = findViewById(R.id.arrowimg1);
+
+                arrow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(SeeAllActivity.this,MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
                 getAllItem();
 
 

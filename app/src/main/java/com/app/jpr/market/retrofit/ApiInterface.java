@@ -63,8 +63,8 @@ public interface ApiInterface {
 
 
     //Catagory
-    @POST("cat_api/test_api.php?action=fetch_all")
-    Call <List<CatagoryResponse>> getCourse();
+   // @POST("cat_api/test_api.php?action=fetch_all")
+    //Call <List<CatagoryResponse>> getCourse();
 
 
     @POST("http://vrok.in/grofer_api/list")
@@ -110,14 +110,5 @@ public interface ApiInterface {
 
     @POST("http://vrok.in/grofer_api/sub_catall")
     Call <TabLayoutTitleResponse> getAlltitleSubItem(@Body TabLayoutTitleRequest tabLayoutTitleRequest);
-
-
-
-
-
-
-
-
-
 
 }

@@ -23,6 +23,8 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
     //private CategoryDashboardAdapter.SellingListInterface sellingListInterface;
     private List<Category> groseryItemList;
     Context context;
+    private SubItemListAdapter.SellingListInterface sellingListInterface;
+
 
     public CourseListAdapter(Context context) {
         this.context = context;
@@ -55,7 +57,24 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
 
         viewHolder.textView15.setText(alllItems.getDTitle());
 
+        viewHolder. arrowicon2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (sellingListInterface != null) {
+                    sellingListInterface.sellinglistitem(alllItems.getCatId());
+                }
+
+            }
+        });
+
     }
+
+    public void setSellingListInterface(SubItemListAdapter.SellingListInterface sellingListInterface) {
+
+        this.sellingListInterface = sellingListInterface;
+    }
+
+
 
     @Override
     public int getItemCount() {
@@ -64,7 +83,7 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView itemImage16, arrowicon;
+        private ImageView itemImage16, arrowicon,arrowicon2;
         private TextView textView13, textView14, textView15, textView4;
 
         public ViewHolder(@NonNull View itemView) {
@@ -75,7 +94,14 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseListAdapter.Vi
             textView15 = itemView.findViewById(R.id.text_tv11);
             itemImage16 = itemView.findViewById(R.id.logoID1);
             arrowicon = itemView.findViewById(R.id.arrow);
+            arrowicon2 = itemView.findViewById(R.id.arrow2);
+
 
         }
     }
+
+    public interface SellingListInterface {
+        public void sellinglistitem(String id);
+    }
+
 }

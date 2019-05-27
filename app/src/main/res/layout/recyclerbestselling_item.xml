@@ -13,11 +13,12 @@
         android:layout_margin="8dp"
         android:layout_height="wrap_content">
 <LinearLayout
-    android:id="@+id/productDetail"
+    android:id="@+id/productDetail1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:visibility="gone"
     android:orientation="vertical"
-    android:visibility="gone">
+   >
     <Button
 
         android:id="@+id/moneyOff_btn"
@@ -162,13 +163,13 @@
                     android:id="@+id/imageView"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:background="@drawable/navimg"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="5dp"
                     android:text="Rs 254"
                     android:textColor="@color/colorBlack"
                     android:textSize="10dp"
@@ -178,7 +179,7 @@
                     android:id="@+id/lockIMG"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:background="@drawable/ic_lock"></ImageView>
 
                 <ImageView

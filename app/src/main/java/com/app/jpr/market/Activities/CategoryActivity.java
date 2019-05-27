@@ -18,7 +18,6 @@ import com.app.jpr.market.adapter.CourseListAdapter;
 import com.app.jpr.market.adapter.DashboardAdapter.BestSellingAdapter;
 import com.app.jpr.market.adapter.DashboardAdapter.BlockBusterAdapter;
 import com.app.jpr.market.adapter.DashboardAdapter.CategoryDashboardAdapter;
-import com.app.jpr.market.adapter.DashboardAdapter.TopSaverAdapter;
 import com.app.jpr.market.models.CatagoryResponse;
 import com.app.jpr.market.models.dashboard.BestSelling;
 import com.app.jpr.market.models.dashboard.BlockbusterSaver;
@@ -103,100 +102,11 @@ public class CategoryActivity extends AppCompatActivity {
                     Utils.dismissProgressDialog();
                     if (response.body() != null) {
                         if (response.body().getStatus()) {
-                            //itemList1 = response.body().getBestSelling();
 
-                            //BestSelling bestSelling = new BestSelling();
-                           // bestSelling.setPTitle("See All");
-                            //itemList1.add(bestSelling);
-                           // itemList1 = response.body().getBlockbusterSavers();
-                           //// itemList2 = response.body().getTodaySavers();
+
+
                             itemList1 = response.body().getCategories();
 
-                         /*   BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
-                            bestSellingAdapter.setdata(itemList);
-                            Log.d("Main Activity", "Done");
-                            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-                            Log.d("Main Activity", "Two");
-                            recyclerView.setLayoutManager(linearLayoutManager);
-                            Log.d("Main Activity", "Three");
-                            recyclerView.setAdapter(bestSellingAdapter);
-                            Log.d("Main Activity", "Four");
-
-
-                            /// click listner
-                            bestSellingAdapter.setSellingListInterface(new BestSellingAdapter.SellingListInterface() { ///
-                                @Override
-                                ///
-                                public void sellinglistitem(String id) {
-                                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-                                }                                                                                        ///
-
-                                @Override
-                                public void sellinglistitemSeeAll(String id) {
-                                    //open see all activity
-                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-
-                                }
-                            });
-*/
-
-                         /*   BlockBusterAdapter blockBusterAdapter = new BlockBusterAdapter(getApplicationContext());
-                            blockBusterAdapter.setdata(itemList1);
-                            LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-                            recyclerView1.setLayoutManager(linearLayoutManager1);
-                            recyclerView1.setAdapter(blockBusterAdapter);
-*/
-                           /* /// click listner
-                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
-                                @Override
-                                ///
-                                public void sellinglistitem(String id) {
-                                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-                                }                                                                                        ///
-
-                                @Override
-                                public void sellinglistitemSeeAll(String id) {
-                                    //open see all activity
-                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-
-                                }
-                            });*/
-
-
-                        /*    TopSaverAdapter topSaverAdapter = new TopSaverAdapter(getApplicationContext());
-                            topSaverAdapter.setdata(itemList2);
-                            LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
-                            recyclerView2.setLayoutManager(linearLayoutManager2);
-                            recyclerView2.setAdapter(blockBusterAdapter);
-                            Log.d("Main Activity", "Four");*/
-
-                             /* /// click listner
-                            blockBusterAdapter.setSellingListInterface(new BlockBusterAdapter.SellingListInterface() { ///
-                                @Override
-                                ///
-                                public void sellinglistitem(String id) {
-                                    Intent intent = new Intent(MainActivity.this, ProductActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-                                }                                                                                        ///
-
-                                @Override
-                                public void sellinglistitemSeeAll(String id) {
-                                    //open see all activity
-                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
-                                    intent.putExtra("id", id);
-                                    startActivity(intent);
-
-                                }
-                            });*/
 
 
                             CategoryDashboardAdapter categoryDashboardAdapter = new CategoryDashboardAdapter(getApplicationContext());
@@ -206,7 +116,7 @@ public class CategoryActivity extends AppCompatActivity {
                             recyclerView1.setAdapter(categoryDashboardAdapter);
 
 
-                       /*     categoryDashboardAdapter.setSellingListInterface(new CategoryDashboardAdapter.SellingListInterface() {
+                            categoryDashboardAdapter.setSellingListInterface(new CategoryDashboardAdapter.SellingListInterface() {
                                 @Override
                                 public void sellinglistitem(String id) {
                                     Intent intent = new Intent(CategoryActivity.this, SubCategoryActivity.class);
@@ -214,7 +124,10 @@ public class CategoryActivity extends AppCompatActivity {
                                     startActivity(intent);
 
                                 }
-                            });*/
+                            });
+
+
+
 
 
                         }

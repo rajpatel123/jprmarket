@@ -1,6 +1,7 @@
 
 package com.app.jpr.market.models.dashboard;
 
+import com.app.jpr.market.adapter.DashboardAdapter.TopSaverAdapter;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -105,5 +106,6 @@ public class TodaySaver {
     public void setSubitems(Subitems_ subitems) {
         this.subitems = subitems;
     }
+
 
 }

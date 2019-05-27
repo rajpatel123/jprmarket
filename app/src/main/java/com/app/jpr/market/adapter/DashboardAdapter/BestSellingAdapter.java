@@ -20,7 +20,7 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.MyViewHolder> {
-    private List<BestSelling> groseryItemList;
+    private List<BestSelling> bestSellingAdapter;
     Context context;
     private CardView cardView;
 
@@ -42,12 +42,12 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
     }
 
     public void setdata(List<BestSelling> itemList) {
-        this.groseryItemList = itemList;
+        this.bestSellingAdapter = itemList;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder viewHolder, int position) {
-        final BestSelling bestSelling = groseryItemList.get(position);
+        final BestSelling bestSelling = bestSellingAdapter.get(position);
 
         viewHolder.itemName.setText(bestSelling.getPTitle());
         Picasso.with(context).load(bestSelling.getPImage())
@@ -95,7 +95,7 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
 
     @Override
     public int getItemCount() {
-        return groseryItemList.size();
+        return bestSellingAdapter.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -121,7 +121,7 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
             totalMoney = itemView.findViewById(R.id.totalitemmoney);
             discountMoney = itemView.findViewById(R.id.afterdiscount);
             cardView = itemView.findViewById(R.id.cardview1);
-            productDeatail = itemView.findViewById(R.id.productDetail);
+            productDeatail = itemView.findViewById(R.id.productDetail1);
 
 
         }

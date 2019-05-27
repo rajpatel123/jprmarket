@@ -2,76 +2,143 @@ package com.app.jpr.market.adapter.DashboardAdapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.jpr.market.R;
+import com.app.jpr.market.models.dashboard.BestSelling;
+import com.app.jpr.market.models.dashboard.BlockbusterSaver;
 import com.app.jpr.market.models.dashboard.TodaySaver;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class TopSaverAdapter extends RecyclerView.Adapter<TopSaverAdapter.MyViewHolder> {
-    private List<TodaySaver> groseryItemList2;
+public class TopSaverAdapter extends RecyclerView.Adapter<TopSaverAdapter.ViewHolder> {
+    private List<TodaySaver> topSavaerAdapter;
     Context context;
+    private CardView cardView;
+
+
+    //click lisner
+   private TopSaverAdapter.SellingListInterface sellingListInterface2;///
+
     public TopSaverAdapter(Context context) {
         this.context = context;
     }
 
+
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.recyclertopsaverstoday, viewGroup, false);
 
-        return new MyViewHolder(itemView);
-
+        return new TopSaverAdapter.ViewHolder(itemView);
     }
-    public void setdata(List<TodaySaver> itemList) {
 
-        this.groseryItemList2 = itemList;
+    public void setdata(List<TodaySaver> itemList) {
+        this.topSavaerAdapter = itemList;
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+
+        final TodaySaver todaySaver = topSavaerAdapter.get(i);
+
+        viewHolder.itemName1.setText(todaySaver.getPTitle());
+        Picasso.with(context).load(todaySaver.getPImage())
+                .error(R.drawable.veg).into(viewHolder.itemImage1);
+
+        viewHolder.itemWeight1.setText(todaySaver.getPQuantity());
+        viewHolder.totalMoney1.setText(todaySaver.getPPrice());
+        viewHolder.discountMoney1.setText(todaySaver.getPDiscPrice());
 
 
+        // seeall after all data from api
+        if (todaySaver.getPDesc().equalsIgnoreCase("See All")) {
+            viewHolder.seeall3.setVisibility(View.VISIBLE);
+            viewHolder.productDeatail3.setVisibility(View.GONE);
+
+            viewHolder.cardView3.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface2!= null) {                           ///
+                        sellingListInterface2.sellinglistitemSeeAll2(todaySaver.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
+
+        } else {
+
+            viewHolder.seeall3.setVisibility(View.GONE);
+            viewHolder.productDeatail3.setVisibility(View.VISIBLE);
+
+            viewHolder.cardView3.setOnClickListener(new View.OnClickListener() { ///
+                @Override
+                public void onClick(View v) {                                    ///
+                    if (sellingListInterface2 != null) {                           ///
+                        sellingListInterface2.sellinglistitem2(todaySaver.getPId());   ///
+                    }                                                              ///
+                }                                                                  ///
+            });                                                                    ///
+
+        }
+
+    }
+
+    ///click Lisner
+    public void setSellingListInterface2(BlockBusterAdapter.SellingListInterface sellingListInterface2) {    ///
+        this.sellingListInterface2 = (SellingListInterface) sellingListInterface2;                                 ///
     }
 
     @Override
     public int getItemCount() {
-        return groseryItemList2.size();
+        return topSavaerAdapter.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-        private Button moneyOff2;
-        private ElegantNumberButton elegantNumberButton3;
-        private ImageView itemImage2, lock2;
-        private TextView itemName2, itemWeight2, totalMoney2, discountMoney2;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private ElegantNumberButton elegantNumberButton;
+        private Button addCart, moneyOff;
+        private ImageView itemImage1, lock;
+        private TextView itemName1, itemWeight1, totalMoney1, discountMoney1, seeall3;
+        private CardView cardView3;
+        private LinearLayout productDeatail3;
 
-
-
-        public MyViewHolder(@NonNull View itemView) {
-
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            elegantNumberButton3 =  itemView.findViewById(R.id.mybutton3);
-            moneyOff2 =  itemView.findViewById(R.id.moneyOff_btn2);
-            itemImage2 =  itemView.findViewById(R.id.vegitable_image2);
-            lock2 =  itemView.findViewById(R.id.lockIMG3);
-            itemName2 =  itemView.findViewById(R.id.itemname2);
-            itemWeight2 =  itemView.findViewById(R.id.itemquantity2);
-            totalMoney2 =  itemView.findViewById(R.id.totalitemmoney2);
-            discountMoney2 =  itemView.findViewById(R.id.discountmoney2);
+
+            elegantNumberButton = itemView.findViewById(R.id.addcartbutton);
+            moneyOff = itemView.findViewById(R.id.moneyOff_btn);
+            itemImage1 = itemView.findViewById(R.id.item_image1);
+            lock = itemView.findViewById(R.id.lockIMG);
+            itemName1 = itemView.findViewById(R.id.item_name1);
+            seeall3 = itemView.findViewById(R.id.seeall3);
+            itemWeight1 = itemView.findViewById(R.id.item_weight1);
+            totalMoney1 = itemView.findViewById(R.id.totalitemmoney1);
+            discountMoney1 = itemView.findViewById(R.id.afterdiscount1);
+            cardView3 = itemView.findViewById(R.id.cardview3);
+            productDeatail3= itemView.findViewById(R.id.productDetail13);
+
+
 
         }
+    }
 
+    ///click Lisner
+    public interface SellingListInterface {       ///
+        public void sellinglistitem2(String id);
+
+        public void sellinglistitemSeeAll2(String id);
 
     }
+
 }
