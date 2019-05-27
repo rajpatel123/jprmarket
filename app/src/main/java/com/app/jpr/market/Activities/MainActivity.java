@@ -251,16 +251,20 @@ public class MainActivity extends AppCompatActivity
                             bestSelling.setPTitle("See All");
                             itemList1.add(bestSelling);
 
-                            /*BlockbusterSaver blockbusterSaver=new BlockbusterSaver();
-                            blockbusterSaver.setPDesc("See All");
-                            itemList2.add(blockbusterSaver);*/
-
-                       /*    TodaySaver todaySaver=new TodaySaver();
-                           todaySaver.setPDesc("See All");
-                          itemList3.add(todaySaver);*/
-
                             itemList2 = response.body().getBlockbusterSavers();
+
+                            BlockbusterSaver blockbusterSaver=new BlockbusterSaver();
+                            blockbusterSaver.setPDesc("See All");
+                            itemList2.add(blockbusterSaver);
+
                             itemList3 = response.body().getTodaySavers();
+
+                           TodaySaver todaySaver=new TodaySaver();
+                           todaySaver.setPDesc("See All");
+                          itemList3.add(todaySaver);
+
+
+
                             itemList4 = response.body().getCategories();
 
                             BestSellingAdapter bestSellingAdapter = new BestSellingAdapter(getApplicationContext());
@@ -329,8 +333,8 @@ public class MainActivity extends AppCompatActivity
                             recyclerView2.setLayoutManager(linearLayoutManager2);
                             recyclerView2.setAdapter(topSaverAdapter);
                             Log.d("Main Activity", "Four");
-                 /*             /// click listner
-                            todaySaver.setSellingListInterface2(new TopSaverAdapter.SellingListInterface() { ///
+                              /// click listner
+                            topSaverAdapter.setSellingListInterface2(new TopSaverAdapter.SellingListInterface() { ///
                                 @Override
                                 ///
                                 public void sellinglistitem2(String id) {
@@ -342,13 +346,12 @@ public class MainActivity extends AppCompatActivity
                                 @Override
                                 public void sellinglistitemSeeAll2(String id) {
                                     //open see all activity
-                                    Intent intent = new Intent(MainActivity.this, SeeAllActivity.class);
+                                    Intent intent = new Intent(MainActivity.this, TabLayoutActivity4.class);
                                     intent.putExtra("id", id);
                                     startActivity(intent);
 
                                 }
                             });
-*/
                             CategoryDashboardAdapter categoryDashboardAdapter = new CategoryDashboardAdapter(getApplicationContext());
                             categoryDashboardAdapter.setdata(itemList4);
                             LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);

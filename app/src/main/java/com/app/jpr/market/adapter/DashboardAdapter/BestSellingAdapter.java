@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.app.jpr.market.R;
 import com.app.jpr.market.models.dashboard.BestSelling;
+import com.app.jpr.market.utils.Utils;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.squareup.picasso.Picasso;
 
@@ -50,8 +51,10 @@ public class BestSellingAdapter extends RecyclerView.Adapter<BestSellingAdapter.
         final BestSelling bestSelling = bestSellingAdapter.get(position);
 
         viewHolder.itemName.setText(bestSelling.getPTitle());
+
         Picasso.with(context).load(bestSelling.getPImage())
-                .error(R.drawable.veg).into(viewHolder.itemImage);
+                             .error(R.drawable.veg)
+                             .into(viewHolder.itemImage);
 
         viewHolder.itemWeight.setText(bestSelling.getPQuantity());
         viewHolder.totalMoney.setText(bestSelling.getPPrice());

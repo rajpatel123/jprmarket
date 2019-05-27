@@ -94,7 +94,7 @@ public class TopSaverAdapter extends RecyclerView.Adapter<TopSaverAdapter.ViewHo
     }
 
     ///click Lisner
-    public void setSellingListInterface2(BlockBusterAdapter.SellingListInterface sellingListInterface2) {    ///
+    public void setSellingListInterface2(SellingListInterface sellingListInterface2) {    ///
         this.sellingListInterface2 = (SellingListInterface) sellingListInterface2;                                 ///
     }
 
