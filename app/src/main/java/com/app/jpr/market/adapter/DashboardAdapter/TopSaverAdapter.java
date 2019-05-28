@@ -56,9 +56,9 @@ public class TopSaverAdapter extends RecyclerView.Adapter<TopSaverAdapter.ViewHo
         Picasso.with(context).load(todaySaver.getPImage())
                 .error(R.drawable.veg).into(viewHolder.itemImage1);
 
-        viewHolder.itemWeight1.setText(todaySaver.getPQuantity());
-        viewHolder.totalMoney1.setText(todaySaver.getPPrice());
-        viewHolder.discountMoney1.setText(todaySaver.getPTitle());
+        viewHolder.discountMoney1.setText(todaySaver.getPQuantity());
+        viewHolder.itemWeight1.setText(todaySaver.getPPrice());
+        viewHolder.totalMoney1.setText(todaySaver.getPTitle());
 
 
         // seeall after all data from api
