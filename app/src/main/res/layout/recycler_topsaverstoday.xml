@@ -20,7 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
 
@@ -79,17 +78,17 @@
                         <ImageView
                             android:id="@+id/imageView1"
                             android:layout_width="12dp"
-
                             android:layout_height="12dp"
-
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/navimg"></ImageView>
 
 
                         <TextView
                             android:id="@+id/item_name1"
                             android:layout_width="wrap_content"
-                            android:layout_height="2dp"
+                            android:layout_height="wrap_content"
                             android:text="Rs259"
+                            android:layout_marginLeft="10dp"
                             android:textColor="@color/colorBlack"
                             android:textSize="16dp"
                             android:textStyle="bold" />
